@@ -9,20 +9,23 @@ export const Footer = () => {
         <footer
             className="border-t border-gray-200 dark:border-slate-800 mt-20 py-10 flex justify-around">
 
-            <span className="hidden md:inline text-xs text-gray-700 mr-4 dark:text-slate-400">
+            <span className="hidden md:inline text-sm text-gray-700 mr-4 dark:text-slate-400">
               <q>
                     Cambiar el mundo a través del código
               </q>
             </span>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 ">
                 <Link href="https://github.com/Edgarmejiav">
-                    <IconGithub/>
+                    GitHub
+                    {/*<IconGithub/>*/}
                 </Link>
                 <Link href="https://www.instagram.com/edgarmejiav/">
-                    <IconInstagram/>
+                    Instagram
+                    {/*<IconInstagram/>*/}
                 </Link>
                 <Link href="https://www.linkedin.com/in/edgarmejiav/">
-                    <IconLinkedin/>
+                    Linkedin
+                    {/*<IconLinkedin/>*/}
                 </Link>
             </div>
         </footer>

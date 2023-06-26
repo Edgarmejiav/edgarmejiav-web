@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {IconApps, IconGithub} from "@/components/icons";
+// import {IconApps, IconGithub} from "@/components/icons";
 
 export const ContainerPage = () => {
     return (
@@ -14,13 +14,13 @@ export const ContainerPage = () => {
             <div className="flex flex-row gap-10">
                 <button className=" flex items-center gap-2 bg-gray-700 p-3 rounded-2xl font-bold   ">
                     <Link className="flex items-center gap-2 " href="/apps">
-                        <IconApps/>
+                        {/*<IconApps/>*/}
                         Aplicaciones
                     </Link>
                 </button>
                 <button className="  bg-gray-700 p-3 rounded-2xl font-bold  ">
                     <Link className="flex items-center gap-2" target="_blank" href="https://github.com/Edgarmejiav">
-                        <IconGithub/>
+                        {/*<IconGithub/>*/}
                         Código
                     </Link>
                 </button>

@@ -5,9 +5,8 @@ export const ConteinerApps = () => {
     return (
         <>
             <Header/>
-            <div className="">
 
-            <section className=" container mx-auto px-[100px]  mt-10 grid grid-cols-2 gap-10 ">
+            <section className=" container mx-auto lg:px-[100px] md:px-[50px]  px-[25px] mt-10 grid xl:grid-cols-2 grid-cols-1  gap-10 ">
 
                 <Card description={"Day Progress"} link={"sfd"} img={"df"} title={"dfgbg"}/>
                 <Card description={"className"} link={"sfd"} img={"df"} title={"dfgbg"}/>
@@ -18,7 +17,6 @@ export const ConteinerApps = () => {
                 <Card description={"className"} link={"sfd"} img={"df"} title={"dfgbg"}/>
                 <Card description={"className"} link={"sfd"} img={"df"} title={"dfgbg"}/>
             </section>
-            </div>
         </>
     )
 }

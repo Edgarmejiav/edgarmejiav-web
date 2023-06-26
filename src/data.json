@@ -1,0 +1,50 @@
+[
+  {
+    "title": "cuevana",
+    "description": "Peliculas y series online en español latino",
+    "img": "https://github.com/Edgarmejiav/Edgarmejiav/assets/35704346/303ae74a-c47b-4d04-957a-1ecfdf22b1ea",
+    "link": "https://cuevana.vercel.app/",
+    "stack": ["react", "swr" , "wouter", "bulma"]
+  },
+  {
+    "title": "Babel Verbs",
+   "description": "Conjuga verbos en ingles present simple, past participle, past perfect",
+    "img": "https://github.com/Edgarmejiav/Edgarmejiav/assets/35704346/f66925fa-358c-4f6a-967c-6985e57fc879",
+    "link": "https://babel-verbs.vercel.app/",
+    "stack": ["react"]
+  },
+  {
+    "title": "Babel Verbs",
+    "description": "Practica las phrasal verbs mas comuens del ingles",
+    "img": "",
+    "link": "https://phrasal-verbs.vercel.app/",
+    "stack": ["react"]
+  },
+  {
+    "title": "Pizzara online",
+   "description": "Pizarron virtual para dibujar y escribir",
+    "img": "https://github.com/Edgarmejiav/Edgarmejiav/assets/35704346/5b083b1d-5c9c-4d2d-b5b1-223a12eb8a9d",
+    "link": "https://virtual-board.vercel.app/",
+    "stack": ["react"]
+  },
+  {
+    "title": "Clone minecraft",
+   "description": "clon de minecraft con javascript",
+    "img": "https://github.com/Edgarmejiav/Edgarmejiav/assets/35704346/899af9cc-79f2-4e2c-ad02-6a85afbd0df2",
+    "link": "https://clone-minecraft.vercel.app/",
+    "stack": ["react", "ThreeJS" , "zustand"]
+  },
+  {
+    "title": "Demo de un portafolio",
+   "description": "Plantilla de un portafolio con html y css",
+    "img": "https://github.com/Edgarmejiav/Edgarmejiav/assets/35704346/9c53b3b2-20c8-45ff-bf22-b4d526faa02c",
+    "link": "https://portafolio-seven-gray.vercel.app/",
+    "stack": ["Nextjs", "Styled Components"]
+  },  {
+    "title": "Time clock",
+   "description": "Reloj en tiempo",
+    "img": "",
+    "link": "https://timeclock.vercel.app/",
+    "stack": ["Nextjs"]
+  }
+]

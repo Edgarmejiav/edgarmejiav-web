@@ -6,9 +6,9 @@ export default function Home() {
 
             <main>
                 <ContainerPage/>
-                <ContainerPage/>
-                <ContainerPage/>
-                <ContainerPage/>
+                {/*<ContainerPage/>*/}
+                {/*<ContainerPage/>*/}
+                {/*<ContainerPage/>*/}
             </main>
         </>
     )

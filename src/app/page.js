@@ -1,4 +1,4 @@
-import {ContainerPage} from "@/components/Page/ContainerPage";
+import {ContainerPage} from "@/components/page/ContainerPage";
 
 export default function Home() {
     return (

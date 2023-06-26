@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {IconApps , IconGithub} from "@/components/Icons";
+import {IconApps, IconGithub} from "@/components/Icons";
 
 export const ContainerPage = () => {
     return (
@@ -9,17 +9,17 @@ export const ContainerPage = () => {
              text-transparent
              bg-clip-text
             p-2 text-6xl font-bold">EdgarMejiaV</h1>
-            <h1 className="text-3xl font-bold text-slate-300">Software engineer | Front-end Developer | Python Developer</h1>
+            <h1 className="text-3xl font-bold text-slate-300">Software engineer & web Developer </h1>
 
             <div className="flex flex-row gap-10">
-                <button className=" flex bg-gray-700 p-3 rounded-2xl font-bold   ">
-                    <Link className="flex" href="/apps">
+                <button className=" flex items-center gap-2 bg-gray-700 p-3 rounded-2xl font-bold   ">
+                    <Link className="flex items-center gap-2 " href="/apps">
                         <IconApps/>
                         Aplicaciones
                     </Link>
                 </button>
                 <button className="  bg-gray-700 p-3 rounded-2xl font-bold  ">
-                    <Link className="flex" target="_blank" href="https://github.com/Edgarmejiav">
+                    <Link className="flex items-center gap-2" target="_blank" href="https://github.com/Edgarmejiav">
                         <IconGithub/>
                         Código
                     </Link>

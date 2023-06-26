@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {IconApps, IconGithub} from "@/components/Icons";
+import {IconApps, IconGithub} from "@/components/icons";
 
 export const ContainerPage = () => {
     return (

@@ -1,7 +1,4 @@
 import Link from "next/link";
-import {IconGithub} from "@/components/Icons";
-import {IconInstagram} from "@/components/Icons/IconInstagram";
-import {IconLinkedin} from "@/components/Icons/IconLinkedin";
 
 export const Footer = () => {
 

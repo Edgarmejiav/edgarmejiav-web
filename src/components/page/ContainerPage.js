@@ -16,7 +16,7 @@ export const ContainerPage = () => {
             ">EdgarMejiaV</h1>
             <h1 className="sm:text-3xl text-1xl   font-bold text-slate-300">Software engineer & web Developer </h1>
 
-            <div className="flex flex-row gap-10">
+            <div className="text-white flex flex-row gap-10">
                 <button className=" flex items-center gap-2 bg-gray-700 p-3 rounded-2xl font-bold   ">
                     <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs" href="/apps">
                         {/*<IconApps/>*/}

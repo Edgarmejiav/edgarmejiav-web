@@ -5,7 +5,7 @@ export const Card = ({title, description, img, link, stack}) => {
     return (
         <Link href={link} target="_blank">
 
-            <div className="flex flex-row  items-center border border-gray-500 bg-gray-800 rounded-lg sm:p-10 p-3  ">
+            <div className="text-white flex flex-row  items-center border border-gray-500 bg-gray-800 rounded-lg sm:p-10 p-3  ">
                 {/*<Image className=" mr-8 sm:w-[100px] sm:h-[100px] w-[50px] h-[50px]"*/}
                 {/*       src={`${img ? img : "https://sindresorhus.com/apps/day-progress/icon.png"}`}*/}
                 {/*/>*/}

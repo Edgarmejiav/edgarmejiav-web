@@ -1,4 +1,5 @@
 import {ContainerPage} from "@/components/page/ContainerPage";
+import {Technologies} from "@/components/Technologies";
 
 export default function Home() {
     return (
@@ -6,6 +7,8 @@ export default function Home() {
 
             <main>
                 <ContainerPage/>
+                <Technologies/>
+
                 {/*<ContainerPage/>*/}
                 {/*<ContainerPage/>*/}
                 {/*<ContainerPage/>*/}

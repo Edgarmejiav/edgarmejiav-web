@@ -25,9 +25,9 @@ export const NavBar = () => {
                 <Link href="/apps">
                     <h1 className="text-xs sm:text-2xl">Apps</h1>
                 </Link>
-                <Link href="/about">
-                    <h1 className="text-xs sm:text-2xl">Acerca de</h1>
-                </Link>
+                {/*<Link href="/about">*/}
+                {/*    <h1 className="text-xs sm:text-2xl">Acerca de</h1>*/}
+                {/*</Link>*/}
             </div>}
 
             {/* Mobile Menu */}
@@ -70,9 +70,9 @@ export const NavBar = () => {
                             <Link href="/apps">
                                 <h1 className="text-xl">Apps</h1>
                             </Link>
-                            <Link href="/about">
-                                <h1 className="text-xl">Acerca de</h1>
-                            </Link>
+                            {/*<Link href="/about">*/}
+                            {/*    <h1 className="text-xl">Acerca de</h1>*/}
+                            {/*</Link>*/}
                         </div>
                     </div>
                 )}

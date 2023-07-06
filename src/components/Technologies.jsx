@@ -50,7 +50,7 @@ export const Technologies =()=> {
 
     return (
 
-        <div className='absolute inset-0'>
+        <div className='absolute inset-0  z-[-99]'>
             <div
                 ref={heroRef}
                 id='icons'

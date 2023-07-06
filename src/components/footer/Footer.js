@@ -11,7 +11,7 @@ export const Footer = () => {
                     Cambiar el mundo a través del código
               </q>
             </span>
-            <div className="flex items-center gap-4 ">
+            <div className="text-white flex items-center gap-4 ">
                 <Link href="https://github.com/Edgarmejiav">
                     GitHub
                     {/*<IconGithub/>*/}

@@ -11,7 +11,7 @@ export const Technologies =()=> {
         const svgs = Array.from(hero.querySelectorAll('svg'))
         svgsRef.current = svgs
 
-        const w = window.innerWidth
+        const w = window.innerWidth - 300
         const h = window.innerHeight - 300
 
         const animateBackgroundIcons = () => {

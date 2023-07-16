@@ -8,7 +8,8 @@
       "swr",
       "wouter",
       "bulma"
-    ]
+    ],
+    "github" : ""
   },
   {
     "title": "Babel Verbs",
@@ -16,7 +17,8 @@
     "link": "https://babel-verbs.vercel.app/",
     "stack": [
       "react"
-    ]
+    ],
+    "github" :  "https://github.com/Edgarmejiav/phrasal-verbs"
   },
   {
     "title": "Phrasal Verbs",
@@ -24,7 +26,8 @@
     "link": "https://phrasal-verbs.vercel.app/",
     "stack": [
       "react"
-    ]
+    ],
+    "" :  "https://github.com/Edgarmejiav/phrasal-verbs"
   },
   {
     "title": "Pizarra online",
@@ -32,7 +35,8 @@
     "link": "https://virtual-board.vercel.app/",
     "stack": [
       "react"
-    ]
+    ],
+    "github" :  "https://github.com/Edgarmejiav/canvas-draw-react"
   },
   {
     "title": "Time clock",
@@ -40,7 +44,8 @@
     "link": "https://timeclock.vercel.app/",
     "stack": [
       "Nextjs"
-    ]
+    ],
+    "github" :  "https://github.com/Edgarmejiav/time-clock"
   },
   {
     "title": "Clone minecraft",
@@ -50,7 +55,8 @@
       "react",
       "ThreeJS",
       "zustand"
-    ]
+    ],
+    "github" :  "https://github.com/Edgarmejiav/clone-minecraft"
   },
   {
     "title": "Demo de un portafolio",
@@ -59,7 +65,8 @@
     "stack": [
       "Nextjs",
       "Styled Components"
-    ]
+    ],
+    "github" :  "https://github.com/Edgarmejiav/portafolio"
   }
 
 ]

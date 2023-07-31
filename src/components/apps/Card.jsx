@@ -33,7 +33,7 @@ export const Card = ({title, description, link, stack, github}) => {
                     </div>
                     <p className="  text-xl text-gray-500">{description}</p>
                     <div className="flex flex-row flex-row  items-center gap-4">
-                        {stack.map((item) =>  <h1  key={item} className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h1>)}
+                        {stack.map((item) =>  <h4  key={item} className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h4>)}
                     </div>
                 </div>
 

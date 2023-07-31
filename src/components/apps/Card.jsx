@@ -9,7 +9,7 @@ export const Card = ({title, description, link, stack, github}) => {
                 <div className="flex flex-col gap-5">
                     <div className="flex items-center gap-4">
 
-                        <h3 className="  text-2xl font-bold ">{title} </h3>
+                        <h2 className="text-2xl font-bold ">{title} </h2>
                         <div className="flex self-start gap-4  ">
                             <Link href={link} target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -31,9 +31,9 @@ export const Card = ({title, description, link, stack, github}) => {
 
                         </div>
                     </div>
-                    <p className="  text-xl text-gray-500">{description}</p>
+                    <p className="text-xl text-gray-400">{description}</p>
                     <div className="flex flex-row flex-row  items-center gap-4">
-                        {stack.map((item) =>  <h4  key={item} className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h4>)}
+                        {stack.map((item) =>  <h3  key={item} className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h3>)}
                     </div>
                 </div>
 

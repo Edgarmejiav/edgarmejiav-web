@@ -18,15 +18,13 @@ export const ContainerPage = () => {
 
             <div className="text-white flex flex-row gap-10">
                 <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold   ">
-                    <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs" href="/apps">
-                        {/*<IconApps/>*/}
+                    <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs scroll-smooth hover:scroll-auto" href="#apps">
                         Aplicaciones
                     </Link>
                 </button>
                 <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold   ">
                     <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs " target="_blank" href="https://github.com/Edgarmejiav">
-                        {/*<IconGithub/>*/}
-                        Código
+                        Github
                     </Link>
                 </button>
             </div>

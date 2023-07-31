@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const ContainerPage = () => {
     return (
-        <div id="div1"  className="flex flex-col items-center justify-center min-h-screen  gap-7 ">
+        <div  className="flex flex-col items-center justify-center min-h-screen  gap-7 ">
             <h1 className="
              bg-gradient-to-br from-blue-900 to-lime-400
              text-transparent

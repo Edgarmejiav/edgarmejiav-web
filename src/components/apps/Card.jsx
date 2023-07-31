@@ -10,7 +10,7 @@ export const Card = ({title, description, link, stack, github}) => {
                 <div className="flex flex-col gap-5">
                     <div className="flex items-center gap-4">
 
-                        <h1 className="  text-2xl font-bold ">{title} </h1>
+                        <h3 className="  text-2xl font-bold ">{title} </h3>
                         <div className="flex self-start gap-4  ">
                             <Link href={link} target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

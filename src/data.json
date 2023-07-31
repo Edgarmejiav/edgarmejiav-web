@@ -54,7 +54,7 @@
     "stack": [
       "React",
       "Three.js",
-      "zustand"
+      "Zustand"
     ],
     "github" :  "https://github.com/Edgarmejiav/clone-minecraft"
   },

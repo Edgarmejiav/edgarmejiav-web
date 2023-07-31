@@ -2,7 +2,8 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import {NavBar} from "@/components/NavBar";
 import {Footer} from "@/components/footer/Footer";
-import { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="https://avatars.githubusercontent.com/u/35704346?v=4"/>
     </head>
     <body className={inter.className}>
+    <Analytics />
     <NavBar/>
 
     {children}

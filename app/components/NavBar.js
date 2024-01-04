@@ -16,7 +16,7 @@ export const NavBar = () => {
             </div>
             <div className="flex flex-row gap-10">
                 <Link href="/photos">
-                    <h1 className="text-xl sm:text-sm ">/ Fotos</h1>
+                    <h1 className="text-xs sm:text-sm ">/ Fotos</h1>
                 </Link>
 
                 <div className="  flex  sm:flex-row sm:gap-10 ">

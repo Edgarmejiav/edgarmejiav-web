@@ -59,7 +59,7 @@ export const Imgs = () => {
         setParts(newParts);
     }, [isMobile]);
     return (
-        <div className={`flex  pt-20 `}>
+        <div className={` container flex  pt-20 `}>
 
             {parts.map((part, index) => (
                 <div key={index} className="flex flex-1 gap-5  flex-col mx-4 ">

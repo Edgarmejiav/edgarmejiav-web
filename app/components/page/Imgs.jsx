@@ -20,7 +20,7 @@ export const Imgs = () => {
     }
 
     return (
-        <div className="flex gap-10">
+        <div className="flex gap-10 pt-20">
             {parts.map((part, index) => (
                 <div key={index} className="flex flex-col gap-10">
                     {part.map((img, imgIndex) => (

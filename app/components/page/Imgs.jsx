@@ -22,10 +22,18 @@ export const Imgs = () => {
         "/img/IMG_3841.webp",
     ];
 
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+    const [isMobile, setIsMobile] = useState(() => {
+            if (typeof window !== "undefined") {
+                return window.innerWidth < 600;
+            } else {
+                return false;
+            }
+        }
+    );
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
+        if (typeof window === "undefined") return;
         const handleResize = () => {
             const screenWidth = window.innerWidth;
             setIsMobile(screenWidth < 768);

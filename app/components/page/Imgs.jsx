@@ -1,28 +1,60 @@
+'use client';
+import {useEffect, useState} from "react";
+
 export const Imgs = () => {
 
     const links = [
-        "https://images.pexels.com/photos/13235825/pexels-photo-13235825.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/18530726/pexels-photo-18530726/free-photo-of-chica-pelirroja-con-un-vestido-vintage-verde-con-uvas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/18597865/pexels-photo-18597865/free-photo-of-ligero-ciudad-amanecer-gente.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/5372612/pexels-photo-5372612.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/18201338/pexels-photo-18201338/free-photo-of-mujer-rock-retrato-pelo-largo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/17916576/pexels-photo-17916576/free-photo-of-escaleras-ciudad-puesta-de-sol-pasos.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/17937239/pexels-photo-17937239/free-photo-of-mujer-en-pie-oscuridad-vestido-blanco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/10497155/pexels-photo-10497155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        "https://images.pexels.com/photos/18072294/pexels-photo-18072294/free-photo-of-mujer-noche-en-pie-urbano.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        "/img/IMG_3801.webp",
+        "/img/IMG_2700-Editar.webp",
+        "/img/DSC_2014-Editar.webp",
+        "/img/IMG_2789.webp",
+        "/img/IMG_8767-min.webp",
+        "/img/IMG_8905-min.webp",
+        "/img/IMG_3809.webp",
+        "/img/IMG_8720-min.webp",
+        "/img/IMG_8735-min.webp",
+        "/img/IMG_6984-Editar-Editar.webp",
+        "/img/IMG_9882-Editar.webp",
+        "/img/IMG_8995-min.webp",
+        "/img/IMG_3917.webp",
+        "/img/IMG_2713.webp",
+        "/img/IMG_8809-2-min.webp",
+        "/img/IMG_3841.webp",
     ];
 
-    const imagesPerPart = Math.ceil(links.length / 3);
+    const [isMobile, setIsMobile] = useState(() => window.innerWidth < 600);
+    const [parts, setParts] = useState([]);
 
-    const parts = [];
-    for (let i = 0; i < 3; i++) {
-        parts.push(links.slice(i * imagesPerPart, (i + 1) * imagesPerPart));
-    }
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            setIsMobile(screenWidth < 768);
+        };
 
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+    useEffect(() => {
+        const columnCount = isMobile ? 2 : 3;
+        const imagesPerPart = Math.floor(links.length / columnCount);
+
+        const newParts = [];
+
+        for (let i = 0; i < columnCount; i++) {
+            newParts.push(links.slice(i * imagesPerPart, (i + 1) * imagesPerPart));
+        }
+
+        setParts(newParts);
+    }, [isMobile]);
     return (
-        <div className="flex gap-10 pt-20">
+        <div className={`flex  pt-20 `}>
+
             {parts.map((part, index) => (
-                <div key={index} className="flex flex-col gap-10">
+                <div key={index} className="flex flex-1 gap-5  flex-col mx-4 ">
                     {part.map((img, imgIndex) => (
                         <img key={imgIndex} className="max-w-full" src={img} alt={"s"}/>
                     ))}

@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import {useEffect, useState} from "react";
 
 export const Imgs = () => {
@@ -6,6 +6,7 @@ export const Imgs = () => {
     const links = [
         "/img/IMG_3801.webp",
         "/img/IMG_2700-Editar.webp",
+        "/img/IMG_3917.webp",
         "/img/DSC_2014-Editar.webp",
         "/img/IMG_2789.webp",
         "/img/IMG_8767-min.webp",
@@ -16,13 +17,12 @@ export const Imgs = () => {
         "/img/IMG_6984-Editar-Editar.webp",
         "/img/IMG_9882-Editar.webp",
         "/img/IMG_8995-min.webp",
-        "/img/IMG_3917.webp",
         "/img/IMG_2713.webp",
         "/img/IMG_8809-2-min.webp",
         "/img/IMG_3841.webp",
     ];
 
-    const [isMobile, setIsMobile] = useState(() => window.innerWidth < 600);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
     const [parts, setParts] = useState([]);
 
     useEffect(() => {

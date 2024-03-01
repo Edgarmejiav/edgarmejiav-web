@@ -2,6 +2,7 @@ import Link from "next/link";
 import {IconGithub} from "@/app/components/icons/IconGithub";
 import {IconLinkedin} from "@/app/components/icons/IconLinkedin";
 import {IconX} from "@/app/components/icons/IconX";
+import {IconsCode} from "@/app/components/icons/IconsCode";
 
 export const SocialIcons = () => {
     return <div
@@ -18,7 +19,7 @@ export const SocialIcons = () => {
 
         </Link>
         <Link href="https://github.com/Edgarmejiav/edgarmejiav-web" target="_blank" aria-label="link to github">
-            <IconGithub />
+            <IconsCode />
         </Link>
 
     </div>

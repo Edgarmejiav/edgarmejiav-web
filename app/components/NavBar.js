@@ -10,9 +10,6 @@ export const NavBar = () => {
         >
 
             <div className={"flex gap-4 items-center"}>
-                <Link href="/">
-                    <h1 className="text-xl sm:text-2xl">EdgarMejiaV</h1>
-                </Link>
                 <span
                     className="bg-green-100 h-fit text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">
                     Disponible para trabajar

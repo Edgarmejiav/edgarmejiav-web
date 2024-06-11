@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const ContainerPage = () => {
-    return (<div className="flex flex-col items-center justify-center   min-h-[80vh]  gap-7  ">
+    return (<div className="flex flex-col items-center justify-center   min-h-[60vh]  gap-7  ">
         <h1 className="
              bg-gradient-to-br from-blue-900 to-lime-400
              text-transparent
@@ -20,14 +20,14 @@ export const ContainerPage = () => {
             <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
                    ">
                 <Link
-                    className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xl  scroll-smooth hover:scroll-auto"
+                    className="flex items-center sm:p-2 p-1 sm:text-[20px] text-sm scroll-smooth hover:scroll-auto"
                     href="mailto:legamejiav@gmail.com">
                     Contáctame
                 </Link>
             </button>
             <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
                    ">
-                <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xl  scroll-smooth hover:scroll-auto"
+                <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-sm  scroll-smooth hover:scroll-auto"
                       target="_blank"
                       href="https://www.linkedin.com/in/legamejiav/">
                     LinkedIn

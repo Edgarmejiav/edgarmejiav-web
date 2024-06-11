@@ -1,9 +1,8 @@
 import Link from "next/link";
 
 export const ContainerPage = () => {
-    return (
-        <div className="flex flex-col items-center justify-center   min-h-[80vh]  gap-7  ">
-            <h1 className="
+    return (<div className="flex flex-col items-center justify-center   min-h-[80vh]  gap-7  ">
+        <h1 className="
              bg-gradient-to-br from-blue-900 to-lime-400
              text-transparent
              bg-clip-text
@@ -13,27 +12,28 @@ export const ContainerPage = () => {
             text-4xl
              font-bold
             ">EdgarMejiaV</h1>
-            <h1 className="sm:text-3xl text-1xl   font-bold text-slate-300">Software engineer & web Developer </h1>
+        <p className="sm:text-2xl text-1xl w-1/2 text-slate-300 [&>strong]:font-bold "> +3 años de
+            experiencia. <strong> Ingeniero de
+                sistemas de Cajamarca, perú 🇵🇪. </strong> Especializado en el desarrollo de aplicaciones web. </p>
 
-            <div className="text-white flex flex-row gap-10">
-                <button
-                    className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white  ">
-                    <Link
-                        className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs scroll-smooth hover:scroll-auto"
-                        href="#apps">
-                        Aplicaciones
-                    </Link>
-                </button>
-                <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
+        <div className="text-white flex flex-row gap-10">
+            <button
+                className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white  ">
+                <Link
+                    className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs scroll-smooth hover:scroll-auto"
+                    href="mailto:legamejiav@gmail.com">
+                    Contáctame
+                </Link>
+            </button>
+            <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
                    ">
-                    <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs " target="_blank"
-                          href="https://github.com/Edgarmejiav">
-                        Github
-                    </Link>
-                </button>
-            </div>
+                <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs " target="_blank"
+                      href="https://www.linkedin.com/in/legamejiav/">
+                    LinkedIn
+                </Link>
+            </button>
         </div>
-    )
+    </div>)
 }
 
 

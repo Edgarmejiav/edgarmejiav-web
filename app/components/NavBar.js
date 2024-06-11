@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/link";
 import {SocialIcons} from "@/app/components/SocialIcons";
 
 export const NavBar = () => {

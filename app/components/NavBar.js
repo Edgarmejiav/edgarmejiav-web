@@ -2,6 +2,7 @@
 import {SocialIcons} from "@/app/components/SocialIcons";
 import lega from "../edgar.png";
 import Image from "next/image";
+import Link from "next/link";
 
 export const NavBar = () => {
     return (
@@ -18,10 +19,10 @@ export const NavBar = () => {
                     hover:scale-110 transform transition duration-500 ease-in-out hover:bg-green-200 hover:text-green-900
 
                     ">
-                    <a href="https://www.linkedin.com/in/legamejiav/" target="_blank">
+                    <Link href="https://www.linkedin.com/in/legamejiav/" target="_blank">
 
                     Disponible para trabajar
-                    </a>
+                    </Link>
                 </span>
 
                 </div>

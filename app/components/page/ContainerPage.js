@@ -16,18 +16,19 @@ export const ContainerPage = () => {
             experiencia. <strong> Ingeniero de
                 sistemas de Cajamarca, perú 🇵🇪. </strong> Especializado en el desarrollo de aplicaciones web. </p>
 
-        <div className="text-white flex flex-row gap-10">
-            <button
-                className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white  ">
+        <div className="text-white flex flex-row gap-4">
+            <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
+                   ">
                 <Link
-                    className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs scroll-smooth hover:scroll-auto"
+                    className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xl  scroll-smooth hover:scroll-auto"
                     href="mailto:legamejiav@gmail.com">
                     Contáctame
                 </Link>
             </button>
             <button className=" flex items-center gap-2 border border-neutral-800 p-3 rounded-2xl font-bold hover:bg-neutral-800 hover:text-white
                    ">
-                <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xs " target="_blank"
+                <Link className="flex items-center sm:p-2 p-1 sm:text-[20px] text-xl  scroll-smooth hover:scroll-auto"
+                      target="_blank"
                       href="https://www.linkedin.com/in/legamejiav/">
                     LinkedIn
                 </Link>

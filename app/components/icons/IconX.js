@@ -1,10 +1,10 @@
-export  const IconX  = ()=> {
-    return <svg viewBox="0 0 24 24" aria-hidden="true"
-                fill="#ffff"  height="21" width="21"
-                className="r-4qtqp9 r-yyyyoo r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-lrsllp r-1nao33i r-16y2uox r-8kz0gk">
-        <g>
-            <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-        </g>
+export const IconX = () => {
+    return <svg className={"text-gray-400 transition-all duration-150 hover:text-gray-200"} width="24"
+                height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 4l11.733 16h4.267l-11.733 -16z"/>
+        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/>
     </svg>
 }

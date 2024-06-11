@@ -10,7 +10,7 @@ export const NavBar = () => {
 
             <div className={"flex gap-4 items-center"}>
                 <span
-                    className="bg-green-100 h-fit text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300
+                    className="bg-green-100 h-fit text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded  
                     hover:scale-110 transform transition duration-500 ease-in-out hover:bg-green-200 hover:text-green-900
                     ">
                     <a href="https://www.linkedin.com/in/legamejiav/" target="_blank">

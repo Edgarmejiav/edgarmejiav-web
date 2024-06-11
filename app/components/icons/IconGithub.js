@@ -1,8 +1,7 @@
 export const IconGithub = () => {
-    return( <svg width="20" height="20" strokeWidth="2" viewBox="0 0 24 24" fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                color="currentColor" name="Github"
-                className="text-gray-400 transition-all duration-150 hover:text-gray-200">
+    return (<svg width="24"
+                 height="24" viewBox="0 0 24 24" strokeWidth="2" fill="none"
+                 className="text-gray-400 transition-all duration-150 hover:text-gray-200">
         <path
             d="M16 22.027v-2.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7a5.44 5.44 0 00-1.5-3.75 5.07 5.07 0 00-.09-3.77s-1.18-.35-3.91 1.48a13.38 13.38 0 00-7 0c-2.73-1.83-3.91-1.48-3.91-1.48A5.07 5.07 0 005 5.797a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7a3.37 3.37 0 00-.94 2.58v2.87M9 20.027c-3 .973-5.5 0-7-3"
             stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>

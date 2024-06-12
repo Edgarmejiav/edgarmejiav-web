@@ -11,6 +11,15 @@
     ],
     "github" : ""
   },
+    {
+    "title": "Time clock",
+    "description": "⌛ Un reloj minimalista en tiempo real para usarlo como protector de pantalla.",
+    "link": "https://timeclock.vercel.app/",
+    "stack": [
+      "Next.js"
+    ],
+    "github" :  "https://github.com/Edgarmejiav/time-clock"
+  },
   {
     "title": "Babel Verbs",
     "description": "🎒 Conjuga verbos en inglés present simple, past participle, past perfect.",
@@ -38,15 +47,7 @@
     ],
     "github" :  "https://github.com/Edgarmejiav/canvas-draw-react"
   },
-  {
-    "title": "Time clock",
-    "description": "⌛ Un reloj minimalista en tiempo real para usarlo como protector de pantalla.",
-    "link": "https://timeclock.vercel.app/",
-    "stack": [
-      "Next.js"
-    ],
-    "github" :  "https://github.com/Edgarmejiav/time-clock"
-  },
+
   {
     "title": "Clone minecraft",
     "description": "💻 Proyecto con JavaScript para mejor habilidad de programación.",

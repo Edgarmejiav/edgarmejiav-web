@@ -9,16 +9,29 @@
       "Wouter",
       "Bulma"
     ],
-    "github" : ""
+    "github": ""
   },
-    {
+  {
     "title": "Time clock",
     "description": "⌛ Un reloj minimalista en tiempo real para usarlo como protector de pantalla.",
     "link": "https://timeclock.vercel.app/",
     "stack": [
       "Next.js"
     ],
-    "github" :  "https://github.com/Edgarmejiav/time-clock"
+    "github": "https://github.com/Edgarmejiav/time-clock"
+  },
+  {
+    "title": "generate fake commit",
+    "description": "\uD83D\uDC1B Esta es una CLI para generar confirmaciones falsas en un repositorio de git para darle vida a su gráfico de contribuciones.",
+    "link": "https://www.npmjs.com/package/generate-fake-commit",
+    "stack": [
+      "javascript",
+      "Node.js",
+      "CLI",
+      "npm",
+      "github"
+    ],
+    "github": "https://github.com/Edgarmejiav/generate-fake-commit"
   },
   {
     "title": "Babel Verbs",
@@ -27,7 +40,7 @@
     "stack": [
       "React"
     ],
-    "github" :  "https://github.com/Edgarmejiav/phrasal-verbs"
+    "github": "https://github.com/Edgarmejiav/phrasal-verbs"
   },
   {
     "title": "Phrasal Verbs",
@@ -36,7 +49,7 @@
     "stack": [
       "React"
     ],
-    "" :  "https://github.com/Edgarmejiav/phrasal-verbs"
+    "": "https://github.com/Edgarmejiav/phrasal-verbs"
   },
   {
     "title": "Pizarra online",
@@ -45,9 +58,8 @@
     "stack": [
       "React"
     ],
-    "github" :  "https://github.com/Edgarmejiav/canvas-draw-react"
+    "github": "https://github.com/Edgarmejiav/canvas-draw-react"
   },
-
   {
     "title": "Clone minecraft",
     "description": "💻 Proyecto con JavaScript para mejor habilidad de programación.",
@@ -57,7 +69,7 @@
       "Three.js",
       "Zustand"
     ],
-    "github" :  "https://github.com/Edgarmejiav/clone-minecraft"
+    "github": "https://github.com/Edgarmejiav/clone-minecraft"
   },
   {
     "title": "Demo de un portafolio",
@@ -67,7 +79,6 @@
       "Next.js",
       "Styled Components"
     ],
-    "github" :  "https://github.com/Edgarmejiav/portafolio"
+    "github": "https://github.com/Edgarmejiav/portafolio"
   }
-
 ]

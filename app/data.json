@@ -80,5 +80,22 @@
       "Styled Components"
     ],
     "github": "https://github.com/Edgarmejiav/portafolio"
+  },
+  {
+    "title": "spotify clone",
+    "description": "Clon de Spotify hecho con Astro, Svelte y TailwindCSS basado en el tutorial de YouTube de MIDUDEV",
+    "link": "https://spotify-clone-rose-one.vercel.app/",
+    "youtube": "https://www.youtube.com/watch?v=WRc8lz-bp78",
+    "stack": [
+      "Astro",
+      "TypeScript",
+      "JavaScript",
+      "Svelte",
+      "Styled Components"
+    ],
+    "github": "https://github.com/Edgarmejiav/spotify-clone",
+    "type": [
+      "tutorial"
+    ]
   }
 ]

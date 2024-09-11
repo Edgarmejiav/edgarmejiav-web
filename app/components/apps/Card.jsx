@@ -1,9 +1,10 @@
 import Link from "next/link";
 import {IconsCode} from "@/app/components/icons/IconsCode";
 import {IconLinkArrow} from "@/app/components/icons/IconLinkArrow";
+import {IconYoutube} from "@/app/components/icons/IconYoutube";
 
 
-export const Card = ({title, description, link, stack, github}) => {
+export const Card = ({title, description, link, stack, github, youtube}) => {
     return (
         <>
             <div
@@ -19,10 +20,14 @@ export const Card = ({title, description, link, stack, github}) => {
 
                                 <IconsCode/>
                             </Link>}
+                            {youtube && <Link href={youtube} target="_blank">
+
+                                <IconYoutube/>
+                            </Link>}
                         </div>
                     </div>
                     <p className="text-xl text-gray-400">{description}</p>
-                    <div className="flex flex-row   items-center gap-4">
+                    <div className="flex flex-row items-center gap-4 flex-wrap">
                         {stack.map((item) => <h3 key={item}
                                                  className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h3>)}
                     </div>

@@ -1,6 +1,7 @@
 
 
 <div align="center">
+
 <img src="/app/favicon.ico" height="90px" width="auto" /> 
 <h2>
     <em>Portafolio</em> de EdgarMejiaV

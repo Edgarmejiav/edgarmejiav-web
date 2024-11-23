@@ -1,7 +1,7 @@
 [
   {
     "title": "Movie",
-    "description": "🍿 Películas y series online en español latino totalmente gratis y sin publicidad.",
+    "description": "🍿 Plataforma de películas y series online en español latino, gratuita y sin publicidad.",
     "link": "https://cuevana.vercel.app/",
     "stack": [
       "React",
@@ -13,7 +13,7 @@
   },
   {
     "title": "Time clock",
-    "description": "⌛ Un reloj minimalista en tiempo real para usarlo como protector de pantalla.",
+    "description": "⌛ Reloj minimalista en tiempo real, ideal como protector de pantalla.",
     "link": "https://timeclock.vercel.app/",
     "stack": [
       "Next.js"
@@ -22,7 +22,7 @@
   },
   {
     "title": "generate fake commit",
-    "description": "\uD83D\uDC1B Esta es una CLI para generar confirmaciones falsas en un repositorio de git para darle vida a su gráfico de contribuciones.",
+    "description": "\uD83D\uDC1B  CLI para generar commits falsos en Git y mejorar el gráfico de contribuciones.",
     "link": "https://www.npmjs.com/package/generate-fake-commit",
     "stack": [
       "javascript",
@@ -35,7 +35,7 @@
   },
   {
     "title": "Babel Verbs",
-    "description": "🎒 Conjuga verbos en inglés present simple, past participle, past perfect.",
+    "description": "🎒 Herramienta para conjugar verbos en inglés en present simple, past participle y past perfect.",
     "link": "https://babel-verbs.vercel.app/",
     "stack": [
       "React"
@@ -44,7 +44,7 @@
   },
   {
     "title": "Phrasal Verbs",
-    "description": "🎒 Practica las phrasal verbs más comunes del inglés.",
+    "description": "🎒 Aplicación para practicar las phrasal verbs más comunes del inglés.",
     "link": "https://phrasal-verbs.vercel.app/",
     "stack": [
       "React"

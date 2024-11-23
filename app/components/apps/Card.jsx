@@ -26,10 +26,10 @@ export const Card = ({title, description, link, stack, github, youtube}) => {
                             </Link>}
                         </div>
                     </div>
-                    <p className="text-xl text-gray-400">{description}</p>
+                    <h3 className="text-xl text-gray-400">{description}</h3>
                     <div className="flex flex-row items-center gap-4 flex-wrap">
-                        {stack.map((item) => <h3 key={item}
-                                                 className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</h3>)}
+                        {stack.map((item) => <span key={item}
+                                                   className=" truncate rounded-md border  border-gray-500 px-2 py-1 sm:text-xl text-sm ">{item}</span>)}
                     </div>
                 </div>
 

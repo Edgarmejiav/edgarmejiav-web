@@ -45,6 +45,7 @@ export default function RootLayout({children}) {
         <html lang="en">
         <head>
             <meta charSet="utf-8"/>
+            <meta name="google-site-verification" content="Jc5LmUKSElMYT4b1kjDK74v55G4yINhv9VoNuFM1Eh8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             {/* Descripción y palabras clave */}
             <meta name="description" content={metadata.metadataBase.description}/>

@@ -1,17 +1,5 @@
 [
   {
-    "title": "Movie",
-    "description": "🍿 Plataforma de películas y series online en español latino, gratuita y sin publicidad.",
-    "link": "https://cuevana.vercel.app/",
-    "stack": [
-      "React",
-      "Swr",
-      "Wouter",
-      "Bulma"
-    ],
-    "github": ""
-  },
-  {
     "title": "Time clock",
     "description": "⌛ Reloj minimalista en tiempo real, ideal como protector de pantalla.",
     "link": "https://timeclock.vercel.app/",

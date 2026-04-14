@@ -9,33 +9,33 @@ const inter = Inter({subsets: ['latin']})
 
 export const metadata = {
     metadataBase: {
-        title: 'EdgarMejiaV - Software Engineer & Web Developer',
-        description: 'Edgar Mejia es un ingeniero de software y desarrollador web con experiencia en aplicaciones web y tecnologías modernas. Explora su portafolio.',
+        title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
+        description: 'Más de 4 años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack. Cajamarca, Perú.',
         twitter: {
-            title: 'EdgarMejiaV - Software Engineer & Web Developer',
-            description: 'Descubre el portafolio de Edgar Mejia, un ingeniero de software y desarrollador web con experiencia en tecnologías modernas.',
+            title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
+            description: 'Portafolio de Edgar Mejía Vásquez, ingeniero de software especializado en microservicios, arquitectura y liderazgo técnico.',
             image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-            card: 'summary_large_image', // Tipo de tarjeta para Twitter (grande)
+            card: 'summary_large_image',
         },
         openGraph: {
-            title: 'EdgarMejiaV - Software Engineer & Web Developer',
-            description: 'Explora el portafolio de Edgar Mejia, ingeniero de software y desarrollador web con habilidades en React, JavaScript, y Next.js.',
-            image: 'https://avatars.githubusercontent.com/u/35704346?v=4', // Imagen compartida para Open Graph
-            url: 'https://edgarmejiav.vercel.app/', // URL de la página
-            type: 'website', // Tipo de contenido
+            title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
+            description: 'Más de 4 años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.',
+            image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
+            url: 'https://edgarmejiav.vercel.app/',
+            type: 'website',
         },
-        category: 'Desarrollador Web',
-        keywords: 'ingeniero de software, desarrollador web, portafolio de desarrollo, aplicaciones web, React, Next.js, JavaScript, TypeScript',
+        category: 'Ingeniería de Software',
+        keywords: 'ingeniero de software, microservicios, backend, frontend, Node.js, NestJS, Spring Boot, React, Next.js, PostgreSQL, Docker, AWS, Cajamarca Perú',
         icons: [
             {
                 href: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-                sizes: '32x32', // Tamaño recomendado
-                type: 'image/png', // Tipo de imagen
+                sizes: '32x32',
+                type: 'image/png',
             }
         ],
         canonicalUrl: 'https://edgarmejiav.vercel.app/',
-        robots: 'index, follow', // Asegura que la página se indexe
-        author: 'Edgar Mejia', // Información del autor
+        robots: 'index, follow',
+        author: 'Edgar Mejía Vásquez',
     }
 }
 
@@ -73,13 +73,12 @@ export default function RootLayout({children}) {
             <link rel="icon" href="https://avatars.githubusercontent.com/u/35704346?v=4"/>
             <link rel="canonical" href={metadata.metadataBase.canonicalUrl}/>
 
-            <title>{metadata.metadataBase.title}</title>
+            <title>Edgar Mejía Vásquez - Software Engineer | Backend &amp; Frontend</title>
         </head>
         <body className={inter.className}>
         <Analytics/>
         <NavBar/>
-        <div
-            className="absolute top-0 z-[-999] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+
         {children}
         <Footer/>
         </body>

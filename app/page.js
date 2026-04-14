@@ -1,17 +1,18 @@
 'use client'
-import {ContainerPage} from "@/app/components/page/ContainerPage";
-import {Technologies} from "@/app/components/Technologies";
-import {ConteinerApps} from "@/app/components/apps/ConteinerApps";
+import { ContainerPage } from "@/app/components/page/ContainerPage";
+import { About } from "@/app/components/About";
+import { Stack } from "@/app/components/Stack";
+import { Experience } from "@/app/components/Experience";
+import { Projects } from "@/app/components/Projects";
 
 export default function Home() {
-    return (
-        <>
-
-            <main>
-                <ContainerPage   />
-                <Technologies/>
-                <ConteinerApps  />
-            </main>
-        </>
-    )
+  return (
+    <main>
+      <ContainerPage />
+      <About />
+      <Stack />
+      <Experience />
+      <Projects />
+    </main>
+  );
 }

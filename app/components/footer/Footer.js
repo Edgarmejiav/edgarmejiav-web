@@ -30,7 +30,7 @@ export const Footer = () => {
       </div>
 
       <div className="max-w-5xl mx-auto mt-6 pt-6 border-t border-neutral-800/40 text-center text-slate-600 text-xs">
-        © {new Date().getFullYear()} Edgar Mejía Vásquez · Cajamarca, Perú 🇵🇪
+        © {new Date().getFullYear()} Edgar Mejía Vásquez ·  Perú 🇵🇪
       </div>
     </footer>
   );

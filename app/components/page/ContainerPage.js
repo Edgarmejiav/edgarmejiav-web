@@ -92,7 +92,7 @@ export const ContainerPage = () => {
         </p>
 
         <p className="text-slate-400 text-sm flex items-center gap-2">
-          <span>📍 Cajamarca, Perú</span>
+          <span>📍 Perú</span>
           <span className="text-slate-600">·</span>
           <a
             href="mailto:legamejiav@gmail.com"

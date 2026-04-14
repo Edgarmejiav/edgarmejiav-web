@@ -1,23 +1,22 @@
 'use client'
 
+const featured = {
+  title: "Ingeniero de Software",
+  company: "Inetum",
+  period: "Jun. 2025 – Actualidad · 11 meses",
+  type: "Jornada completa · En remoto · Perú",
+  clients: ["Inetum", "Belcorp"],
+  achievements: [
+    "Implementación y optimización de microservicios en .NET y Node.js para sincronización de datos de alto volumen.",
+    "Diseño y mantenimiento de procesos ETL en PostgreSQL, optimizando el rendimiento de consultas complejas en más del 30%.",
+    "Integración de servicios en AWS S3 y plataformas internas garantizando escalabilidad del sistema.",
+    "Implementación de validaciones de seguridad y auditoría en endpoints críticos.",
+    "Reducción del 26% en duplicación de código aplicando interfaces y patrones de herencia.",
+  ],
+  stack: [".NET", "Node.js", "PostgreSQL", "AWS S3", "ETL", "Microservicios"],
+};
+
 const experiences = [
-  {
-    title: "Ingeniero de Software",
-    company: "Inetum",
-    type: "Remoto",
-    period: "Junio 2025 – Actualidad",
-    current: true,
-    color: "from-violet-500 to-cyan-500",
-    dotColor: "bg-violet-500",
-    achievements: [
-      "Implementación y optimización de microservicios en .NET y Node.js para sincronización de datos de alto volumen.",
-      "Diseño y mantenimiento de procesos ETL en PostgreSQL, optimizando el rendimiento de consultas complejas en más del 30%.",
-      "Integración de servicios en AWS S3 y plataformas internas garantizando escalabilidad del sistema.",
-      "Implementación de validaciones de seguridad y auditoría en endpoints críticos.",
-      "Reducción del 26% en duplicación de código aplicando interfaces y patrones de herencia.",
-    ],
-    stack: [".NET", "Node.js", "PostgreSQL", "AWS S3", "ETL"],
-  },
   {
     title: "Ingeniero de Software Autónomo",
     company: "Freelance",
@@ -50,7 +49,7 @@ const experiences = [
   {
     title: "Desarrollador de Software",
     company: "GRUPO ALVICOM TRADING SRL",
-    type: "Cajamarca, Perú",
+    type: "Perú",
     period: "Septiembre 2021 – Marzo 2024",
     current: false,
     color: "from-lime-500 to-emerald-500",
@@ -78,29 +77,100 @@ export const Experience = () => {
           <div className="h-px flex-1 bg-gradient-to-l from-transparent to-lime-500/40" />
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/50 via-cyan-500/30 to-transparent" />
+        {/* ── FEATURED: Inetum ── */}
+        <div className="relative mb-14 rounded-2xl overflow-hidden group">
+          {/* Glow border */}
+          <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-violet-500 via-cyan-500 to-violet-500 opacity-60 group-hover:opacity-90 transition-opacity duration-500 blur-sm" />
+          <div className="relative rounded-2xl bg-neutral-900 p-7">
+            {/* Top row */}
+            <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+              <div>
+                {/* Company + Clients */}
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-xs font-bold tracking-widest uppercase text-violet-400 bg-violet-500/10 border border-violet-500/30 px-2.5 py-1 rounded-full">
+                    Posición Actual
+                  </span>
+                  {featured.clients.map((c) => (
+                    <span
+                      key={c}
+                      className="text-xs font-semibold text-slate-300 bg-neutral-800 border border-neutral-700 px-2.5 py-1 rounded-full"
+                    >
+                      🏢 {c}
+                    </span>
+                  ))}
+                </div>
 
-          <div className="flex flex-col gap-10">
+                <h3 className="text-white text-2xl font-extrabold leading-tight group-hover:text-cyan-300 transition-colors duration-300">
+                  {featured.title}
+                </h3>
+                <p className="text-slate-400 text-sm mt-1 flex flex-wrap items-center gap-2">
+                  <span className="font-semibold bg-gradient-to-r from-violet-400 to-cyan-400 text-transparent bg-clip-text text-base">
+                    {featured.company}
+                  </span>
+                  <span className="text-slate-600">·</span>
+                  <span>{featured.type}</span>
+                </p>
+              </div>
+
+              <div className="flex flex-col items-end gap-2">
+                <span className="flex items-center gap-1.5 text-emerald-400 text-xs font-bold bg-emerald-500/10 border border-emerald-500/30 px-3 py-1.5 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse" />
+                  Actual
+                </span>
+                <span className="text-slate-500 text-xs font-mono bg-neutral-800/80 px-3 py-1.5 rounded-lg border border-neutral-700/50">
+                  {featured.period}
+                </span>
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-gradient-to-r from-violet-500/30 via-cyan-500/20 to-transparent mb-5" />
+
+            {/* Achievements */}
+            <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2.5 mb-6">
+              {featured.achievements.map((a, i) => (
+                <li key={i} className="flex items-start gap-2 text-slate-300 text-sm leading-relaxed">
+                  <span className="text-cyan-400 mt-0.5 shrink-0 font-bold">▹</span>
+                  {a}
+                </li>
+              ))}
+            </ul>
+
+            {/* Stack */}
+            <div className="flex flex-wrap gap-2">
+              {featured.stack.map((t) => (
+                <span
+                  key={t}
+                  className="text-xs font-medium text-cyan-300 border border-cyan-500/30 bg-cyan-500/10 px-2.5 py-1 rounded-lg"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Timeline: resto de experiencias ── */}
+        <div className="relative">
+          <div className="absolute left-4 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/40 via-slate-700/30 to-transparent" />
+
+          <div className="flex flex-col gap-8">
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative pl-12 md:pl-20">
-                {/* Timeline dot */}
-                <div className={`absolute left-2 md:left-6 top-6 w-5 h-5 rounded-full border-2 border-neutral-950 ${exp.dotColor} shadow-lg`} />
+                {/* Dot */}
+                <div className={`absolute left-2 md:left-6 top-6 w-4 h-4 rounded-full border-2 border-neutral-950 ${exp.dotColor} shadow-md`} />
                 {exp.current && (
-                  <div className={`absolute left-2 md:left-6 top-6 w-5 h-5 rounded-full ${exp.dotColor} opacity-30 animate-ping`} />
+                  <div className={`absolute left-2 md:left-6 top-6 w-4 h-4 rounded-full ${exp.dotColor} opacity-30 animate-ping`} />
                 )}
 
                 {/* Card */}
-                <div className="glass-card rounded-2xl p-6 hover:border-neutral-600/60 hover:scale-[1.01] transition-all duration-300 group">
-                  {/* Header */}
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div className="glass-card rounded-2xl p-5 hover:border-neutral-600/60 hover:scale-[1.01] transition-all duration-300 group">
+                  <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
                     <div>
-                      <h3 className="text-white font-bold text-lg group-hover:text-cyan-300 transition-colors">
+                      <h3 className="text-white font-bold text-base group-hover:text-cyan-300 transition-colors">
                         {exp.title}
                       </h3>
-                      <div className="flex flex-wrap items-center gap-2 mt-1">
+                      <div className="flex flex-wrap items-center gap-2 mt-0.5">
                         <span className={`text-sm font-semibold bg-gradient-to-r ${exp.color} text-transparent bg-clip-text`}>
                           {exp.company}
                         </span>
@@ -121,8 +191,7 @@ export const Experience = () => {
                     </div>
                   </div>
 
-                  {/* Achievements */}
-                  <ul className="flex flex-col gap-2 mb-4">
+                  <ul className="flex flex-col gap-1.5 mb-3">
                     {exp.achievements.map((a, i) => (
                       <li key={i} className="flex items-start gap-2 text-slate-400 text-sm leading-relaxed">
                         <span className="text-cyan-400 mt-0.5 shrink-0">▹</span>
@@ -131,13 +200,9 @@ export const Experience = () => {
                     ))}
                   </ul>
 
-                  {/* Stack badges */}
                   <div className="flex flex-wrap gap-2">
                     {exp.stack.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs text-slate-400 border border-neutral-700/60 bg-neutral-800/50 px-2 py-0.5 rounded-md"
-                      >
+                      <span key={t} className="text-xs text-slate-400 border border-neutral-700/60 bg-neutral-800/50 px-2 py-0.5 rounded-md">
                         {t}
                       </span>
                     ))}

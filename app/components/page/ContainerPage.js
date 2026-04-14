@@ -91,16 +91,19 @@ export const ContainerPage = () => {
           <span className="text-cyan-400"> /&gt;</span>
         </p>
 
-        <p className="text-slate-400 text-sm flex items-center gap-2">
-          <span>📍 Perú</span>
-          <span className="text-slate-600">·</span>
-          <a
-            href="mailto:legamejiav@gmail.com"
-            className="text-cyan-400 hover:text-cyan-300 transition-colors"
-          >
-            legamejiav@gmail.com
-          </a>
-        </p>
+        {/* Key differentiators */}
+        <div className="flex flex-wrap justify-center gap-2">
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-300">
+            🏢 Empresas Multinacionales
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">
+            🌐 100% Remoto
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-300">
+            ⚡ +4 años de experiencia
+          </span>
+        </div>
+
       </div>
 
       {/* CTA Buttons */}

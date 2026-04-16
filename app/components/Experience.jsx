@@ -1,19 +1,19 @@
 'use client'
 
 const featured = {
-  title: "Ingeniero de Software",
+  title: "Full-Stack Developer",
   company: "Inetum",
-  period: "Jun. 2025 – Actualidad · 11 meses",
-  type: "Jornada completa · En remoto · Perú",
+  period: "Jun. 2024 – Actualidad",
+  type: "Jornada completa · En remoto · LATAM",
   clients: ["Inetum", "Belcorp"],
   achievements: [
-    "Implementación y optimización de microservicios en .NET y Node.js para sincronización de datos de alto volumen.",
-    "Diseño y mantenimiento de procesos ETL en PostgreSQL, optimizando el rendimiento de consultas complejas en más del 30%.",
-    "Integración de servicios en AWS S3 y plataformas internas garantizando escalabilidad del sistema.",
-    "Implementación de validaciones de seguridad y auditoría en endpoints críticos.",
-    "Reducción del 26% en duplicación de código aplicando interfaces y patrones de herencia.",
+    "Implementé y optimicé microservicios en .NET y Node.js para sincronización de datos.",
+    "Diseñé y mantuve procesos ETL con PostgreSQL, optimizando consultas en más de 30%.",
+    "Integré servicios en AWS S3 y plataformas internas, asegurando escalabilidad.",
+    "Implementé validaciones de seguridad y auditoría en endpoints críticos.",
+    "Reduje 26% de duplicación de código aplicando interfaces y patrones de herencia.",
   ],
-  stack: [".NET", "Node.js", "PostgreSQL", "AWS S3", "ETL", "Microservicios"],
+  stack: [".NET", "Node.js", "PostgreSQL", "AWS (S3)", "Docker", "Linux", "GitHub Actions", "Microservicios", "ETL", "Seguridad y Auditoría", "Arquitectura de Software", "CI/CD"],
 };
 
 const experiences = [
@@ -34,33 +34,35 @@ const experiences = [
   {
     title: "Full-stack Developer",
     company: "DATECSOFT S.R.L",
-    type: "Remoto",
+    type: "Remoto · Perú",
     period: "Octubre 2024 – Abril 2025",
     current: false,
     color: "from-blue-500 to-violet-500",
     dotColor: "bg-blue-500",
     achievements: [
-      "Liderazgo en modelado avanzado de bases de datos relacionales (PostgreSQL) para sistemas de gestión complejos.",
-      "Implementación de arquitecturas sólidas con Spring Boot y desarrollo de interfaces con Angular para administración de pagos en residenciales.",
-      "Optimización del rendimiento de bases de datos mediante procedimientos almacenados y revisión de consultas.",
+      "Lideré el modelado de bases de datos en PostgreSQL, diseñando estructuras eficientes que mejoraron el manejo de datos en sistemas complejos y facilitaron la integración con Docker.",
+      "Desarrollé arquitecturas robustas con Angular (TypeScript), optimizando la experiencia del usuario y reduciendo los tiempos de carga de la aplicación.",
+      "Diseñé interfaces modernas y responsivas con Angular, Tailwind CSS y Bootstrap, mejorando la usabilidad y la experiencia de usuario.",
+      "Apliqué estrategias de SEO, aumentando el tráfico orgánico en un 60%.",
     ],
-    stack: ["Spring Boot", "Angular", "PostgreSQL"],
+    stack: ["Spring Boot", "Angular", "Java", "TypeScript", "PostgreSQL", "Docker", "Tailwind CSS", "Bootstrap", "AWS", "Figma"],
   },
   {
     title: "Desarrollador de Software",
     company: "GRUPO ALVICOM TRADING SRL",
-    type: "Perú",
+    type: "Cajamarca, Perú",
     period: "Septiembre 2021 – Marzo 2024",
     current: false,
     color: "from-lime-500 to-emerald-500",
     dotColor: "bg-lime-500",
     achievements: [
-      "Desarrollo e implementación de soluciones escalables para gestión de flotas mineras.",
-      "Presentación oficial del sistema DTS Mine en la Cumbre Minera Internacional (Perumin).",
-      "Liderazgo de proyectos ágiles con Scrum y Jira, logrando un aumento del 20% en productividad del equipo.",
-      "Creación de política estandarizada para gestión de commits en Git, reduciendo errores en integración de código.",
+      "Implementé e integré APIs RESTful en Node.js, mejorando el rendimiento del sistema en un 15% mediante optimización de endpoints y consultas.",
+      "Mejoré el rendimiento de consultas en MongoDB, reduciendo significativamente los tiempos de respuesta.",
+      "Establecí políticas de commits en Git, aumentando la eficiencia de integración de código.",
+      "Implementé componentes reutilizables en React.js y Vue.js, y construí interfaces atractivas con TypeScript, Material UI, Styled-components y Tailwind CSS.",
+      "Alcancé una cobertura de pruebas superior al 85% mediante Jest y React Testing Library, asegurando la calidad de la UI."
     ],
-    stack: ["Scrum", "Jira", "Git"],
+    stack: ["JavaScript", "React.js", "Vue.js", "TypeScript", "Node.js", "Tailwind CSS", "Python", "Linux", "Redux.js", "CSS", "Webpack", "Material-UI", "styled-components", "HTML", "Storybook", "JIRA", "Figma"],
   },
 ];
 

@@ -2,40 +2,40 @@
 
 const techGroups = [
   {
-    category: "Lenguajes",
-    color: "from-violet-500 to-purple-600",
-    icon: "💻",
-    items: ["JavaScript", "TypeScript", "Python", "Java", "C#", "SQL"],
-  },
-  {
-    category: "Frontend",
-    color: "from-cyan-500 to-blue-600",
-    icon: "🎨",
-    items: ["React.js", "Angular", "Vue.js", "Next.js"],
-  },
-  {
     category: "Backend",
     color: "from-emerald-500 to-teal-600",
     icon: "⚙️",
-    items: ["Node.js", "NestJS", "Spring Boot", ".NET", "Django", "FastAPI"],
+    items: ["Java", "Python", "Node.js", ".NET", "Spring Boot", "FastAPI", "NestJS", "OAuth"],
   },
   {
     category: "Bases de Datos",
     color: "from-orange-500 to-amber-600",
     icon: "🗄️",
-    items: ["PostgreSQL", "MongoDB", "Redis"],
+    items: ["PostgreSQL", "MongoDB", "SQL"],
   },
   {
-    category: "DevOps & Cloud",
+    category: "Frontend",
+    color: "from-cyan-500 to-blue-600",
+    icon: "🎨",
+    items: ["JavaScript", "TypeScript", "React.js", "Vue.js", "Angular", "Redux.js", "Tailwind CSS", "Bootstrap", "Material-UI", "Styled-components", "HTML", "CSS", "Webpack", "Storybook", "HTTPS"],
+  },
+  {
+    category: "CI/CD & Cloud",
     color: "from-pink-500 to-rose-600",
     icon: "☁️",
-    items: ["Docker", "AWS S3", "GitHub Actions", "Linux", "Tailscale", "Cloudflare Tunnels"],
+    items: ["GitHub Actions", "Vercel", "AWS Amplify", "Azure Static Web Apps", "Docker", "Linux", "AWS S3", "AWS CloudFront"],
   },
   {
-    category: "Arquitectura",
+    category: "Pruebas y Calidad",
+    color: "from-violet-500 to-purple-600",
+    icon: "🧪",
+    items: ["Jest", "Storybook", "Selenium", "Mocha", "Chai", "Testing Library", "Postman", "ESLint", "Prettier"],
+  },
+  {
+    category: "Gestión y Metodologías",
     color: "from-lime-500 to-green-600",
-    icon: "🏗️",
-    items: ["Microservicios", "APIs REST", "gRPC", "ETL", "Patrones de Diseño"],
+    icon: "📊",
+    items: ["Scrum", "Kanban", "Agile", "Jira", "Notion", "Git"],
   },
 ];
 

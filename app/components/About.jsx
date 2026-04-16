@@ -3,32 +3,34 @@
 const highlights = [
   {
     icon: "🎤",
-    title: "AforShow",
-    subtitle: "Conferencista Twitch España",
-    desc: "+300 espectadores en charla de programación",
+    title: "AforShow 2023",
+    subtitle: "Conferencista en Twitch",
+    desc: "+500 espectadores en charla sobre desarrollo en LATAM",
   },
   {
-    icon: "📣",
-    title: "Dpex Project",
-    subtitle: "Webinar de Gestión de Proyectos",
-    desc: "50K personas alcanzadas en redes sociales",
+    icon: "🎭",
+    title: "Barrio Teatro",
+    subtitle: "Gestión de Proyecto 2023",
+    desc: "Lideré equipos multidisciplinarios para reducir violencia con soluciones culturales.",
   },
   {
-    icon: "⛏️",
-    title: "Perumin",
-    subtitle: "Cumbre Minera Internacional",
-    desc: "Presentación oficial del sistema DTS Mine",
+    icon: "🎓",
+    title: "Educación",
+    subtitle: "Ing. de Sistemas / Inglés",
+    desc: "Univ. Nacional de Cajamarca (2016-2021) / ICPNA Inglés Avanzado.",
   },
   {
-    icon: "🌐",
-    title: "Open Source",
-    subtitle: "Comunidad Afordin",
-    desc: "Colaborador activo en repositorios GitHub",
+    icon: "🗣️",
+    title: "Idiomas",
+    subtitle: "Nativo y Avanzado",
+    desc: "Español (Nativo), Inglés (Avanzado)",
   },
 ];
 
+const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
+
 const stats = [
-  { value: "4+", label: "Años de experiencia" },
+  { value: `${experienceYears}+`, label: "Años de experiencia" },
   { value: "50K+", label: "Visitas mensuales" },
   { value: "300+", label: "Audiencia en eventos" },
   { value: "30%", label: "Mejora en rendimiento DB" },
@@ -53,36 +55,25 @@ export const About = () => {
             <p>
               Soy un{" "}
               <span className="text-white font-semibold">
-                Ingeniero de Software
+                Desarrollador Fullstack
               </span>{" "}
               con más de{" "}
               <span className="text-cyan-400 font-semibold">
-                4 años de experiencia
+                {experienceYears} años de experiencia
               </span>{" "}
-              especializado en arquitectura de sistemas, microservicios y
-              liderazgo técnico.
+              en desarrollo de software (Node.js, Python, Java, Linux), utilizando frameworks y tecnologías como React, Vue, Angular, NestJS, Spring Boot y PostgreSQL.
             </p>
             <p>
-              Domino tecnologías como{" "}
+              Especializado en la creación de soluciones escalables y eficientes tanto en el{" "}
               <span className="text-lime-400">
-                JavaScript, Python, Java y Linux
+                frontend como en el backend
               </span>
-              , trabajando con frameworks modernos para crear soluciones
-              escalables y de alto impacto.
+              , impulsando la calidad del código, metodologías ágiles e integraciones sólidas.
             </p>
             <p>
-              He presentado software en eventos internacionales como{" "}
-              <span className="text-white font-medium">Perumin</span> y dictado
-              charlas sobre programación para audiencias globales.
-            </p>
-            <p>
-              Desarrollo soluciones que superan las{" "}
-              <span className="text-cyan-400 font-semibold">50K visitas mensuales</span>,
-              enfocado en{" "}
-              <span className="text-white">
-                Clean Code, CI/CD e integraciones seguras
-              </span>
-              .
+              He {" "}
+              <span className="text-white font-medium">liderado equipos multidisciplinarios</span>{" "}
+              fomentando la colaboración y la innovación, asegurando el éxito y la escalabilidad de los proyectos en diversas industrias.
             </p>
           </div>
 
@@ -121,6 +112,28 @@ export const About = () => {
               <div className="text-slate-400 text-sm">{h.desc}</div>
             </div>
           ))}
+        </div>
+
+        {/* Certifications */}
+        <div className="mt-12 glass-card rounded-2xl p-6">
+          <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+            <span className="text-violet-400">📜</span> Certificaciones Destacadas
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "Scrum Foundation Professional Certificate",
+              "Remote Work Professional Certification",
+              "Next.js: Framework De React Para Producción",
+              "TypeScript Y Práctica Canvas 2021",
+              "Vue.js: De Cero A Experto",
+              "Docker Avanzado",
+              "PostgreSQL & Java Spring"
+            ].map(cert => (
+              <span key={cert} className="text-xs font-medium text-slate-300 border border-neutral-700/60 bg-neutral-800/80 px-3 py-1.5 rounded-lg hover:border-violet-500/40 hover:text-white transition-all cursor-default">
+                {cert}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

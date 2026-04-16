@@ -7,10 +7,12 @@ import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] })
 
+const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
+
 export const metadata = {
     metadataBase: {
         title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
-        description: 'Más de 4 años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.  Perú.',
+        description: `Más de ${experienceYears} años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.  Perú.`,
         twitter: {
             title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
             description: 'Portafolio de Edgar Mejía Vásquez, ingeniero de software especializado en microservicios, arquitectura y liderazgo técnico.',
@@ -19,7 +21,7 @@ export const metadata = {
         },
         openGraph: {
             title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
-            description: 'Más de 4 años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.',
+            description: `Más de ${experienceYears} años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.`,
             image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
             url: 'https://edgarmejiav.vercel.app/',
             type: 'website',

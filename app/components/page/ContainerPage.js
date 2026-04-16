@@ -12,6 +12,8 @@ const roles = [
   "Tech Lead",
 ];
 
+const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
+
 export const ContainerPage = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
@@ -100,7 +102,7 @@ export const ContainerPage = () => {
             🌐 100% Remoto
           </span>
           <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-lime-500/10 border border-lime-500/30 text-lime-300">
-            ⚡ +4 años de experiencia
+            ⚡ +{experienceYears} años de experiencia
           </span>
         </div>
 

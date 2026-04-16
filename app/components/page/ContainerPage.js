@@ -135,6 +135,15 @@ export const ContainerPage = () => {
         >
           <span>⚡</span> GitHub
         </a>
+        <a
+          href="https://www.tiktok.com/@legadev"
+          target="_blank"
+          rel="noopener noreferrer"
+          id="cta-tiktok"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border border-neutral-700 text-slate-300 hover:border-pink-500 hover:text-pink-400 hover:scale-105 transition-all duration-300 bg-neutral-900/50 backdrop-blur"
+        >
+          <span>🎵</span> TikTok
+        </a>
       </div>
 
       {/* Scroll hint */}

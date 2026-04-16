@@ -11,23 +11,23 @@ const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000
 
 export const metadata = {
     metadataBase: {
-        title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
-        description: `Más de ${experienceYears} años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.  Perú.`,
+        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
+        description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en Node.js, React, Spring Boot y microservicios. Disponible para proyectos y contratación remota en LATAM.`,
         twitter: {
-            title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
-            description: 'Portafolio de Edgar Mejía Vásquez, ingeniero de software especializado en microservicios, arquitectura y liderazgo técnico.',
+            title: 'Edgar Mejía Vásquez | Full-Stack Developer',
+            description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en backend, frontend y arquitectura en la nube.`,
             image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
             card: 'summary_large_image',
         },
         openGraph: {
-            title: 'Edgar Mejía Vásquez - Software Engineer | Backend & Frontend',
-            description: `Más de ${experienceYears} años de experiencia en arquitectura de microservicios, liderazgo técnico y desarrollo full-stack.`,
+            title: 'Edgar Mejía Vásquez | Full-Stack Developer',
+            description: `Buscando perfil tech? Desarrollador Full-Stack con +${experienceYears} años de experiencia en Node.js, React y Cloud (AWS/Vercel).`,
             image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
             url: 'https://edgarmejiav.vercel.app/',
-            type: 'website',
+            type: 'profile',
         },
         category: 'Ingeniería de Software',
-        keywords: 'ingeniero de software, microservicios, backend, frontend, Node.js, NestJS, Spring Boot, React, Next.js, PostgreSQL, Docker, AWS, Cajamarca Perú',
+        keywords: 'contratar desarrollador full stack, hire full stack developer, ingeniero de software, tech lead remoto, especialista backend, frontend developer, experto Node.js, experto React, AWS, Perú, LATAM, Edgar Mejia',
         icons: [
             {
                 href: 'https://avatars.githubusercontent.com/u/35704346?v=4',
@@ -41,6 +41,22 @@ export const metadata = {
     }
 }
 
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Edgar Mejía Vásquez",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://edgarmejiav.vercel.app/",
+    "image": "https://avatars.githubusercontent.com/u/35704346?v=4",
+    "alumniOf": "Universidad Nacional de Cajamarca",
+    "description": `Desarrollador Full-Stack con +${experienceYears} años de experiencia en desarrollo Frontend y Backend.`,
+    "knowsAbout": ["Desarrollo Backend", "Desarrollo Frontend", "Node.js", "React.js", "PostgreSQL", "AWS", "Microservicios", "Liderazgo Técnico"],
+    "sameAs": [
+        "https://www.linkedin.com/in/legamejiav/",
+        "https://github.com/edgarmejiav",
+        "https://www.tiktok.com/@legadev"
+    ]
+};
 
 export default function RootLayout({ children }) {
     return (
@@ -75,7 +91,13 @@ export default function RootLayout({ children }) {
                 <link rel="icon" href="https://avatars.githubusercontent.com/u/35704346?v=4" />
                 <link rel="canonical" href={metadata.metadataBase.canonicalUrl} />
 
-                <title>Edgar Mejía Vásquez - Software Engineer | Backend &amp; Frontend</title>
+                <title>Edgar Mejía Vásquez | Full-Stack Developer</title>
+                
+                {/* Structured Data for SEO y RRHH */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
             </head>
             <body className={inter.className}>
                 <Analytics />

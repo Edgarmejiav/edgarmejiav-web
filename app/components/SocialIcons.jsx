@@ -3,6 +3,7 @@ import { IconGithub } from "@/app/components/icons/IconGithub";
 import { IconLinkedin } from "@/app/components/icons/IconLinkedin";
 import { IconX } from "@/app/components/icons/IconX";
 import { IconsCode } from "@/app/components/icons/IconsCode";
+import { IconTiktok } from "@/app/components/icons/IconTiktok";
 
 export const SocialIcons = () => {
     return <div
@@ -13,7 +14,9 @@ export const SocialIcons = () => {
         </Link>
         <Link href="https://github.com/edgarmejiav" target="_blank" aria-label="link to github">
             <IconGithub />
-
+        </Link>
+        <Link href="https://www.tiktok.com/@legadev" target="_blank" aria-label="link to tiktok">
+            <IconTiktok />
         </Link>
         <Link href="https://github.com/Edgarmejiav/edgarmejiav-web" target="_blank" aria-label="link to github">
             <IconsCode />

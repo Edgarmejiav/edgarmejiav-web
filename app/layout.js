@@ -88,11 +88,13 @@ export default function RootLayout({ children }) {
                 <meta property="og:locale:alternate" content="es_ES" />
                 <meta property="og:locale:alternate" content="es_MX" />
 
+                <meta name="google-site-verification" content="fOWq2uZW4f3PoHz865_XFbWHoPcYAgUKOxJGp3xdN84" />
+
                 <link rel="icon" href="https://avatars.githubusercontent.com/u/35704346?v=4" />
                 <link rel="canonical" href={metadata.metadataBase.canonicalUrl} />
 
                 <title>Edgar Mejía Vásquez | Full-Stack Developer</title>
-                
+
                 {/* Structured Data for SEO y RRHH */}
                 <script
                     type="application/ld+json"

@@ -23,7 +23,7 @@ export const metadata = {
             title: 'Edgar Mejía Vásquez | Full-Stack Developer',
             description: `Buscando perfil tech? Desarrollador Full-Stack con +${experienceYears} años de experiencia en Node.js, React y Cloud (AWS/Vercel).`,
             image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-            url: 'https://edgarmejiav.vercel.app/',
+            url: 'https://www.lega.dev/',
             type: 'profile',
         },
         category: 'Ingeniería de Software',
@@ -35,7 +35,7 @@ export const metadata = {
                 type: 'image/png',
             }
         ],
-        canonicalUrl: 'https://edgarmejiav.vercel.app/',
+        canonicalUrl: 'https://www.lega.dev/',
         robots: 'index, follow',
         author: 'Edgar Mejía Vásquez',
     }
@@ -46,7 +46,7 @@ const jsonLd = {
     "@type": "Person",
     "name": "Edgar Mejía Vásquez",
     "jobTitle": "Full-Stack Developer",
-    "url": "https://edgarmejiav.vercel.app/",
+    "url": "https://www.lega.dev/",
     "image": "https://avatars.githubusercontent.com/u/35704346?v=4",
     "alumniOf": "Universidad Nacional de Cajamarca",
     "description": `Desarrollador Full-Stack con +${experienceYears} años de experiencia en desarrollo Frontend y Backend.`,

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import lega from "../../edgar.png";
 import { useEffect, useState } from "react";
+import { Technologies } from "../Technologies";
 
 const roles = [
   "Software Engineer",
@@ -68,7 +69,7 @@ export const ContainerPage = () => {
           priority
         />
       </div>
-
+      <Technologies></Technologies>
       {/* Name + Badge */}
       <div className="flex flex-col items-center gap-3">
         <div className="flex items-center gap-3">

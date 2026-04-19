@@ -1,7 +1,7 @@
 'use client'
 
 const featured = {
-  title: "Full-Stack Developer",
+  title: "Software Engineer",
   company: "Inetum",
   period: "Jun. 2024 – Actualidad",
   type: "Jornada completa · En remoto · LATAM",

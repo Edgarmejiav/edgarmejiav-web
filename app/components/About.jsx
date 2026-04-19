@@ -54,14 +54,12 @@ export const About = () => {
           <div className="flex flex-col gap-5 text-slate-400 leading-relaxed">
             <p>
               Soy un{" "}
-              <span className="text-white font-semibold">
-                Desarrollador Fullstack
-              </span>{" "}
+              <span className="text-white font-semibold">Software Engineer</span>{" "}
               con más de{" "}
-              <span className="text-cyan-400 font-semibold">
-                {experienceYears} años de experiencia
-              </span>{" "}
-              en desarrollo de software (Node.js, Python, Java, Linux), utilizando frameworks y tecnologías como React, Vue, Angular, NestJS, Spring Boot y PostgreSQL.
+              <span className="text-cyan-400 font-semibold">{experienceYears} años de experiencia</span>{" "}
+              en desarrollo de software, con dominio{" "}
+              <span className="text-slate-300 font-medium">full-stack</span>{" "}
+              en Node.js, Python, Java y Linux — usando React, NestJS, Spring Boot y PostgreSQL.
             </p>
             <p>
               Especializado en la creación de soluciones escalables y eficientes tanto en el{" "}

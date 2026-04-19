@@ -5,7 +5,7 @@ const highlights = [
     icon: "🎤",
     title: "AforShow 2023",
     subtitle: "Conferencista en Twitch",
-    desc: "+500 espectadores en charla sobre desarrollo en LATAM",
+    desc: "+300 espectadores en charla sobre desarrollo en LATAM",
   },
   {
     icon: "🎭",
@@ -16,8 +16,8 @@ const highlights = [
   {
     icon: "🎓",
     title: "Educación",
-    subtitle: "Ing. de Sistemas / Inglés",
-    desc: "Univ. Nacional de Cajamarca (2016-2021) / ICPNA Inglés Avanzado.",
+    subtitle: "Ing. de Sistemas ",
+    desc: "Universidad Nacional de Cajamarca",
   },
   {
     icon: "🗣️",
@@ -31,7 +31,7 @@ const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000
 
 const stats = [
   { value: `${experienceYears}+`, label: "Años de experiencia" },
-  { value: "50K+", label: "Visitas mensuales" },
+  { value: "2", label: "Empresas multinacionales" },
   { value: "300+", label: "Audiencia en eventos" },
   { value: "30%", label: "Mejora en rendimiento DB" },
 ];

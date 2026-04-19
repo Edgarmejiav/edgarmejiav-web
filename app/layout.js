@@ -4,111 +4,199 @@ import { NavBar } from "@/app/components/NavBar";
 import { Footer } from "@/app/components/footer/Footer";
 import { Analytics } from '@vercel/analytics/react';
 
-
 const inter = Inter({ subsets: ['latin'] })
 
 const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
 
-export const metadata = {
-    metadataBase: {
-        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
-        description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en Node.js, React, Spring Boot y microservicios. Disponible para proyectos y contratación remota en LATAM.`,
-        twitter: {
-            title: 'Edgar Mejía Vásquez | Full-Stack Developer',
-            description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en backend, frontend y arquitectura en la nube.`,
-            image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-            card: 'summary_large_image',
-        },
-        openGraph: {
-            title: 'Edgar Mejía Vásquez | Full-Stack Developer',
-            description: `Buscando perfil tech? Desarrollador Full-Stack con +${experienceYears} años de experiencia en Node.js, React y Cloud (AWS/Vercel).`,
-            image: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-            url: 'https://www.lega.dev/',
-            type: 'profile',
-        },
-        category: 'Ingeniería de Software',
-        keywords: 'contratar desarrollador full stack, hire full stack developer, ingeniero de software, tech lead remoto, especialista backend, frontend developer, experto Node.js, experto React, AWS, Perú, LATAM, Edgar Mejia',
-        icons: [
-            {
-                href: 'https://avatars.githubusercontent.com/u/35704346?v=4',
-                sizes: '32x32',
-                type: 'image/png',
-            }
-        ],
-        canonicalUrl: 'https://www.lega.dev/',
-        robots: 'index, follow',
-        author: 'Edgar Mejía Vásquez',
-    }
-}
+const siteUrl = 'https://www.lega.dev';
+const ogImage = 'https://avatars.githubusercontent.com/u/35704346?v=4';
 
+/**
+ * Metadata exportada correctamente para Next.js App Router.
+ * Next.js lee estas propiedades de primer nivel para generar
+ * automáticamente las etiquetas <meta> en el <head>.
+ *
+ * IMPORTANTE: metadataBase solo debe ser la URL base del sitio
+ * para que Next.js resuelva rutas relativas de imágenes.
+ */
+export const metadata = {
+    metadataBase: new URL(siteUrl),
+
+    title: {
+        default: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
+        template: '%s | Edgar Mejía Vásquez',
+    },
+    description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en Node.js, React, Spring Boot y microservicios. Disponible para proyectos y contratación remota en LATAM.`,
+    keywords: [
+        'contratar desarrollador full stack',
+        'hire full stack developer',
+        'ingeniero de software Peru',
+        'tech lead remoto LATAM',
+        'especialista backend Node.js',
+        'frontend developer React',
+        'AWS cloud developer',
+        'Edgar Mejia Vasquez',
+        'lega.dev',
+        'desarrollador web Peru',
+        'microservicios Spring Boot',
+    ],
+    authors: [{ name: 'Edgar Mejía Vásquez', url: siteUrl }],
+    creator: 'Edgar Mejía Vásquez',
+    publisher: 'Edgar Mejía Vásquez',
+    category: 'Ingeniería de Software',
+
+    // ── Canonical & Robots ──────────────────────────────────────────────────
+    alternates: {
+        canonical: siteUrl,
+        languages: {
+            'es-PE': siteUrl,
+            'es': siteUrl,
+        },
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+
+    // ── Open Graph ──────────────────────────────────────────────────────────
+    openGraph: {
+        type: 'profile',
+        locale: 'es_PE',
+        alternateLocale: ['es_MX', 'es_ES', 'en_US'],
+        url: siteUrl,
+        siteName: 'Edgar Mejía Vásquez · lega.dev',
+        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
+        description: `Buscas un perfil tech senior? Desarrollador Full-Stack con +${experienceYears} años de experiencia en Node.js, React y Cloud (AWS/Vercel). Disponible para contratación remota.`,
+        images: [
+            {
+                url: ogImage,
+                width: 460,
+                height: 460,
+                alt: 'Edgar Mejía Vásquez — Full-Stack Developer',
+            },
+        ],
+        firstName: 'Edgar',
+        lastName: 'Mejía Vásquez',
+        username: 'edgarmejiav',
+        gender: 'male',
+    },
+
+    // ── Twitter / X Card ────────────────────────────────────────────────────
+    twitter: {
+        card: 'summary_large_image',
+        site: '@legaMejiav',
+        creator: '@legaMejiav',
+        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
+        description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en backend, frontend y arquitectura en la nube.`,
+        images: [ogImage],
+    },
+
+    // ── Verification ────────────────────────────────────────────────────────
+    verification: {
+        google: ['Jc5LmUKSElMYT4b1kjDK74v55G4yINhv9VoNuFM1Eh8', 'fOWq2uZW4f3PoHz865_XFbWHoPcYAgUKOxJGp3xdN84'],
+    },
+
+    // ── Icons ───────────────────────────────────────────────────────────────
+    icons: {
+        icon: [
+            { url: ogImage, type: 'image/png', sizes: '96x96' },
+        ],
+        shortcut: ogImage,
+        apple: ogImage,
+    },
+};
+
+// ── JSON-LD Structured Data ─────────────────────────────────────────────────
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Edgar Mejía Vásquez",
-    "jobTitle": "Full-Stack Developer",
-    "url": "https://www.lega.dev/",
-    "image": "https://avatars.githubusercontent.com/u/35704346?v=4",
-    "alumniOf": "Universidad Nacional de Cajamarca",
-    "description": `Desarrollador Full-Stack con +${experienceYears} años de experiencia en desarrollo Frontend y Backend.`,
-    "knowsAbout": ["Desarrollo Backend", "Desarrollo Frontend", "Node.js", "React.js", "PostgreSQL", "AWS", "Microservicios", "Liderazgo Técnico"],
+    "jobTitle": "Full-Stack Developer & Tech Lead",
+    "url": siteUrl,
+    "image": ogImage,
+    "email": "mailto:legamejiav@gmail.com",
+    "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Nacional de Cajamarca"
+    },
+    "description": `Desarrollador Full-Stack con +${experienceYears} años de experiencia en desarrollo Frontend y Backend. Especialista en Node.js, React, Spring Boot, microservicios y cloud (AWS/Vercel).`,
+    "knowsAbout": [
+        "Desarrollo Backend",
+        "Desarrollo Frontend",
+        "Node.js",
+        "React.js",
+        "Spring Boot",
+        "PostgreSQL",
+        "AWS",
+        "Microservicios",
+        "Liderazgo Técnico",
+        "TypeScript",
+        "Kubernetes",
+        "Docker"
+    ],
     "sameAs": [
         "https://www.linkedin.com/in/legamejiav/",
         "https://github.com/edgarmejiav",
         "https://www.tiktok.com/@legadev"
-    ]
+    ],
+    "knowsLanguage": ["es", "en"],
+    "nationality": {
+        "@type": "Country",
+        "name": "Peru"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": siteUrl
+    }
+};
+
+// ── WebSite schema para Sitelinks Search Box (Google) ──────────────────────
+const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Edgar Mejía Vásquez · lega.dev",
+    "url": siteUrl,
+    "description": `Portafolio profesional de Edgar Mejía Vásquez, Full-Stack Developer con +${experienceYears} años de experiencia.`,
+    "author": {
+        "@type": "Person",
+        "name": "Edgar Mejía Vásquez"
+    },
+    "inLanguage": "es"
 };
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
+        // lang="es" correcto ya que el contenido es principalmente en español
+        <html lang="es">
             <head>
                 <meta charSet="utf-8" />
-                <meta name="google-site-verification" content="Jc5LmUKSElMYT4b1kjDK74v55G4yINhv9VoNuFM1Eh8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                {/* Descripción y palabras clave */}
-                <meta name="description" content={metadata.metadataBase.description} />
-                <meta name="keywords" content={metadata.metadataBase.keywords} />
-                <meta name="author" content="Edgar Mejia" />
-                <meta name="robots" content="index, follow" />
-                <meta name="googlebot" content="index, follow" />
-                {/*  twitter*/}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@legaMejiav" />
-                <meta name="twitter:title" content={metadata.metadataBase.twitter.title} />
-                <meta name="twitter:description" content={metadata.metadataBase.twitter.description} />
-                <meta name="twitter:image" content={metadata.metadataBase.twitter.image} />
-                {/*  facebook*/}
-                <meta property="og:title" content={metadata.metadataBase.openGraph.title} />
-                <meta property="og:description" content={metadata.metadataBase.openGraph.description} />
-                <meta property="og:image" content={metadata.metadataBase.openGraph.image} />
-                <meta property="og:url" content={metadata.metadataBase.openGraph.url} />
-                <meta property="og:site_name" content="EdgarMejiaV" />
-                <meta property="og:type" content="website" />
-                <meta property="og:locale" content="en_US" />
-                <meta property="og:locale:alternate" content="es_ES" />
-                <meta property="og:locale:alternate" content="es_MX" />
 
-                <meta name="google-site-verification" content="fOWq2uZW4f3PoHz865_XFbWHoPcYAgUKOxJGp3xdN84" />
-
-                <link rel="icon" href="https://avatars.githubusercontent.com/u/35704346?v=4" />
-                <link rel="canonical" href={metadata.metadataBase.canonicalUrl} />
-
-                <title>Edgar Mejía Vásquez | Full-Stack Developer</title>
-
-                {/* Structured Data for SEO y RRHH */}
+                {/* JSON-LD — Person Schema */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+
+                {/* JSON-LD — WebSite Schema (habilita Sitelinks en Google) */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
                 />
             </head>
             <body className={inter.className}>
                 <Analytics />
                 <NavBar />
-
                 {children}
                 <Footer />
             </body>
-
         </html>
     )
 }

@@ -23,11 +23,12 @@ export const metadata = {
     metadataBase: new URL(siteUrl),
 
     title: {
-        default: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
+        default: 'Edgar Mejía Vásquez | Software Engineer & Tech Lead',
         template: '%s | Edgar Mejía Vásquez',
     },
-    description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en Node.js, React, Spring Boot y microservicios. Disponible para proyectos y contratación remota en LATAM.`,
+    description: `Software Engineer con +${experienceYears} años de experiencia en empresas multinacionales como Inetum (Europa) y Belcorp (LATAM). Especialista en Node.js, React, Spring Boot y microservicios. Disponible para contratación remota en LATAM.`,
     keywords: [
+        'software engineer Peru',
         'contratar desarrollador full stack',
         'hire full stack developer',
         'ingeniero de software Peru',
@@ -37,8 +38,12 @@ export const metadata = {
         'AWS cloud developer',
         'Edgar Mejia Vasquez',
         'lega.dev',
+        'legadev',
+        'Inetum developer',
+        'Belcorp engineer',
         'desarrollador web Peru',
         'microservicios Spring Boot',
+        'empresa multinacional software',
     ],
     authors: [{ name: 'Edgar Mejía Vásquez', url: siteUrl }],
     creator: 'Edgar Mejía Vásquez',
@@ -72,8 +77,8 @@ export const metadata = {
         alternateLocale: ['es_MX', 'es_ES', 'en_US'],
         url: siteUrl,
         siteName: 'Edgar Mejía Vásquez · lega.dev',
-        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
-        description: `Buscas un perfil tech senior? Desarrollador Full-Stack con +${experienceYears} años de experiencia en Node.js, React y Cloud (AWS/Vercel). Disponible para contratación remota.`,
+        title: 'Edgar Mejía Vásquez | Software Engineer & Tech Lead',
+        description: `Software Engineer con experiencia en multinacionales como Inetum (empresa europea de servicios digitales) y Belcorp. +${experienceYears} años desarrollando sistemas con Node.js, React, Spring Boot y Cloud (AWS/Vercel). Disponible para contratación remota.`,
         images: [
             {
                 url: ogImage,
@@ -93,8 +98,8 @@ export const metadata = {
         card: 'summary_large_image',
         site: '@legaMejiav',
         creator: '@legaMejiav',
-        title: 'Edgar Mejía Vásquez | Full-Stack Developer & Tech Lead',
-        description: `Desarrollador Full-Stack con +${experienceYears} años de experiencia. Especialista en backend, frontend y arquitectura en la nube.`,
+        title: 'Edgar Mejía Vásquez | Software Engineer @ Inetum · Belcorp',
+        description: `Software Engineer con trayectoria en multinacionales (Inetum, Belcorp). +${experienceYears} años de experiencia en backend, frontend y arquitectura cloud.`,
         images: [ogImage],
     },
 
@@ -118,15 +123,29 @@ const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Edgar Mejía Vásquez",
-    "jobTitle": "Full-Stack Developer & Tech Lead",
+    "jobTitle": "Software Engineer & Tech Lead",
     "url": siteUrl,
     "image": ogImage,
     "email": "mailto:legamejiav@gmail.com",
+    "worksFor": [
+        {
+            "@type": "Organization",
+            "name": "Inetum",
+            "description": "Empresa multinacional europea líder en servicios y soluciones digitales",
+            "url": "https://www.inetum.com"
+        },
+        {
+            "@type": "Organization",
+            "name": "Belcorp",
+            "description": "Corporación multinacional de belleza con presencia en más de 15 países de América Latina",
+            "url": "https://www.belcorp.biz"
+        }
+    ],
     "alumniOf": {
         "@type": "CollegeOrUniversity",
         "name": "Universidad Nacional de Cajamarca"
     },
-    "description": `Desarrollador Full-Stack con +${experienceYears} años de experiencia en desarrollo Frontend y Backend. Especialista en Node.js, React, Spring Boot, microservicios y cloud (AWS/Vercel).`,
+    "description": `Software Engineer con +${experienceYears} años de experiencia en empresas multinacionales como Inetum y Belcorp. Edgar Mejía Vásquez es un ingeniero de software peruano especializado en Node.js, React, Spring Boot, microservicios y cloud (AWS/Vercel). Desarrolla arquitecturas escalables de alto impacto para proyectos en América Latina.`,
     "knowsAbout": [
         "Desarrollo Backend",
         "Desarrollo Frontend",

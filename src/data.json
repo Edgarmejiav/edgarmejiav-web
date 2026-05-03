@@ -1,0 +1,60 @@
+[
+  {
+    "title": "Time clock",
+    "description": "⌛ Reloj minimalista en tiempo real, ideal como protector de pantalla.",
+    "link": "https://timeclock.vercel.app/",
+    "stack": ["Next.js"],
+    "github": "https://github.com/Edgarmejiav/time-clock"
+  },
+  {
+    "title": "generate fake commit",
+    "description": "🐛 CLI para generar commits falsos en Git y mejorar el gráfico de contribuciones.",
+    "link": "https://www.npmjs.com/package/generate-fake-commit",
+    "stack": ["javascript", "Node.js", "CLI", "npm", "github"],
+    "github": "https://github.com/Edgarmejiav/generate-fake-commit"
+  },
+  {
+    "title": "Babel Verbs",
+    "description": "🎒 Herramienta para conjugar verbos en inglés en present simple, past participle y past perfect.",
+    "link": "https://babel-verbs.vercel.app/",
+    "stack": ["React"],
+    "github": "https://github.com/Edgarmejiav/phrasal-verbs"
+  },
+  {
+    "title": "Phrasal Verbs",
+    "description": "🎒 Aplicación para practicar las phrasal verbs más comunes del inglés.",
+    "link": "https://phrasal-verbs.vercel.app/",
+    "stack": ["React"],
+    "github": "https://github.com/Edgarmejiav/phrasal-verbs"
+  },
+  {
+    "title": "Pizarra online",
+    "description": "✒️ Lienzo en blanco listo para que plasmes tus pensamientos.",
+    "link": "https://virtual-board.vercel.app/",
+    "stack": ["React"],
+    "github": "https://github.com/Edgarmejiav/canvas-draw-react"
+  },
+  {
+    "title": "Clone minecraft",
+    "description": "💻 Proyecto con JavaScript para mejor habilidad de programación.",
+    "link": "https://clone-minecraft.vercel.app/",
+    "stack": ["React", "Three.js", "Zustand"],
+    "github": "https://github.com/Edgarmejiav/clone-minecraft"
+  },
+  {
+    "title": "Demo de un portafolio",
+    "description": "👷 Plantilla para crear tu portafolio personalizado utilizando HTML y CSS.",
+    "link": "https://portafolio-seven-gray.vercel.app/",
+    "stack": ["Next.js", "Styled Components"],
+    "github": "https://github.com/Edgarmejiav/portafolio"
+  },
+  {
+    "title": "spotify clone",
+    "description": "Clon de Spotify hecho con Astro, Svelte y TailwindCSS basado en el tutorial de YouTube de MIDUDEV",
+    "link": "https://spotify-clone-rose-one.vercel.app/",
+    "youtube": "https://www.youtube.com/watch?v=WRc8lz-bp78",
+    "stack": ["Astro", "TypeScript", "JavaScript", "Svelte", "Styled Components"],
+    "github": "https://github.com/Edgarmejiav/spotify-clone",
+    "type": ["tutorial"]
+  }
+]

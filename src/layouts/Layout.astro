@@ -1,0 +1,131 @@
+---
+import '../styles/global.css';
+import NavBar from '../components/NavBar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
+
+const siteUrl = 'https://www.lega.dev';
+const ogImage = 'https://avatars.githubusercontent.com/u/35704346?v=4';
+
+const { title, description } = Astro.props;
+
+const fullTitle = title 
+  ? `${title} | Edgar Mejía Vásquez` 
+  : 'Edgar Mejía Vásquez | Software Engineer & Tech Lead';
+
+const metaDescription = description || `Software Engineer con +${experienceYears} años de experiencia en empresas multinacionales como Inetum (Europa) y Belcorp (LATAM). Especialista en Node.js, React, Spring Boot y microservicios. Disponible para contratación remota en LATAM.`;
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Edgar Mejía Vásquez",
+    "jobTitle": "Software Engineer & Tech Lead",
+    "url": siteUrl,
+    "image": ogImage,
+    "email": "mailto:legamejiav@gmail.com",
+    "worksFor": [
+        {
+            "@type": "Organization",
+            "name": "Inetum",
+            "description": "Empresa multinacional europea líder en servicios y soluciones digitales",
+            "url": "https://www.inetum.com"
+        },
+        {
+            "@type": "Organization",
+            "name": "Belcorp",
+            "description": "Corporación multinacional de belleza con presencia en más de 15 países de América Latina",
+            "url": "https://www.belcorp.biz"
+        }
+    ],
+    "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Nacional de Cajamarca"
+    },
+    "description": `Software Engineer con +${experienceYears} años de experiencia en empresas multinacionales como Inetum y Belcorp. Edgar Mejía Vásquez es un ingeniero de software peruano especializado en Node.js, React, Spring Boot, microservicios y cloud (AWS/Vercel). Desarrolla arquitecturas escalables de alto impacto para proyectos en América Latina.`,
+    "knowsAbout": [
+        "Desarrollo Backend",
+        "Desarrollo Frontend",
+        "Node.js",
+        "React.js",
+        "Spring Boot",
+        "PostgreSQL",
+        "AWS",
+        "Microservicios",
+        "Liderazgo Técnico",
+        "TypeScript",
+        "Kubernetes",
+        "Docker"
+    ],
+    "sameAs": [
+        "https://www.linkedin.com/in/legamejiav/",
+        "https://github.com/edgarmejiav",
+        "https://www.tiktok.com/@legadev"
+    ],
+    "knowsLanguage": ["es", "en"],
+    "nationality": {
+        "@type": "Country",
+        "name": "Peru"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "id": siteUrl
+    }
+};
+
+const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Edgar Mejía Vásquez · lega.dev",
+    "url": siteUrl,
+    "description": `Portafolio profesional de Edgar Mejía Vásquez, Full-Stack Developer con +${experienceYears} años de experiencia.`,
+    "author": {
+        "@type": "Person",
+        "name": "Edgar Mejía Vásquez"
+    },
+    "inLanguage": "es"
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{fullTitle}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="author" content="Edgar Mejía Vásquez" />
+    <meta name="creator" content="Edgar Mejía Vásquez" />
+    <meta name="publisher" content="Edgar Mejía Vásquez" />
+    
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <link rel="canonical" href={siteUrl} />
+    
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
+  </head>
+  <body class="font-sans">
+    <NavBar />
+    <slot />
+    <Footer />
+  </body>
+</html>

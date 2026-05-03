@@ -1,0 +1,31 @@
+---
+import SocialIcons from './SocialIcons.astro';
+---
+
+<footer class="border-t border-neutral-800/60 mt-8 py-10 px-6">
+  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex flex-col items-center sm:items-start gap-1">
+      <span class="text-white font-bold text-sm">
+        Edgar<span class="text-cyan-400">MejiaV</span>
+      </span>
+      <p class="text-slate-500 text-xs italic">
+        &ldquo;Cambiar el mundo a través del código&rdquo;
+      </p>
+    </div>
+
+    <div class="flex gap-6 text-slate-500 text-xs">
+      <a href="#about" class="hover:text-white transition-colors">Sobre Mí</a>
+      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
+      <a href="#experience" class="hover:text-white transition-colors">Experiencia</a>
+      <a href="#projects" class="hover:text-white transition-colors">Proyectos</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <SocialIcons />
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto mt-6 pt-6 border-t border-neutral-800/40 text-center text-slate-600 text-xs">
+    © {new Date().getFullYear()} Edgar Mejía Vásquez ·  Perú 🇵🇪
+  </div>
+</footer>

@@ -27,33 +27,36 @@ const techIcons = [
 </div>
 
 <script>
-    const container = document.getElementById('tech-icons');
-    if (!container) return;
+    function initTechnologies() {
+        const container = document.getElementById('tech-icons');
+        if (!container) return;
 
-    const svgs = Array.from(container.querySelectorAll('svg'));
-    const { innerWidth: w, innerHeight: h } = window;
+        const svgs = Array.from(container.querySelectorAll('svg'));
+        
+        const animateOne = () => {
+            const available = svgs.filter(s => !s.classList.contains('is-animating'));
+            if (!available.length) return;
 
-    const animateOne = () => {
-        const available = svgs.filter(s => !s.classList.contains('is-animating'));
-        if (!available.length) return;
+            const svg = available[Math.floor(Math.random() * available.length)];
+            const maxX = window.innerWidth - 100;
+            const maxY = window.innerHeight - 200;
 
-        const svg = available[Math.floor(Math.random() * available.length)];
-        const maxX = window.innerWidth - 100;
-        const maxY = window.innerHeight - 200;
+            svg.style.top = `${Math.floor(Math.random() * maxY)}px`;
+            svg.style.left = `${Math.floor(Math.random() * maxX)}px`;
+            svg.classList.add('animate-float', 'is-animating');
 
-        svg.style.top = `${Math.floor(Math.random() * maxY)}px`;
-        svg.style.left = `${Math.floor(Math.random() * maxX)}px`;
-        svg.classList.add('animate-float', 'is-animating');
+            svg.addEventListener('animationend', () => {
+                svg.classList.remove('animate-float', 'is-animating');
+                svg.style.removeProperty('top');
+                svg.style.removeProperty('left');
+            }, { once: true });
+        };
 
-        svg.addEventListener('animationend', () => {
-            svg.classList.remove('animate-float', 'is-animating');
-            svg.style.removeProperty('top');
-            svg.style.removeProperty('left');
-        }, { once: true });
-    };
-
-    svgs.forEach((_, i) => setTimeout(animateOne, i * 400));
-    setInterval(animateOne, 1800);
+        svgs.forEach((_, i) => setTimeout(animateOne, i * 400));
+        setInterval(animateOne, 1800);
+    }
+    
+    initTechnologies();
 </script>
 
 <style>

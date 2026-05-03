@@ -1,43 +1,49 @@
-# Astro Starter Kit: Minimal
+# legadev - Portafolio Personal
 
-```sh
-pnpm create astro@latest -- --template minimal
+[![Website](https://img.shields.io/badge/Website-lega.dev-cyan?style=flat&link=https://www.lega.dev)](https://www.lega.dev)
+[![GitHub](https://img.shields.io/badge/GitHub-legadev-black?style=flat&logo=github)](https://github.com/legamejiav/legadev)
+
+Software Engineer con +4 años de experiencia en empresas multinacionales como Inetum (Europa) y Belcorp (LATAM). Especialista en Node.js, React, Spring Boot y microservicios.
+
+## 🚀 Tech Stack
+
+- **Framework:** Astro 6.x
+- **Styling:** Tailwind CSS 3.x
+- **Deployment:** Cloudflare Pages
+
+## 🛠️ Getting Started
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 📁 Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```
 /
-├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/    # UI components (Hero, About, Projects, etc.)
+│   ├── layouts/       # Page layouts
+│   ├── pages/         # Routes
+│   ├── styles/        # Global styles
+│   └── data.json      # Portfolio data
+├── public/            # Static assets
+├── tailwind.config.mjs
+└── astro.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🔗 Links
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- 🌐 [lega.dev](https://www.lega.dev)
+- 💼 [LinkedIn](https://www.linkedin.com/in/legamejiav/)
+- 🐙 [GitHub](https://github.com/legamejiav)

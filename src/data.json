@@ -1,5 +1,44 @@
 [
   {
+    "title": "Gemini Float",
+    "description": "✨ Gemini Float is a lightweight Linux desktop app that gives you a dedicated window for Google Gemini. It feels like a small, focused app you can open instantly, without keeping Gemini buried in a browser tab.",
+    "link": "",
+    "stack": ["Linux", "Desktop", "Shell"],
+    "github": "",
+    "image": "../../public/imgs/gemini/gemini.png",
+    "images": {
+      "hero": "../../public/imgs/gemini/gemini.png",
+      "gallery": [
+        "https://placehold.co/800x500/1a1a2e/ffffff?text=Window+Preview",
+        "https://placehold.co/800x500/1a1a2e/ffffff?text=Shortcut+Demo"
+      ]
+    },
+    "details": {
+      "features": [
+        "🪟 A dedicated desktop window for Gemini",
+        "🎯 A cleaner, app-like experience",
+        "⚡ Quick access without browser clutter",
+        "🐧 Linux desktop integration",
+        "🔁 Optional autostart support",
+        "Floating-style window behavior",
+        "Fast launch",
+        "Easy access from your applications menu"
+      ],
+      "shortcut": {
+        "key": "Ctrl+Space",
+        "description": "Show or hide Gemini Float from anywhere"
+      },
+      "installation": "bash install.sh",
+      "why": [
+        "a desktop app instead of a browser tab",
+        "a faster way to open Gemini",
+        "a lightweight and focused workflow",
+        "a simple Linux-native experience"
+      ],
+      "license": "MIT"
+    }
+  },
+  {
     "title": "Time clock",
     "description": "⌛ Reloj minimalista en tiempo real, ideal como protector de pantalla.",
     "link": "https://timeclock.vercel.app/",

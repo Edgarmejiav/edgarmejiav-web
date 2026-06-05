@@ -97,11 +97,18 @@ const { details, images } = app;
         <div class="mb-12">
           <h3 class="text-sm uppercase tracking-widest text-white/40 mb-4">Screenshots</h3>
           <div class="grid md:grid-cols-2 gap-4">
-            {images.gallery.map((src) => (
-              <div class="rounded-2xl overflow-hidden border border-white/10">
-                <img src={src} alt="" class="w-full aspect-video object-cover bg-[#1a1a2e]" />
-              </div>
-            ))}
+            {images.gallery.map((src) => {
+              const isVideo = /\.(mp4|webm|ogg|mov|avi)$/i.test(src);
+              return (
+                <div class="rounded-2xl overflow-hidden border border-white/10">
+                  {isVideo ? (
+                    <video src={src} controls class="w-full aspect-video object-cover bg-[#1a1a2e]" />
+                  ) : (
+                    <img src={src} alt="" class="w-full aspect-video object-cover bg-[#1a1a2e]" />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

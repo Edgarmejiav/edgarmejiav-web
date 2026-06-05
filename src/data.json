@@ -9,8 +9,8 @@
     "images": {
       "hero": "../../public/imgs/gemini/gemini.png",
       "gallery": [
-        "https://placehold.co/800x500/1a1a2e/ffffff?text=Window+Preview",
-        "https://placehold.co/800x500/1a1a2e/ffffff?text=Shortcut+Demo"
+        "../../public/imgs/gemini/video1.mp4",
+        "../../public/imgs/gemini/video2.mp4"
       ]
     },
     "details": {

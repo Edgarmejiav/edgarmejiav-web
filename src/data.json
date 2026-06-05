@@ -5,12 +5,12 @@
     "link": "",
     "stack": ["Linux", "Desktop", "Shell"],
     "github": "",
-    "image": "../../public/imgs/gemini/gemini.png",
+    "image": "/imgs/gemini/gemini.png",
     "images": {
-      "hero": "../../public/imgs/gemini/gemini.png",
+      "hero": "/imgs/gemini/gemini.png",
       "gallery": [
-        "../../public/imgs/gemini/video1.mp4",
-        "../../public/imgs/gemini/video2.mp4"
+        "/imgs/gemini/demo1.gif",
+        "/imgs/gemini/demo2.gif"
       ]
     },
     "details": {

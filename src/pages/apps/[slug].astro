@@ -63,20 +63,26 @@ const { details, images } = app;
           <!-- Shortcut & Installation -->
           <div class="grid md:grid-cols-2 gap-4">
             {details.shortcut && (
-              <div class="service-card">
-                <span class="eyebrow text-[var(--accent-cyan)] block mb-3">Atajo de teclado</span>
+              <div class="service-card p-6">
+                <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
+                  <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(ATAJO DE TECLADO)</span>
+                  <span class="eyebrow text-[var(--text-tertiary)]">01</span>
+                </div>
                 <div class="flex items-center gap-3">
                   <kbd class="px-3 py-1.5 bg-white/10 border border-white/20 rounded-lg text-sm font-mono text-[var(--text-primary)]">
                     {details.shortcut.key}
                   </kbd>
-                  <span class="text-[var(--text-secondary)] text-sm">{details.shortcut.description}</span>
+                  <span class="font-sans text-[var(--text-secondary)] text-sm">{details.shortcut.description}</span>
                 </div>
               </div>
             )}
 
             {details.installation && (
-              <div class="service-card">
-                <span class="eyebrow text-[var(--accent-cyan)] block mb-3">Instalación</span>
+              <div class="service-card p-6">
+                <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
+                  <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(INSTALACIÓN)</span>
+                  <span class="eyebrow text-[var(--text-tertiary)]">02</span>
+                </div>
                 <pre class="bg-black/60 border border-[var(--border-color)] rounded-lg p-3 text-xs sm:text-sm font-mono text-[var(--accent-lime)] overflow-x-auto"><code>{details.installation}</code></pre>
               </div>
             )}
@@ -84,11 +90,14 @@ const { details, images } = app;
 
           <!-- Features -->
           {details.features && details.features.length > 0 && (
-            <div class="service-card">
-              <span class="eyebrow text-[var(--text-secondary)] block mb-4">Características principales</span>
-              <ul class="grid md:grid-cols-2 gap-3">
+            <div class="service-card p-6 sm:p-8">
+              <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-5">
+                <h3 class="font-sans font-bold text-lg sm:text-xl text-[var(--text-primary)]">Características Principales</h3>
+                <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(03 / FEATURES)</span>
+              </div>
+              <ul class="grid md:grid-cols-2 gap-3.5">
                 {details.features.map((f) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm sm:text-base">
+                  <li class="flex items-start gap-3 text-[var(--text-secondary)] font-sans text-sm sm:text-base leading-relaxed">
                     <span class="text-[var(--accent-cyan)] font-mono mt-0.5">▹</span>
                     <span>{f}</span>
                   </li>
@@ -99,12 +108,15 @@ const { details, images } = app;
 
           <!-- Why -->
           {details.why && details.why.length > 0 && (
-            <div class="service-card">
-              <span class="eyebrow text-[var(--text-secondary)] block mb-4">¿Por qué {app.title}?</span>
+            <div class="service-card p-6 sm:p-8">
+              <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-5">
+                <h3 class="font-sans font-bold text-lg sm:text-xl text-[var(--text-primary)]">¿Por qué {app.title}?</h3>
+                <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(04 / PROPÓSITO)</span>
+              </div>
               <ul class="space-y-3">
                 {details.why.map((w) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm sm:text-base">
-                    <span class="text-[var(--accent-cyan)] mt-0.5">✦</span>
+                  <li class="flex items-start gap-3 text-[var(--text-secondary)] font-sans text-sm sm:text-base leading-relaxed">
+                    <span class="text-[var(--accent-cyan)] font-mono mt-0.5">✦</span>
                     <span>{w}</span>
                   </li>
                 ))}

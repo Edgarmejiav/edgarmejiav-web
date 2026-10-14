@@ -1,35 +1,109 @@
 ---
 const techGroups = [
-  { category: "Backend", icon: "⚙️", items: ["Java", "Python", "Node.js", ".NET", "Spring Boot", "FastAPI", "NestJS", "OAuth"] },
-  { category: "Bases de Datos", icon: "🗄️", items: ["PostgreSQL", "MongoDB", "SQL"] },
-  { category: "Frontend", icon: "🎨", items: ["JavaScript", "TypeScript", "React.js", "Vue.js", "Angular", "Redux.js", "Tailwind CSS", "Bootstrap", "Material-UI", "Styled-components", "HTML", "CSS", "Webpack", "Storybook", "HTTPS"] },
-  { category: "CI/CD & Cloud", icon: "☁️", items: ["GitHub Actions", "Vercel", "AWS Amplify", "Azure Static Web Apps", "Docker", "Linux", "AWS S3", "AWS CloudFront"] },
-  { category: "Pruebas y Calidad", icon: "🧪", items: ["Jest", "Storybook", "Selenium", "Mocha", "Chai", "Testing Library", "Postman", "ESLint", "Prettier"] },
-  { category: "Gestión y Metodologías", icon: "📊", items: ["Scrum", "Kanban", "Agile", "Jira", "Notion", "Git"] },
+  {
+    num: "01",
+    category: "Backend & APIs",
+    tag: "(CORE ARCHITECTURE)",
+    description: "Desarrollo de microservicios robustos, arquitecturas orientadas a eventos y APIs RESTful de alto rendimiento.",
+    items: ["Java", "Spring Boot", "Node.js", "NestJS", "Python", "FastAPI", ".NET", "OAuth 2.0", "REST APIs"],
+  },
+  {
+    num: "02",
+    category: "Bases de Datos & ETL",
+    tag: "(DATA & STORAGE)",
+    description: "Modelado relacional y NoSQL, optimización de queries complejas y procesos ETL para sincronización continua.",
+    items: ["PostgreSQL", "MongoDB", "SQL Server", "ETL Pipelines", "Query Optimization", "Indexing"],
+  },
+  {
+    num: "03",
+    category: "Frontend Moderno",
+    tag: "(INTERFACES & UX)",
+    description: "Interfaces reactivas, rápidas y accesibles con frameworks modernos y arquitecturas por componentes.",
+    items: ["TypeScript", "JavaScript", "React.js", "Next.js", "Vue.js", "Angular", "Tailwind CSS", "Redux", "Storybook"],
+  },
+  {
+    num: "04",
+    category: "Cloud, CI/CD & DevOps",
+    tag: "(INFRASTRUCTURE)",
+    description: "Despliegues automatizados, contenedorización y arquitecturas escalables en la nube.",
+    items: ["AWS S3", "AWS CloudFront", "Docker", "Linux", "GitHub Actions", "Vercel", "Azure Apps", "CI/CD Pipelines"],
+  },
+  {
+    num: "05",
+    category: "Testing & Calidad",
+    tag: "(QA & RELIABILITY)",
+    description: "Pruebas unitarias, de integración y políticas de código limpio para asegurar estabilidad en producción.",
+    items: ["Jest", "Testing Library", "Mocha", "Chai", "Selenium", "Postman", "ESLint", "Prettier", "Clean Code"],
+  },
+  {
+    num: "06",
+    category: "Liderazgo & Gestión",
+    tag: "(AGILE DELIVERY)",
+    description: "Coordinación de equipos multidisciplinarios, metodologías ágiles y entregas continuas con métricas claras.",
+    items: ["Scrum Master", "Kanban", "Jira", "Git Flow", "Code Reviews", "Tech Leadership", "Mentoring"],
+  },
 ];
 ---
 
 <section id="stack" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
   <div class="max-w-[1400px] mx-auto">
     <!-- Section head (Wilcock-style) -->
-    <div class="section-head mb-8" data-reveal>
-      <h2 class="eyebrow text-[var(--text-secondary)]">Stack Tecnológico <span class="text-[var(--text-tertiary)]">(02)</span></h2>
-      <span class="eyebrow text-[var(--text-tertiary)]">{techGroups.reduce((acc, g) => acc + g.items.length, 0)} tecnologías</span>
+    <div class="section-head mb-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <h2 class="eyebrow text-[var(--text-secondary)]">
+          Capacidades & Stack <span class="text-[var(--text-tertiary)]">(06)</span>
+        </h2>
+      </div>
+      <div class="flex items-center gap-4 eyebrow text-[var(--text-tertiary)]">
+        <span class="text-[var(--accent-cyan)] font-mono">Full-Stack & Cloud</span>
+        <span class="hidden sm:inline">·</span>
+        <span class="hidden sm:inline">{techGroups.reduce((acc, g) => acc + g.items.length, 0)} tecnologías</span>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {techGroups.map((group, idx) => (
-        <div class="service-card" data-reveal style={`transition-delay: ${idx * 0.08}s`}>
-          <div class="flex items-center gap-3 mb-4">
-            <span class="text-xl opacity-80">{group.icon}</span>
-            <h3 class="text-[var(--text-primary)] font-medium text-base">{group.category}</h3>
-          </div>
-          <div class="flex flex-wrap gap-2">
-            {group.items.map((tech) => (
-              <span class="text-xs font-medium text-[var(--text-secondary)] bg-white/3 border border-[var(--border-color)] rounded-lg px-2.5 py-1 hover:bg-white/8 hover:text-[var(--text-primary)] hover:border-white/15 transition-all duration-200 cursor-default">
-                {tech}
+        <div
+          class="service-card group relative flex flex-col justify-between overflow-hidden"
+          data-reveal
+          style={`transition-delay: ${idx * 0.07}s`}
+        >
+          <!-- Hover subtle background highlight -->
+          <div class="absolute -top-16 -right-16 w-32 h-32 bg-[var(--accent-cyan)]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[var(--accent-cyan)]/10 transition-colors duration-500"></div>
+
+          <div>
+            <!-- Top card row: Number + Tag -->
+            <div class="flex items-center justify-between pb-4 border-b border-[var(--border-color)] mb-5">
+              <span class="eyebrow text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors">
+                {group.num}
               </span>
-            ))}
+              <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem] tracking-wider">
+                {group.tag}
+              </span>
+            </div>
+
+            <!-- Title in bold Archivo -->
+            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-[var(--text-primary)] mb-3 group-hover:text-white transition-colors">
+              {group.category}
+            </h3>
+
+            <!-- Description in Archivo -->
+            <p class="font-sans text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+              {group.description}
+            </p>
+          </div>
+
+          <!-- Items in Geist Mono chips -->
+          <div class="pt-4 border-t border-[var(--border-color)]/60">
+            <span class="eyebrow text-[var(--text-tertiary)] text-[0.6rem] block mb-2.5">TECNOLOGÍAS CLAVE</span>
+            <div class="flex flex-wrap gap-1.5">
+              {group.items.map((tech) => (
+                <span class="font-mono text-xs text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] rounded-md px-2.5 py-1 hover:border-[var(--accent-cyan)]/50 hover:text-[var(--text-primary)] hover:bg-white/[0.07] transition-all duration-200 cursor-default">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       ))}

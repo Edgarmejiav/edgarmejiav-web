@@ -1,18 +1,18 @@
 ---
 const highlights = [
-  { icon: "🎤", title: "AforShow 2023", subtitle: "Conferencista en Twitch", desc: "+300 espectadores en charla sobre desarrollo en LATAM" },
-  { icon: "🎭", title: "Barrio Teatro", subtitle: "Gestión de Proyecto 2023", desc: "Lideré equipos multidisciplinarios para reducir violencia con soluciones culturales." },
-  { icon: "🎓", title: "Educación", subtitle: "Ing. de Sistemas ", desc: "Universidad Nacional de Cajamarca" },
-  { icon: "🗣️", title: "Idiomas", subtitle: "Nativo y Avanzado", desc: "Español (Nativo), Inglés (Avanzado)" },
+  { num: "01", icon: "🎤", title: "AforShow 2023", subtitle: "Conferencista en Twitch", desc: "+300 espectadores en charla sobre desarrollo y buenas prácticas en LATAM.", tag: "(TALK / COMMUNITY)" },
+  { num: "02", icon: "🎭", title: "Barrio Teatro", subtitle: "Gestión de Proyecto 2023", desc: "Lideré equipos multidisciplinarios para reducir violencia mediante soluciones culturales.", tag: "(LEADERSHIP)" },
+  { num: "03", icon: "🎓", title: "Educación", subtitle: "Ing. de Sistemas", desc: "Universidad Nacional de Cajamarca. Formación rigurosa en computación y algoritmos.", tag: "(ACADEMIC)" },
+  { num: "04", icon: "🗣️", title: "Idiomas", subtitle: "Nativo y Avanzado", desc: "Español (Nativo), Inglés (Avanzado profesional para equipos distribuidos globales).", tag: "(LANGUAGES)" },
 ];
 
 const experienceYears = Math.floor((new Date().getTime() - new Date('2021-09-01').getTime()) / (1000 * 60 * 60 * 24 * 365.25));
 
 const stats = [
-  { value: `${experienceYears}+`, label: "Años de experiencia" },
-  { value: "2", label: "Empresas multinacionales" },
-  { value: "300+", label: "Audiencia en eventos" },
-  { value: "30%", label: "Mejora en rendimiento DB" },
+  { value: `${experienceYears}+`, label: "Años de experiencia", tag: "(TRAYECTORIA)" },
+  { value: "2", label: "Empresas multinacionales", tag: "(GLOBAL IMPACT)" },
+  { value: "300+", label: "Audiencia en eventos", tag: "(COMUNIDAD)" },
+  { value: "30%", label: "Mejora rendimiento DB", tag: "(PERFORMANCE)" },
 ];
 
 const certifications = [
@@ -30,7 +30,7 @@ const certifications = [
   <div class="max-w-[1400px] mx-auto">
     <!-- Large statement (Wilcock-style) -->
     <div class="mb-24" data-reveal>
-      <span class="eyebrow text-[var(--accent-cyan)] block mb-6">(Hola)</span>
+      <span class="eyebrow text-[var(--accent-cyan)] block mb-6 font-mono">(HOLA)</span>
       <p class="large-statement">
         Soy Edgar. Desarrollo software que <em>escala</em>, <em>resuelve</em> y
         deja impacto real. Backend en Node.js y Spring Boot,
@@ -39,51 +39,83 @@ const certifications = [
     </div>
 
     <!-- Section head -->
-    <div class="section-head mb-8" data-reveal>
-      <h2 class="eyebrow text-[var(--text-secondary)]">Sobre Mí <span class="text-[var(--text-tertiary)]">(01)</span></h2>
-      <span class="eyebrow text-[var(--text-tertiary)]">+{experienceYears} años</span>
+    <div class="section-head mb-12" data-reveal>
+      <div class="flex items-center gap-3">
+        <h2 class="eyebrow text-[var(--text-secondary)]">
+          Sobre Mí <span class="text-[var(--text-tertiary)]">(01)</span>
+        </h2>
+      </div>
+      <span class="eyebrow text-[var(--text-tertiary)]">+{experienceYears} AÑOS DE EXPERIENCIA</span>
     </div>
 
-    <!-- Content grid -->
-    <div class="grid lg:grid-cols-5 gap-12 items-start mb-16" data-reveal>
-      <div class="lg:col-span-3 flex flex-col gap-5 text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed">
-        <p>Soy un <span class="text-[var(--text-primary)] font-medium">Software Engineer</span> con más de <span class="text-[var(--accent-cyan)] font-medium">{experienceYears} años de experiencia</span> en desarrollo de software, con dominio <span class="text-[var(--text-primary)]">full-stack</span> en Node.js, Python, Java y Linux — usando React, NestJS, Spring Boot y PostgreSQL.</p>
-        <p>Especializado en la creación de soluciones escalables y eficientes tanto en el <span class="text-[var(--accent-lime)]">frontend como en el backend</span>, impulsando la calidad del código, metodologías ágiles e integraciones sólidas.</p>
-        <p>He <span class="text-[var(--text-primary)] font-medium">liderado equipos multidisciplinarios</span> fomentando la colaboración y la innovación, asegurando el éxito y la escalabilidad de los proyectos en diversas industrias.</p>
+    <!-- Content grid: Bio + Stat cards -->
+    <div class="grid lg:grid-cols-12 gap-8 items-start mb-14" data-reveal>
+      <div class="lg:col-span-7 flex flex-col gap-6 text-[var(--text-secondary)] font-sans text-base sm:text-lg leading-relaxed">
+        <p>
+          Soy un <span class="text-[var(--text-primary)] font-semibold">Software Engineer</span> con más de <span class="text-[var(--accent-cyan)] font-mono font-medium">{experienceYears} años de experiencia</span> en desarrollo de software, con dominio <span class="text-[var(--text-primary)] font-medium">full-stack</span> en Node.js, Python, Java y Linux — usando React, NestJS, Spring Boot y PostgreSQL.
+        </p>
+        <p>
+          Especializado en la creación de soluciones escalables y eficientes tanto en el <span class="text-[var(--accent-lime)] font-medium">frontend como en el backend</span>, impulsando la calidad del código, metodologías ágiles e integraciones sólidas con servicios en la nube (AWS / Vercel).
+        </p>
+        <p>
+          He <span class="text-[var(--text-primary)] font-semibold">liderado equipos multidisciplinarios</span> fomentando la colaboración técnica y la innovación constante, asegurando el éxito y la escalabilidad de proyectos críticos en diversas industrias en LATAM y Europa.
+        </p>
       </div>
 
-      <div class="lg:col-span-2 grid grid-cols-2 gap-3">
-        {stats.map((stat) => (
-          <div class="service-card text-center">
-            <div class="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-1">
-              {stat.value}
+      <!-- Stat Cards in Wilcock Aesthetic -->
+      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+        {stats.map((stat, idx) => (
+          <div class="service-card flex flex-col justify-between p-6">
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
+              <span class="eyebrow text-[var(--accent-cyan)] text-[0.62rem]">{stat.tag}</span>
+              <span class="eyebrow text-[var(--text-tertiary)]">0{idx + 1}</span>
             </div>
-            <div class="eyebrow text-[var(--text-tertiary)] text-[0.65rem]">{stat.label}</div>
+            <div>
+              <div class="font-sans text-4xl sm:text-5xl font-extrabold tracking-tighter text-[var(--text-primary)] mb-2">
+                {stat.value}
+              </div>
+              <div class="font-mono text-xs text-[var(--text-secondary)] uppercase tracking-wider">{stat.label}</div>
+            </div>
           </div>
         ))}
       </div>
     </div>
 
-    <!-- Highlights grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-reveal>
+    <!-- Highlights Cards Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8" data-reveal>
       {highlights.map((h) => (
-        <div class="service-card">
-          <div class="text-2xl mb-4 opacity-80">{h.icon}</div>
-          <div class="text-[var(--text-primary)] font-medium text-base mb-1">{h.title}</div>
-          <div class="eyebrow text-[var(--accent-cyan)] text-[0.65rem] mb-2">{h.subtitle}</div>
-          <div class="text-[var(--text-secondary)] text-sm leading-relaxed">{h.desc}</div>
+        <div class="service-card group flex flex-col justify-between p-6">
+          <div>
+            <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
+              <span class="eyebrow text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors">{h.num}</span>
+              <span class="eyebrow text-[var(--accent-cyan)] text-[0.62rem]">{h.tag}</span>
+            </div>
+            <div class="text-2xl mb-3 opacity-90">{h.icon}</div>
+            <h3 class="font-sans font-bold text-xl tracking-tight text-[var(--text-primary)] mb-1 group-hover:text-white transition-colors">
+              {h.title}
+            </h3>
+            <span class="eyebrow text-[var(--accent-cyan)] text-[0.68rem] block mb-3 font-mono">
+              {h.subtitle}
+            </span>
+            <p class="font-sans text-sm text-[var(--text-secondary)] leading-relaxed">
+              {h.desc}
+            </p>
+          </div>
         </div>
       ))}
     </div>
 
-    <!-- Certifications -->
-    <div class="mt-8 service-card" data-reveal>
-      <h3 class="text-[var(--text-primary)] font-medium text-base mb-4 flex items-center gap-2">
-        <span class="opacity-60">📜</span> Certificaciones
-      </h3>
+    <!-- Certifications Card in Wilcock Style -->
+    <div class="service-card p-6 sm:p-8" data-reveal>
+      <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[var(--border-color)] mb-6">
+        <h3 class="font-sans font-bold text-lg sm:text-xl text-[var(--text-primary)] flex items-center gap-2.5">
+          <span>📜</span> Certificaciones Profesionales
+        </h3>
+        <span class="eyebrow text-[var(--accent-cyan)]">07 CERTIFICACIONES VALIDADAS</span>
+      </div>
       <div class="flex flex-wrap gap-2">
         {certifications.map((cert) => (
-          <span class="text-xs font-medium text-[var(--text-secondary)] border border-[var(--border-color)] bg-white/3 px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-[var(--text-primary)] transition-all cursor-default">
+          <span class="font-mono text-xs text-[var(--text-secondary)] border border-[var(--border-color)] bg-white/[0.03] px-3.5 py-1.5 rounded-md hover:border-[var(--accent-cyan)]/50 hover:text-[var(--text-primary)] hover:bg-white/[0.07] transition-all cursor-default uppercase tracking-wider">
             {cert}
           </span>
         ))}

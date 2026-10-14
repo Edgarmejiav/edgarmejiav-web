@@ -155,17 +155,17 @@ const projects = data.map((item, idx) => {
 
           <!-- Preview Text Details -->
           <div class="flex flex-col gap-3">
-            <h3 class="text-2xl font-bold tracking-tight text-[var(--text-primary)]" id="preview-title">
+            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-[var(--text-primary)]" id="preview-title">
               {projects[0].title}
             </h3>
-            <p class="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3" id="preview-desc">
+            <p class="font-sans text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3" id="preview-desc">
               {projects[0].description}
             </p>
 
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-1.5 pt-2" id="preview-stack">
               {projects[0].stack.map((t) => (
-                <span class="text-xs font-mono text-[var(--text-secondary)] bg-white/5 border border-[var(--border-color)] px-2.5 py-1 rounded-md">
+                <span class="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] px-2.5 py-1 rounded-md">
                   {t}
                 </span>
               ))}
@@ -176,7 +176,7 @@ const projects = data.map((item, idx) => {
               <a
                 id="preview-link-btn"
                 href={projects[0].href}
-                class="eyebrow flex-1 text-center py-2.5 px-4 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider hover:opacity-85 transition-opacity"
+                class="font-mono text-xs uppercase tracking-wider flex-1 text-center py-2.5 px-4 rounded-full bg-[var(--accent-cyan)] !text-black font-bold hover:opacity-85 transition-opacity"
               >
                 Abrir proyecto →
               </a>
@@ -287,7 +287,7 @@ const projects = data.map((item, idx) => {
     // Stack pills
     if (previewStack) {
       previewStack.innerHTML = p.stack
-        .map(s => `<span class="text-xs font-mono text-[var(--text-secondary)] bg-white/5 border border-[var(--border-color)] px-2.5 py-1 rounded-md">${s}</span>`)
+        .map(s => `<span class="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] px-2.5 py-1 rounded-md">${s}</span>`)
         .join("");
     }
 

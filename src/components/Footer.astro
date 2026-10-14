@@ -1,31 +1,116 @@
 ---
 import SocialIcons from './SocialIcons.astro';
+
+const now = new Date();
+const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
 ---
 
-<footer class="border-t border-white/5 mt-8 py-10 px-6">
-  <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
-    <div class="flex flex-col items-center sm:items-start gap-1">
-      <span class="text-white font-medium text-sm">
-        Edgar<span class="text-cyan-400">MejiaV</span>
-      </span>
-      <p class="text-[var(--text-tertiary)] text-xs italic">
-        "Cambiar el mundo a través del código"
-      </p>
+<footer class="px-[var(--gutter)] pt-24 pb-12 border-t border-[var(--border-color)] overflow-hidden">
+  <div class="max-w-[1400px] mx-auto flex flex-col justify-between min-h-[60vh]">
+    <!-- Top eyebrow -->
+    <div class="flex items-center justify-between eyebrow text-[var(--text-secondary)] mb-12" data-reveal>
+      <span>¿Tienes un proyecto en mente?</span>
+      <span class="hidden sm:inline">Disponible para nuevos retos</span>
+      <span>(Contacto)</span>
     </div>
 
-    <div class="flex gap-6 text-[var(--text-secondary)] text-xs">
-      <a href="#about" class="hover:text-white transition-colors">Sobre Mí</a>
-      <a href="#stack" class="hover:text-white transition-colors">Stack</a>
-      <a href="#experience" class="hover:text-white transition-colors">Experiencia</a>
-      <a href="#apps" class="hover:text-white transition-colors">Apps</a>
+    <!-- Massive CTA: HABLEMOS -->
+    <div class="my-auto py-12" data-reveal>
+      <a
+        href="mailto:legamejiav@gmail.com"
+        class="cta-massive block w-full group relative cursor-pointer"
+        aria-label="Escríbeme un correo: legamejiav@gmail.com"
+      >
+        <span class="inline-block transition-transform duration-500 group-hover:scale-[1.02] origin-left">
+          HABLEMOS<span class="text-[var(--accent-cyan)] inline-block transition-transform duration-300 group-hover:translate-x-4">.</span>
+        </span>
+      </a>
     </div>
 
-    <div class="flex items-center gap-3">
-      <SocialIcons />
-    </div>
-  </div>
+    <!-- Bottom metadata & links row (Wilcock-style) -->
+    <div class="pt-12 border-t border-[var(--border-color)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 eyebrow text-[var(--text-secondary)]" data-reveal>
+      <!-- Direct Email -->
+      <a
+        href="mailto:legamejiav@gmail.com"
+        class="hover:text-[var(--accent-cyan)] transition-colors text-sm font-mono lowercase"
+      >
+        legamejiav@gmail.com
+      </a>
 
-  <div class="max-w-5xl mx-auto mt-6 pt-6 border-t border-white/5 text-center text-[var(--text-tertiary)] text-xs">
-    © {new Date().getFullYear()} Edgar Mejía Vásquez · Perú 🇵🇪
+      <!-- Social Links -->
+      <div class="flex flex-wrap items-center gap-6">
+        <a
+          href="https://www.linkedin.com/in/legamejiav/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[var(--text-primary)] transition-colors"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/edgarmejiav"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[var(--text-primary)] transition-colors"
+        >
+          GitHub
+        </a>
+        <a
+          href="https://www.tiktok.com/@legadev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[var(--text-primary)] transition-colors"
+        >
+          TikTok
+        </a>
+        <a
+          href="https://github.com/Edgarmejiav/edgarmejiav-web"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[var(--text-primary)] transition-colors hidden sm:inline"
+        >
+          Source Code
+        </a>
+      </div>
+
+      <!-- Time + Location & Back to Top -->
+      <div class="flex items-center gap-6">
+        <span class="text-[var(--text-tertiary)]">
+          Perú, LATAM <span id="footer-time">{timeStr}</span>
+        </span>
+        <a
+          href="#navbar"
+          class="hover:text-[var(--accent-cyan)] transition-colors flex items-center gap-1 cursor-pointer"
+          id="back-to-top"
+        >
+          Volver arriba ↑
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright footnote -->
+    <div class="mt-8 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-[var(--text-tertiary)]">
+      <span>© {new Date().getFullYear()} Edgar Mejía Vásquez</span>
+      <span class="italic">"Cambiar el mundo a través del código"</span>
+      <span>Diseñado con inspiración en mikewilcockdesign</span>
+    </div>
   </div>
 </footer>
+
+<script>
+  // Live time in footer
+  const footerTime = document.getElementById('footer-time');
+  if (footerTime) {
+    setInterval(() => {
+      const now = new Date();
+      footerTime.textContent = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }, 60000);
+  }
+
+  // Smooth scroll back to top
+  const backToTop = document.getElementById('back-to-top');
+  backToTop?.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

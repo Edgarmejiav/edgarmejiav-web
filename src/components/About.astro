@@ -6,7 +6,7 @@ const highlights = [
   { icon: "🗣️", title: "Idiomas", subtitle: "Nativo y Avanzado", desc: "Español (Nativo), Inglés (Avanzado)" },
 ];
 
-const experienceYears = Math.floor((new Date() - new Date('2021-09-01')) / (1000 * 60 * 60 * 24 * 365.25));
+const experienceYears = Math.floor((new Date().getTime() - new Date('2021-09-01').getTime()) / (1000 * 60 * 60 * 24 * 365.25));
 
 const stats = [
   { value: `${experienceYears}+`, label: "Años de experiencia" },
@@ -26,51 +26,64 @@ const certifications = [
 ];
 ---
 
-<section id="about" class="py-28 px-6">
-  <div class="max-w-5xl mx-auto">
-    <div class="flex items-center gap-4 mb-16">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
-      <h2 class="text-title-2 font-sans text-white"><span class="text-white/40">01.</span> Sobre Mí</h2>
-      <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
+<section id="about" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+  <div class="max-w-[1400px] mx-auto">
+    <!-- Large statement (Wilcock-style) -->
+    <div class="mb-24" data-reveal>
+      <span class="eyebrow text-[var(--accent-cyan)] block mb-6">(Hola)</span>
+      <p class="large-statement">
+        Soy Edgar. Desarrollo software que <em>escala</em>, <em>resuelve</em> y
+        deja impacto real. Backend en Node.js y Spring Boot,
+        frontend en React, desplegado en la <span class="accent">nube</span>.
+      </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-16 items-start">
-      <div class="flex flex-col gap-6 text-[var(--text-secondary)] leading-relaxed text-base">
-        <p>Soy un <span class="text-white font-medium">Software Engineer</span> con más de <span class="text-cyan-400 font-medium">{experienceYears} años de experiencia</span> en desarrollo de software, con dominio <span class="text-white/80">full-stack</span> en Node.js, Python, Java y Linux — usando React, NestJS, Spring Boot y PostgreSQL.</p>
-        <p>Especializado en la creación de soluciones escalables y eficientes tanto en el <span class="text-lime-400">frontend como en el backend</span>, impulsando la calidad del código, metodologías ágiles e integraciones sólidas.</p>
-        <p>He <span class="text-white font-medium">liderado equipos multidisciplinarios</span> fomentando la colaboración y la innovación, asegurando el éxito y la escalabilidad de los proyectos en diversas industrias.</p>
+    <!-- Section head -->
+    <div class="section-head mb-8" data-reveal>
+      <h2 class="eyebrow text-[var(--text-secondary)]">Sobre Mí <span class="text-[var(--text-tertiary)]">(01)</span></h2>
+      <span class="eyebrow text-[var(--text-tertiary)]">+{experienceYears} años</span>
+    </div>
+
+    <!-- Content grid -->
+    <div class="grid lg:grid-cols-5 gap-12 items-start mb-16" data-reveal>
+      <div class="lg:col-span-3 flex flex-col gap-5 text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed">
+        <p>Soy un <span class="text-[var(--text-primary)] font-medium">Software Engineer</span> con más de <span class="text-[var(--accent-cyan)] font-medium">{experienceYears} años de experiencia</span> en desarrollo de software, con dominio <span class="text-[var(--text-primary)]">full-stack</span> en Node.js, Python, Java y Linux — usando React, NestJS, Spring Boot y PostgreSQL.</p>
+        <p>Especializado en la creación de soluciones escalables y eficientes tanto en el <span class="text-[var(--accent-lime)]">frontend como en el backend</span>, impulsando la calidad del código, metodologías ágiles e integraciones sólidas.</p>
+        <p>He <span class="text-[var(--text-primary)] font-medium">liderado equipos multidisciplinarios</span> fomentando la colaboración y la innovación, asegurando el éxito y la escalabilidad de los proyectos en diversas industrias.</p>
       </div>
 
-      <div class="grid grid-cols-2 gap-4">
+      <div class="lg:col-span-2 grid grid-cols-2 gap-3">
         {stats.map((stat) => (
-          <div class="glass-card group rounded-2xl p-6 text-center hover:bg-white/5 transition-all duration-300">
-            <div class="text-4xl font-semibold tracking-tight text-white">
+          <div class="service-card text-center">
+            <div class="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--text-primary)] mb-1">
               {stat.value}
             </div>
-            <div class="text-[var(--text-secondary)] text-sm mt-1">{stat.label}</div>
+            <div class="eyebrow text-[var(--text-tertiary)] text-[0.65rem]">{stat.label}</div>
           </div>
         ))}
       </div>
     </div>
 
-    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- Highlights grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-reveal>
       {highlights.map((h) => (
-        <div class="glass-card rounded-2xl p-5 hover:bg-white/5 transition-all duration-300">
-          <div class="text-2.5 mb-4 opacity-80">{h.icon}</div>
-          <div class="text-white font-medium text-lg">{h.title}</div>
-          <div class="text-cyan-400 text-xs font-medium mt-1 mb-2">{h.subtitle}</div>
-          <div class="text-[var(--text-secondary)] text-sm">{h.desc}</div>
+        <div class="service-card">
+          <div class="text-2xl mb-4 opacity-80">{h.icon}</div>
+          <div class="text-[var(--text-primary)] font-medium text-base mb-1">{h.title}</div>
+          <div class="eyebrow text-[var(--accent-cyan)] text-[0.65rem] mb-2">{h.subtitle}</div>
+          <div class="text-[var(--text-secondary)] text-sm leading-relaxed">{h.desc}</div>
         </div>
       ))}
     </div>
 
-    <div class="mt-12 glass-card rounded-2xl p-6">
-      <h3 class="text-white font-medium text-lg mb-4 flex items-center gap-2">
+    <!-- Certifications -->
+    <div class="mt-8 service-card" data-reveal>
+      <h3 class="text-[var(--text-primary)] font-medium text-base mb-4 flex items-center gap-2">
         <span class="opacity-60">📜</span> Certificaciones
       </h3>
       <div class="flex flex-wrap gap-2">
         {certifications.map((cert) => (
-          <span class="text-xs font-medium text-[var(--text-secondary)] border border-white/10 bg-white/5 px-3 py-1.5 rounded-lg hover:bg-white/10 hover:text-white transition-all cursor-default">
+          <span class="text-xs font-medium text-[var(--text-secondary)] border border-[var(--border-color)] bg-white/3 px-3 py-1.5 rounded-lg hover:bg-white/5 hover:text-[var(--text-primary)] transition-all cursor-default">
             {cert}
           </span>
         ))}

@@ -1,73 +1,60 @@
 ---
-import Technologies from './Technologies.astro';
+const experienceYears = Math.floor((new Date().getTime() - new Date('2021-09-01').getTime()) / (1000 * 60 * 60 * 24 * 365.25));
+const firstName = "EDGAR";
+const lastName = "MEJÍA V.";
 ---
 
-<section id="hero" class="relative flex flex-col items-center justify-center min-h-screen gap-6 px-6 text-center overflow-hidden">
-  <Technologies />
-
-  <div class="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+<section id="hero" class="relative flex flex-col justify-between min-h-screen px-[var(--gutter)] pt-24 pb-12 overflow-hidden">
+  <!-- Top eyebrow row -->
+  <div class="flex items-center justify-between eyebrow" data-reveal>
+    <span>(Portfolio / ©{new Date().getFullYear()})</span>
+    <span class="hidden sm:inline">Software Engineer</span>
+    <span>Perú, LATAM</span>
   </div>
 
-  <div class="relative group">
-    <div class="absolute -inset-0.5 rounded-full bg-gradient-to-br from-violet-500 via-cyan-400 to-lime-400 blur-md opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
-    <img
-      width="128"
-      height="128"
-      class="relative rounded-full border border-white/10 shadow-2xl"
-      src="https://avatars.githubusercontent.com/u/35704346?v=4"
-      alt="Edgar Mejía Vásquez"
-    />
-  </div>
-
-  <div class="flex flex-col items-center gap-4">
-    <span class="text-xs font-medium bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
-      Disponible para trabajar
-    </span>
-
-    <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-white">
-      Edgar Mejía<br />
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-cyan-400 to-lime-400">
-        Vásquez
+  <!-- Massive name -->
+  <div class="flex-1 flex flex-col justify-center py-8">
+    <h1 class="kinetic-name" aria-label="Edgar Mejía V.">
+      <span class="line-first" aria-hidden="true">
+        {firstName.split('').map((letter, i) => (
+          <span class="kinetic__letter" style={`animation-delay: ${0.05 + i * 0.06}s`}>{letter}</span>
+        ))}
+      </span>
+      <span class="line-second" aria-hidden="true">
+        {lastName.split('').map((letter, i) => (
+          <span class="kinetic__letter" style={`animation-delay: ${0.35 + i * 0.06}s`}>{letter === ' ' ? '\u00A0' : letter}</span>
+        ))}
       </span>
     </h1>
-
-
-
-  <div class="flex flex-col items-center gap-2">
-    <p class="text-lg sm:text-xl text-[var(--text-secondary)] font-normal min-h-[2rem] mt-1">
-      <span class="text-cyan-400 font-mono">&lt;</span>
-      <span class="text-white font-mono" id="role-text"></span>
-      <span class="animate-blink text-cyan-400 font-mono">|</span>
-      <span class="text-cyan-400 font-mono"> /&gt;</span>
-    </p>
-  </div>
-      <div class="flex flex-wrap justify-center gap-2 mt-2">
-          <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60">🏢 Empresas Multinacionales</span>
-          <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60">🌐 100% Remoto</span>
-          <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60">⚡ +4 años</span>
-      </div>
-  </div>
-  <div class="flex flex-wrap gap-3 justify-center mt-4">
-    <a href="mailto:legamejiav@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm bg-white text-black hover:bg-white/90 hover:scale-105 transition-all duration-300">
-      ✉️ Contáctame
-    </a>
-    <a href="https://www.linkedin.com/in/legamejiav/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm border border-white/20 text-white/80 hover:border-white/40 hover:bg-white/5 transition-all duration-300">
-      💼 LinkedIn
-    </a>
-    <a href="https://github.com/edgarmejiav" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm border border-white/20 text-white/80 hover:border-white/40 hover:bg-white/5 transition-all duration-300">
-      ⚡ GitHub
-    </a>
   </div>
 
-  <div class="absolute bottom-8 flex flex-col items-center gap-1 text-white/30 text-xs animate-bounce">
-    <span>scroll</span>
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 3v10M8 13l-3-3M8 13l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
+  <!-- Bottom row -->
+  <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
+    <div class="max-w-md" data-reveal>
+      <p class="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed">
+        Desarrollo software <em class="not-italic text-[var(--text-primary)]">escalable</em> y
+        <em class="not-italic text-[var(--text-primary)]">eficiente</em> para empresas
+        multinacionales. Microservicios, APIs y apps con impacto real.
+      </p>
+
+      <!-- Typewriter role -->
+      <p class="mt-3 text-base text-[var(--text-tertiary)] font-mono">
+        <span class="text-[var(--accent-cyan)]">&lt;</span>
+        <span id="role-text"></span>
+        <span class="animate-blink text-[var(--accent-cyan)]">|</span>
+        <span class="text-[var(--accent-cyan)]"> /&gt;</span>
+      </p>
+    </div>
+
+    <div class="flex flex-col items-end gap-4" data-reveal>
+      <span class="eyebrow text-[var(--text-tertiary)]">↓ scroll, suave</span>
+      <a
+        href="#about"
+        class="eyebrow inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-white/5 transition-all duration-300"
+      >
+        Ver más →
+      </a>
+    </div>
   </div>
 </section>
 
@@ -84,14 +71,13 @@ import Technologies from './Technologies.astro';
   function typeEffect() {
     if (!roleText) return;
     const current = roles[roleIndex];
-    
+
     if (!isDeleting) {
       roleText.textContent = current.substring(0, charIndex + 1);
       charIndex++;
-      if (charIndex + 1 === current.length) {
-        setTimeout(() => isDeleting = true, pauseTime);
-      } else {
-        setTimeout(typeEffect, isDeleting ? deleteSpeed : speed);
+      if (charIndex === current.length) {
+        setTimeout(() => { isDeleting = true; typeEffect(); }, pauseTime);
+        return;
       }
     } else {
       roleText.textContent = current.substring(0, charIndex - 1);
@@ -99,12 +85,23 @@ import Technologies from './Technologies.astro';
       if (charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeEffect, speed);
-      } else {
-        setTimeout(typeEffect, deleteSpeed);
       }
     }
+    setTimeout(typeEffect, isDeleting ? deleteSpeed : speed);
   }
-  
+
   typeEffect();
+
+  // Reveal animation observer
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => {
+    revealObserver.observe(el);
+  });
 </script>

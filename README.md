@@ -1,7 +1,7 @@
 # legadev - Portafolio Personal
 
 [![Website](https://img.shields.io/badge/Website-lega.dev-cyan?style=flat&link=https://www.lega.dev)](https://www.lega.dev)
-[![GitHub](https://img.shields.io/badge/GitHub-legadev-black?style=flat&logo=github)](https://github.com/legamejiav/legadev)
+[![GitHub](https://img.shields.io/badge/GitHub-edgarmejiav--web-black?style=flat&logo=github)](https://github.com/Edgarmejiav/edgarmejiav-web)
 
 Software Engineer con +4 años de experiencia en empresas multinacionales como Inetum (Europa) y Belcorp (LATAM). Especialista en Node.js, React, Spring Boot y microservicios.
 
@@ -46,4 +46,4 @@ pnpm preview
 
 - 🌐 [lega.dev](https://www.lega.dev)
 - 💼 [LinkedIn](https://www.linkedin.com/in/legamejiav/)
-- 🐙 [GitHub](https://github.com/legamejiav)
+- 🐙 [GitHub](https://github.com/Edgarmejiav)

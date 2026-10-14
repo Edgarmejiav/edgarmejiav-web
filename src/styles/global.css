@@ -1,16 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --text-primary: #f5f5f7;
-  --text-secondary: #86868b;
-  --text-tertiary: #6e6e73;
-  --bg-primary: #000000;
-  --bg-secondary: #1d1d1f;
+  /* Keep project's original accent colors */
+  --accent-violet: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-lime: #84cc16;
+  --accent-blue: #7FA8FF;
+
+  /* Dark theme - inspired by Wilcock's palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-card: #161616;
+  --text-primary: #edece8;
+  --text-secondary: #8f8a82;
+  --text-tertiary: #5a5650;
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* Spacing */
+  --section-padding: clamp(80px, 12vw, 160px);
+  --gutter: clamp(20px, 4vw, 48px);
 }
+
+/* ─── Base ─────────────────────────────────────────────────── */
 
 html {
   scroll-behavior: smooth;
@@ -19,128 +34,257 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.5;
   overflow-x: hidden;
 }
 
-@layer components {
-  .text-title-large {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter font-sans;
-  }
-  
-  .text-title-1 {
-    @apply text-3xl md:text-4xl font-bold tracking-tighter font-sans;
-  }
-  
-  .text-title-2 {
-    @apply text-2xl md:text-3xl font-bold tracking-tighter font-sans;
-  }
-  
-  .text-title-3 {
-    @apply text-xl md:text-2xl font-semibold tracking-tight font-sans;
-  }
-  
-  .text-headline {
-    @apply text-lg font-semibold font-sans;
-  }
+/* ─── Kinetic Typography ──────────────────────────────────── */
 
-  .text-label {
-    @apply text-xs uppercase tracking-[0.4em] font-medium font-sans;
-  }
+.kinetic-name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.85;
+  letter-spacing: -0.03em;
+  font-size: clamp(60px, 19vw, 280px);
+  color: var(--text-primary);
+}
 
-  .text-subheadline {
-    @apply text-sm text-[var(--text-secondary)] font-sans;
-  }
-  
-  .text-body {
-    @apply text-base md:text-lg font-sans;
-  }
-  
-  .text-callout {
-    @apply text-base text-[var(--text-secondary)] font-sans;
-  }
-  
-  .text-footnote {
-    @apply text-sm text-[var(--text-tertiary)] font-sans;
-  }
-  
-  .text-caption {
-    @apply text-xs text-[var(--text-tertiary)] font-sans;
-  }
+.kinetic-name .line-first {
+  display: block;
+  text-align: left;
+}
 
-  .accent-serif {
-    @apply font-serif font-bold;
+.kinetic-name .line-second {
+  display: block;
+  text-align: right;
+}
+
+/* Individual letter animation */
+.kinetic__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: letterReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* Stagger delay for each letter */
+.kinetic__letter:nth-child(1) { animation-delay: 0.05s; }
+.kinetic__letter:nth-child(2) { animation-delay: 0.10s; }
+.kinetic__letter:nth-child(3) { animation-delay: 0.15s; }
+.kinetic__letter:nth-child(4) { animation-delay: 0.20s; }
+.kinetic__letter:nth-child(5) { animation-delay: 0.25s; }
+.kinetic__letter:nth-child(6) { animation-delay: 0.30s; }
+.kinetic__letter:nth-child(7) { animation-delay: 0.35s; }
+.kinetic__letter:nth-child(8) { animation-delay: 0.40s; }
+
+/* ─── Eyebrow / Label ─────────────────────────────────────── */
+
+.eyebrow {
+  font-family: 'Geist Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* ─── Reveal animations ──────────────────────────────────── */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Marquee ─────────────────────────────────────────────── */
+
+.marquee {
+  overflow: hidden;
+  padding: 32px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee__copy {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-right: 24px;
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(24px, 4vw, 48px);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.marquee__diamond {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-cyan);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Selected Work / Projects ────────────────────────────── */
+
+.work-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: baseline;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.work-row:hover {
+  opacity: 0.7;
+}
+
+.work-row__num {
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.work-row__name {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.work-row__details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.work-row__tag {
+  color: var(--accent-blue);
+}
+
+/* ─── Section Head ────────────────────────────────────────── */
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0;
+}
+
+/* ─── Large Statement ─────────────────────────────────────── */
+
+.large-statement {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 5vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-secondary);
+}
+
+.large-statement em {
+  font-style: italic;
+  color: var(--text-primary);
+}
+
+.large-statement .accent {
+  color: var(--accent-cyan);
+}
+
+/* ─── Glass card override ─────────────────────────────────── */
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
 }
 
-.section-title {
-  @apply text-2xl md:text-3xl font-semibold text-white tracking-tight;
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-@keyframes blob {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33%       { transform: translate(30px, -50px) scale(1.1); }
-  66%       { transform: translate(-20px, 20px) scale(0.9); }
+/* ─── Service cards (grid of capabilities) ────────────────── */
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
-  animation: blob 10s ease-in-out infinite;
+.service-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
 }
 
-.blob-1 {
-  width: 480px;
-  height: 480px;
-  background: #7c3aed;
-  top: -100px;
-  left: -100px;
+/* ─── CTA footer ──────────────────────────────────────────── */
+
+.cta-massive {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 14vw, 200px);
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  transition: opacity 0.3s ease;
 }
 
-.blob-2 {
-  width: 400px;
-  height: 400px;
-  background: #06b6d4;
-  top: 20%;
-  right: -80px;
-  animation-delay: 3s;
+.cta-massive:hover {
+  opacity: 0.7;
 }
 
-.blob-3 {
-  width: 300px;
-  height: 300px;
-  background: #84cc16;
-  bottom: 10%;
-  left: 30%;
-  animation-delay: 6s;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0; }
-}
-
-.animate-blink {
-  animation: blink 1s step-end infinite;
-}
+/* ─── Scrollbar ───────────────────────────────────────────── */
 
 ::-webkit-scrollbar {
   width: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: #3d3d3d;
@@ -151,5 +295,49 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(6, 182, 212, 0.25);
+}
+
+/* ─── Blink cursor ────────────────────────────────────────── */
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ─── Blob background ─────────────────────────────────────── */
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -50px) scale(1.1); }
+  66%       { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+/* ─── Stagger animations ─────────────────────────────────── */
+
+.stagger-1 { transition-delay: 0.1s !important; }
+.stagger-2 { transition-delay: 0.2s !important; }
+.stagger-3 { transition-delay: 0.3s !important; }
+.stagger-4 { transition-delay: 0.4s !important; }
+.stagger-5 { transition-delay: 0.5s !important; }
+
+/* ─── Skip link (accessibility) ───────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 8px 16px;
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
 }

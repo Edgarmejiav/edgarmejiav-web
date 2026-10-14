@@ -132,9 +132,38 @@ const websiteJsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(websiteJsonLd)} />
   </head>
-  <body class="font-sans">
+  <body class="font-sans bg-[var(--bg-primary)] text-[var(--text-primary)] selection:bg-[var(--accent-cyan)] selection:text-black">
+    <a href="#hero" class="skip-link">Saltar al contenido</a>
     <NavBar />
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
     <Footer />
+
+    <script>
+      // Global reveal animation observer
+      function initScrollReveal() {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollReveal);
+      } else {
+        initScrollReveal();
+      }
+    </script>
   </body>
 </html>

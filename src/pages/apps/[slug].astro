@@ -15,113 +15,124 @@ const { app } = Astro.props;
 const { details, images } = app;
 ---
 
-<Layout title={`${app.title} | Apps`} description={app.description}>
-  <main class="min-h-screen bg-[var(--bg-primary)] text-white">
-    <div class="max-w-4xl mx-auto px-6 py-20">
-      <a href="/" class="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors mb-8 text-sm">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5m7-7-7 7 7 7"/></svg>
-        Back to home
-      </a>
+<Layout title={`${app.title} | Proyectos`} description={app.description}>
+  <div class="min-h-screen px-[var(--gutter)] pt-28 pb-20">
+    <div class="max-w-4xl mx-auto">
+      <!-- Back link Wilcock eyebrow style -->
+      <div class="mb-10" data-reveal>
+        <a
+          href="/"
+          class="eyebrow inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors py-2 px-3 -ml-3 rounded-lg hover:bg-white/5"
+        >
+          ← Volver a inicio
+        </a>
+      </div>
 
+      <!-- App Header -->
+      <div class="mb-10 pb-8 border-b border-[var(--border-color)]" data-reveal>
+        <div class="flex items-center gap-3 eyebrow text-[var(--accent-cyan)] mb-3">
+          <span>(PROYECTO SELECCIONADO)</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+          {app.title}
+        </h1>
+        <p class="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+          {app.description}
+        </p>
+
+        <!-- Tech tags -->
+        <div class="flex flex-wrap gap-2 mt-6">
+          {app.stack.map((t) => (
+            <span class="text-xs font-mono text-[var(--text-secondary)] border border-[var(--border-color)] bg-white/4 px-3 py-1 rounded-md">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Hero image -->
       {images?.hero && (
-        <div class="rounded-2xl overflow-hidden border border-white/10 mb-10">
-          <img src={images.hero} alt={app.title} class="w-full aspect-[2/1] object-cover bg-[#1a1a2e]" />
+        <div class="rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)] mb-12 shadow-2xl" data-reveal>
+          <img src={images.hero} alt={app.title} class="w-full aspect-[16/9] object-cover" />
         </div>
       )}
 
-      <h1 class="text-4xl md:text-5xl font-bold mb-3">{app.title}</h1>
-      <p class="text-lg text-[var(--text-secondary)] leading-relaxed mb-8">{app.description}</p>
-
-      <div class="flex flex-wrap gap-2 mb-10">
-        {app.stack.map((t) => (
-          <span class="text-sm text-[var(--text-secondary)] border border-white/10 bg-white/5 px-3 py-1 rounded-lg">{t}</span>
-        ))}
-      </div>
-
+      <!-- Details & features -->
       {details && (
-        <>
-          <div class="grid md:grid-cols-2 gap-6 mb-12">
+        <div class="flex flex-col gap-8 mb-12" data-reveal>
+          <!-- Shortcut & Installation -->
+          <div class="grid md:grid-cols-2 gap-4">
             {details.shortcut && (
-              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-sm p-6">
-                <h3 class="text-sm uppercase tracking-widest text-white/40 mb-3">Shortcut</h3>
+              <div class="service-card">
+                <span class="eyebrow text-[var(--accent-cyan)] block mb-3">Atajo de teclado</span>
                 <div class="flex items-center gap-3">
-                  <kbd class="px-3 py-1.5 bg-white/10 border border-white/20 rounded-lg text-sm font-mono">{details.shortcut.key}</kbd>
+                  <kbd class="px-3 py-1.5 bg-white/10 border border-white/20 rounded-lg text-sm font-mono text-[var(--text-primary)]">
+                    {details.shortcut.key}
+                  </kbd>
                   <span class="text-[var(--text-secondary)] text-sm">{details.shortcut.description}</span>
                 </div>
               </div>
             )}
 
             {details.installation && (
-              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-sm p-6">
-                <h3 class="text-sm uppercase tracking-widest text-white/40 mb-3">Installation</h3>
-                <pre class="bg-black/40 rounded-lg p-3 text-sm text-green-400 overflow-x-auto"><code>{details.installation}</code></pre>
+              <div class="service-card">
+                <span class="eyebrow text-[var(--accent-cyan)] block mb-3">Instalación</span>
+                <pre class="bg-black/60 border border-[var(--border-color)] rounded-lg p-3 text-xs sm:text-sm font-mono text-[var(--accent-lime)] overflow-x-auto"><code>{details.installation}</code></pre>
               </div>
             )}
           </div>
 
+          <!-- Features -->
           {details.features && details.features.length > 0 && (
-            <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-sm p-6 mb-12">
-              <h3 class="text-sm uppercase tracking-widest text-white/40 mb-4">Features</h3>
+            <div class="service-card">
+              <span class="eyebrow text-[var(--text-secondary)] block mb-4">Características principales</span>
               <ul class="grid md:grid-cols-2 gap-3">
                 {details.features.map((f) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm">
-                    <span class="text-white/30 mt-0.5">▹</span>
-                    {f}
+                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm sm:text-base">
+                    <span class="text-[var(--accent-cyan)] font-mono mt-0.5">▹</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
+          <!-- Why -->
           {details.why && details.why.length > 0 && (
-            <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/5 backdrop-blur-sm p-6 mb-12">
-              <h3 class="text-sm uppercase tracking-widest text-white/40 mb-4">Why {app.title}?</h3>
+            <div class="service-card">
+              <span class="eyebrow text-[var(--text-secondary)] block mb-4">¿Por qué {app.title}?</span>
               <ul class="space-y-3">
                 {details.why.map((w) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm">
-                    <span class="text-cyan-400 mt-0.5">✦</span>
-                    {w}
+                  <li class="flex items-start gap-3 text-[var(--text-secondary)] text-sm sm:text-base">
+                    <span class="text-[var(--accent-cyan)] mt-0.5">✦</span>
+                    <span>{w}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          <div class="text-center text-white/40 text-xs pt-8 border-t border-white/10">
-            {details.license || "MIT"} License
+          <!-- License -->
+          <div class="eyebrow text-[var(--text-tertiary)] pt-6 border-t border-[var(--border-color)] flex items-center justify-between">
+            <span>Licencia: {details.license || "MIT"}</span>
+            <a href="/" class="hover:text-[var(--text-primary)] transition-colors">Volver a Proyectos ↑</a>
           </div>
-        </>
+        </div>
       )}
 
+      <!-- Screenshots gallery -->
       {images?.gallery && images.gallery.length > 0 && (
-        <div class="mb-12">
-          <h3 class="text-sm uppercase tracking-widest text-white/40 mb-4">Screenshots</h3>
+        <div class="mb-12" data-reveal>
+          <span class="eyebrow text-[var(--text-secondary)] block mb-6">Galería de demostración</span>
           <div class="grid md:grid-cols-2 gap-4">
             {images.gallery.map((src) => (
-              <div class="rounded-2xl overflow-hidden border border-white/10">
-                <img src={src} alt="" class="w-full aspect-video object-cover bg-[#1a1a2e]" />
+              <div class="rounded-xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
+                <img src={src} alt="Demo" class="w-full aspect-video object-cover" />
               </div>
             ))}
           </div>
         </div>
       )}
-
-      {!details && (
-        <div class="flex gap-4 mt-8">
-          {app.github && (
-            <a href={app.github} target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-sm text-white/80 hover:bg-white/10 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
-            </a>
-          )}
-          {app.link && (
-            <a href={app.link} target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm hover:bg-cyan-500/20 transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Live Demo
-            </a>
-          )}
-        </div>
-      )}
     </div>
-  </main>
+  </div>
 </Layout>

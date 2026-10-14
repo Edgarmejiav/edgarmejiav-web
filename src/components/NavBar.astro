@@ -5,92 +5,149 @@ const navLinks = [
   { href: "#experience", label: "Experiencia" },
   { href: "#apps", label: "Apps" },
 ];
+
+const now = new Date();
+const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
 ---
 
-<nav class="fixed top-0 z-50 w-full transition-all duration-500" id="navbar">
-  <div class="max-w-6xl mx-auto flex items-center justify-between px-6 h-16">
-    <a href="#hero" class="flex items-center gap-3 group" id="nav-logo">
-      <div class="relative">
-        <div class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-violet-500 to-cyan-500 opacity-0 group-hover:opacity-80 blur transition-opacity duration-300"></div>
-        <img
-          width="34"
-          height="34"
-          class="relative rounded-full border border-neutral-700"
-          src="https://avatars.githubusercontent.com/u/35704346?v=4"
-          alt="Edgar"
-        />
-      </div>
-      <span class="text-white font-bold text-sm hidden sm:block">
-        Edgar<span class="text-cyan-400">MejiaV</span>
+<header class="fixed top-0 z-50 w-full transition-all duration-500" id="navbar">
+  <div class="max-w-[1400px] mx-auto flex items-center justify-between px-[var(--gutter)] h-16">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-0 group" id="nav-logo">
+      <span class="font-extrabold text-sm uppercase tracking-tight text-[var(--text-primary)]">Edgar</span>
+      <span class="relative inline-flex items-center mx-0.5">
+        <span class="absolute inset-0 bg-[var(--accent-cyan)] rounded-[3px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+        <span class="relative text-sm italic font-medium text-[var(--text-primary)] px-1">m</span>
       </span>
+      <span class="font-normal text-sm text-[var(--text-primary)]">ejía</span>
     </a>
 
-    <div class="hidden md:flex items-center gap-1">
+    <!-- Status (location + time) -->
+    <div class="hidden md:flex items-center gap-2 eyebrow text-[var(--text-secondary)]">
+      <span>Perú, LATAM</span>
+      <span class="text-[var(--text-tertiary)]">/</span>
+      <span id="live-time">{timeStr}</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex items-center gap-1">
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-slate-400 hover:text-white text-sm font-medium px-4 py-2 rounded-lg hover:bg-neutral-800/60 transition-all duration-200"
+          class="eyebrow text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-200"
         >
           {link.label}
         </a>
       ))}
-    </div>
+      <a
+        href="mailto:legamejiav@gmail.com"
+        class="eyebrow ml-2 px-4 py-2.5 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider hover:opacity-85 transition-opacity duration-200"
+      >
+        Contáctame
+      </a>
+    </nav>
 
-    <div class="flex items-center gap-4">
-      <div class="hidden sm:flex items-center">
-        <slot name="social" />
+    <!-- Mobile menu button -->
+    <button
+      class="md:hidden text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-lg hover:bg-white/5 transition-colors"
+      id="mobile-menu-btn"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="flex flex-col gap-1.5 w-5" id="menu-bars">
+        <span class="w-full h-[1.5px] bg-current transition-all duration-300 origin-center" id="bar1"></span>
+        <span class="w-full h-[1.5px] bg-current transition-all duration-300" id="bar2"></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <nav
+    id="mobile-menu"
+    class="md:hidden bg-[var(--bg-primary)]/95 backdrop-blur-xl border-t border-[var(--border-color)] px-[var(--gutter)] overflow-hidden transition-all duration-500"
+    style="max-height: 0; opacity: 0;"
+    aria-label="Mobile navigation"
+  >
+    <div class="py-6 flex flex-col gap-1">
+      {navLinks.map((link, i) => (
+        <a
+          href={link.href}
+          class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-all group"
+        >
+          <span class="text-[var(--text-primary)] text-lg font-medium">{link.label}</span>
+          <span class="eyebrow text-[var(--text-tertiary)]">0{i + 1}</span>
+        </a>
+      ))}
+      <div class="mt-4 pt-4 border-t border-[var(--border-color)]">
+        <a
+          href="mailto:legamejiav@gmail.com"
+          class="block text-center eyebrow px-4 py-3 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider"
+        >
+          Contáctame
+        </a>
       </div>
-      <a
-        href="https://www.linkedin.com/in/legamejiav/"
-        target="_blank"
-        class="hidden sm:flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold px-3 py-1.5 rounded-full hover:bg-emerald-500/20 transition-all duration-200"
-      >
-        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse"></span>
-        Open to work
-      </a>
-
-      <button
-        class="md:hidden text-slate-400 hover:text-white p-2 rounded-lg hover:bg-neutral-800/60 transition-colors"
-        id="mobile-menu-btn"
-        aria-label="Toggle menu"
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <line x1="4" y1="6" x2="20" y2="6"></line>
-          <line x1="4" y1="12" x2="20" y2="12"></line>
-          <line x1="4" y1="18" x2="20" y2="18"></line>
-        </svg>
-      </button>
+      <div class="mt-4 flex items-center justify-between eyebrow text-[var(--text-tertiary)]">
+        <span>legamejiav@gmail.com</span>
+        <span>Perú, LATAM</span>
+      </div>
     </div>
-  </div>
-
-  <div class="md:hidden bg-neutral-950/95 backdrop-blur-xl border-t border-neutral-800/60 px-6 py-4 flex flex-col gap-2 hidden" id="mobile-menu">
-    {navLinks.map((link) => (
-      <a
-        href={link.href}
-        class="text-slate-300 hover:text-white text-sm font-medium py-2 px-3 rounded-lg hover:bg-neutral-800/60 transition-all"
-      >
-        {link.label}
-      </a>
-    ))}
-  </div>
-</nav>
+  </nav>
+</header>
 
 <script>
+  // Mobile menu toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
-  
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  let isOpen = false;
+
   btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
+    isOpen = !isOpen;
+    btn.setAttribute('aria-expanded', String(isOpen));
+
+    if (isOpen) {
+      menu!.style.maxHeight = menu!.scrollHeight + 'px';
+      menu!.style.opacity = '1';
+      bar1!.style.transform = 'rotate(45deg) translateY(3px)';
+      bar2!.style.transform = 'rotate(-45deg) translateY(-3px)';
+    } else {
+      menu!.style.maxHeight = '0';
+      menu!.style.opacity = '0';
+      bar1!.style.transform = '';
+      bar2!.style.transform = '';
+    }
   });
 
+  // Close mobile menu on link click
+  menu?.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => {
+      isOpen = false;
+      btn!.setAttribute('aria-expanded', 'false');
+      menu!.style.maxHeight = '0';
+      menu!.style.opacity = '0';
+      bar1!.style.transform = '';
+      bar2!.style.transform = '';
+    });
+  });
+
+  // Navbar background on scroll
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar?.classList.add('bg-neutral-950/90', 'backdrop-blur-xl', 'border-b', 'border-neutral-800/60', 'shadow-lg', 'shadow-black/30');
-      navbar?.classList.remove('bg-transparent');
+      navbar?.classList.add('bg-[var(--bg-primary)]/90', 'backdrop-blur-xl', 'border-b', 'border-[var(--border-color)]');
     } else {
-      navbar?.classList.remove('bg-neutral-950/90', 'backdrop-blur-xl', 'border-b', 'border-neutral-800/60', 'shadow-lg', 'shadow-black/30');
-      navbar?.classList.add('bg-transparent');
+      navbar?.classList.remove('bg-[var(--bg-primary)]/90', 'backdrop-blur-xl', 'border-b', 'border-[var(--border-color)]');
     }
   }, { passive: true });
+
+  // Live time update
+  const timeEl = document.getElementById('live-time');
+  if (timeEl) {
+    setInterval(() => {
+      const now = new Date();
+      timeEl.textContent = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }, 60000);
+  }
 </script>

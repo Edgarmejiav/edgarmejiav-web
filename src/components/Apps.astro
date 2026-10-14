@@ -1,9 +1,7 @@
 ---
 import data from '../data.json';
-import AppCard from './AppCard.astro';
-
-const apps = data.filter((item) => !item?.type?.includes("tutorial"));
-const tutorials = data.filter((item) => item?.type?.includes("tutorial"));
+import IconGitHubSmall from './icons/IconGitHubSmall.astro';
+import IconLinkSmall from './icons/IconLinkSmall.astro';
 
 const slugify = (str: string) =>
   str
@@ -11,48 +9,319 @@ const slugify = (str: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-const gradients = [
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-  "from-white/5 to-white/5 border-white/10",
-];
+// Enrich data with category tags and years
+const projects = data.map((item, idx) => {
+  let tag = "(PROYECTO)";
+  let year = "2024";
+  let previewType = "web";
+
+  if (item.title === "Gemini Float") {
+    tag = "(DESKTOP · LINUX)";
+    year = "2025";
+    previewType = "image";
+  } else if (item.title === "Time clock") {
+    tag = "(MINIMAL SCREEN)";
+    year = "2024";
+  } else if (item.title === "generate fake commit") {
+    tag = "(CLI EN NPM)";
+    year = "2024";
+    previewType = "terminal";
+  } else if (item.title === "Clone minecraft") {
+    tag = "(3D THREE.JS)";
+    year = "2023";
+  } else if (item.title === "spotify clone") {
+    tag = "(ASTRO & SVELTE)";
+    year = "2023";
+  } else if (item.type?.includes("tutorial")) {
+    tag = "(DEMO TÉCNICA)";
+    year = "2023";
+  } else {
+    tag = "(WEB APP)";
+    year = "2024";
+  }
+
+  const href = item.title === "Gemini Float" 
+    ? `/apps/${slugify(item.title)}/` 
+    : (item.link || item.github || "#");
+
+  return {
+    ...item,
+    num: String(idx + 1).padStart(2, "0"),
+    slug: slugify(item.title),
+    tag,
+    year,
+    previewType,
+    href,
+  };
+});
 ---
 
-<section id="apps" class="py-28 px-6">
-  <div class="max-w-5xl mx-auto">
-    <div class="flex items-center gap-4 mb-16">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/10"></div>
-      <h2 class="text-title-2 font-sans text-white"><span class="text-white/40">04.</span> Apps</h2>
-      <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/10"></div>
+<section id="apps" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+  <div class="max-w-[1400px] mx-auto">
+    <!-- Header Wilcock-style -->
+    <div class="section-head mb-10" data-reveal>
+      <div class="flex items-center gap-3">
+        <h2 class="eyebrow text-[var(--text-secondary)]">
+          Proyectos Seleccionados <span class="text-[var(--text-tertiary)]">({String(projects.length).padStart(2, "0")})</span>
+        </h2>
+      </div>
+      <div class="flex items-center gap-4 eyebrow text-[var(--text-tertiary)]">
+        <button type="button" id="pause-motion-btn" class="hover:text-[var(--text-primary)] transition-colors cursor-pointer">
+          (Pausar movimiento)
+        </button>
+        <span class="hidden sm:inline">2021 — 2026</span>
+      </div>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-4 mb-16">
-      {apps.map((item, idx) => {
-        const card = <AppCard item={item} gradient={gradients[idx % gradients.length]} />;
-        return item.title === "Gemini Float"
-          ? <a href={`/apps/${slugify(item.title)}/`} class="block group">{card}</a>
-          : card;
-      })}
-    </div>
+    <!-- Main Grid: List on Left, Sticky Preview Dock on Right -->
+    <div class="grid lg:grid-cols-12 gap-8 items-start">
+      <!-- Project List (Left Column) -->
+      <div class="lg:col-span-7 flex flex-col" id="project-list">
+        {projects.map((project, idx) => (
+          <a
+            href={project.href}
+            target={project.title === "Gemini Float" ? "_self" : "_blank"}
+            rel={project.title === "Gemini Float" ? "" : "noopener noreferrer"}
+            class="project-row group"
+            data-index={idx}
+            data-reveal
+            style={`transition-delay: ${idx * 0.05}s`}
+          >
+            <div class="flex items-baseline justify-between gap-4 w-full">
+              <!-- Left: Number + Title -->
+              <div class="flex items-baseline gap-4 sm:gap-6 min-w-0">
+                <span class="project-num eyebrow text-[var(--text-tertiary)] group-hover:text-[var(--accent-cyan)] transition-colors">
+                  {project.num}
+                </span>
+                <span class="project-title font-sans font-normal tracking-tight text-[var(--text-primary)] group-hover:translate-x-2 transition-transform duration-300">
+                  {project.title}
+                </span>
+              </div>
 
-    {tutorials.length > 0 && (
-      <>
-        <div class="flex items-center gap-4 mb-8">
-          <div class="h-px flex-1 bg-white/10"></div>
-          <h3 class="text-[var(--text-secondary)] text-sm font-medium uppercase tracking-widest">Demos</h3>
-          <div class="h-px flex-1 bg-white/10"></div>
+              <!-- Right: Year -->
+              <span class="project-year eyebrow text-[var(--text-tertiary)] shrink-0">
+                {project.year}
+              </span>
+            </div>
+
+            <!-- Details subtitle row -->
+            <div class="flex flex-wrap items-center justify-between gap-2 mt-2 pl-9 sm:pl-12">
+              <div class="flex items-center gap-3 eyebrow text-[var(--text-secondary)]">
+                <span class="text-[var(--text-tertiary)] hidden sm:inline">
+                  {project.stack.slice(0, 3).join(" · ")}
+                </span>
+                <span class="text-[var(--accent-cyan)] text-[0.68rem]">{project.tag}</span>
+              </div>
+              <span class="project-cta eyebrow text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all duration-200">
+                Ver proyecto →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Preview Dock (Right Column - Desktop Sticky) -->
+      <div class="hidden lg:block lg:col-span-5 sticky top-24">
+        <div class="preview-dock rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] p-6 overflow-hidden relative shadow-2xl">
+          <!-- Background Ambient Glow -->
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[var(--accent-violet)]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <!-- Preview Top Header -->
+          <div class="flex items-center justify-between pb-4 border-b border-[var(--border-color)] mb-5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent-cyan)] animate-pulse"></span>
+              <span class="eyebrow text-[var(--text-primary)]" id="preview-num">01 / {String(projects.length).padStart(2, "0")}</span>
+            </div>
+            <span class="eyebrow text-[var(--accent-cyan)]" id="preview-tag">(DESKTOP · LINUX)</span>
+          </div>
+
+          <!-- Preview Visual Container -->
+          <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-black/60 border border-[var(--border-color)] mb-5 flex items-center justify-center p-4" id="preview-visual">
+            <img
+              id="preview-img"
+              src="/imgs/gemini/gemini.png"
+              alt="Gemini Float preview"
+              class="w-full h-full object-cover rounded-lg transition-all duration-500"
+            />
+            <div id="preview-fallback" class="hidden flex-col items-center justify-center text-center p-6 w-full h-full">
+              <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl mb-3" id="preview-fallback-icon">
+                ⚡
+              </div>
+              <span class="text-sm font-medium text-[var(--text-primary)]" id="preview-fallback-title">Proyecto</span>
+              <span class="text-xs text-[var(--text-secondary)] mt-1 font-mono" id="preview-fallback-tech">Tech Stack</span>
+            </div>
+          </div>
+
+          <!-- Preview Text Details -->
+          <div class="flex flex-col gap-3">
+            <h3 class="text-2xl font-bold tracking-tight text-[var(--text-primary)]" id="preview-title">
+              {projects[0].title}
+            </h3>
+            <p class="text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3" id="preview-desc">
+              {projects[0].description}
+            </p>
+
+            <!-- Tech Pills -->
+            <div class="flex flex-wrap gap-1.5 pt-2" id="preview-stack">
+              {projects[0].stack.map((t) => (
+                <span class="text-xs font-mono text-[var(--text-secondary)] bg-white/5 border border-[var(--border-color)] px-2.5 py-1 rounded-md">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <!-- Actions Row -->
+            <div class="flex items-center gap-3 pt-4 border-t border-[var(--border-color)] mt-2">
+              <a
+                id="preview-link-btn"
+                href={projects[0].href}
+                class="eyebrow flex-1 text-center py-2.5 px-4 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider hover:opacity-85 transition-opacity"
+              >
+                Abrir proyecto →
+              </a>
+              <a
+                id="preview-github-btn"
+                href={projects[0].github || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-2.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white hover:border-white/30 transition-all"
+                aria-label="GitHub"
+              >
+                <IconGitHubSmall />
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="grid md:grid-cols-2 gap-4">
-          {tutorials.map((item, idx) => (
-            <AppCard item={item} gradient={gradients[(idx + apps.length) % gradients.length]} />
-          ))}
-        </div>
-      </>
-    )}
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .project-row {
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .project-row:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.04) 0%, transparent 80%);
+    padding-left: 8px;
+  }
+
+  .project-title {
+    font-size: clamp(28px, 4vw, 56px);
+    line-height: 1.1;
+  }
+
+  .preview-dock {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .preview-dock:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+</style>
+
+<script define:vars={{ projects }}>
+  const rows = document.querySelectorAll('.project-row');
+  const previewNum = document.getElementById('preview-num');
+  const previewTag = document.getElementById('preview-tag');
+  const previewImg = document.getElementById('preview-img');
+  const previewFallback = document.getElementById('preview-fallback');
+  const previewFallbackIcon = document.getElementById('preview-fallback-icon');
+  const previewFallbackTitle = document.getElementById('preview-fallback-title');
+  const previewFallbackTech = document.getElementById('preview-fallback-tech');
+  const previewTitle = document.getElementById('preview-title');
+  const previewDesc = document.getElementById('preview-desc');
+  const previewStack = document.getElementById('preview-stack');
+  const previewLinkBtn = document.getElementById('preview-link-btn');
+  const previewGithubBtn = document.getElementById('preview-github-btn');
+  const pauseBtn = document.getElementById('pause-motion-btn');
+
+  let activeIndex = 0;
+  let isMotionPaused = false;
+
+  function updatePreview(index) {
+    const p = projects[index];
+    if (!p) return;
+
+    activeIndex = index;
+    if (previewNum) previewNum.textContent = `${p.num} / ${String(projects.length).padStart(2, "0")}`;
+    if (previewTag) previewTag.textContent = p.tag;
+    if (previewTitle) previewTitle.textContent = p.title;
+    if (previewDesc) previewDesc.textContent = p.description;
+
+    // Image vs Fallback
+    if (p.image && previewImg) {
+      previewImg.src = p.image;
+      previewImg.classList.remove('hidden');
+      if (previewFallback) previewFallback.classList.add('hidden');
+    } else {
+      if (previewImg) previewImg.classList.add('hidden');
+      if (previewFallback) {
+        previewFallback.classList.remove('hidden');
+        if (previewFallbackTitle) previewFallbackTitle.textContent = p.title;
+        if (previewFallbackTech) previewFallbackTech.textContent = p.stack.join(" · ");
+        if (previewFallbackIcon) {
+          const iconMap = {
+            "Time clock": "⌛",
+            "generate fake commit": "🐛",
+            "Babel Verbs": "🎒",
+            "Phrasal Verbs": "🗣️",
+            "Pizarra online": "✒️",
+            "Clone minecraft": "⛏️",
+            "Demo de un portafolio": "💼",
+            "spotify clone": "🎵",
+          };
+          previewFallbackIcon.textContent = iconMap[p.title] || "⚡";
+        }
+      }
+    }
+
+    // Stack pills
+    if (previewStack) {
+      previewStack.innerHTML = p.stack
+        .map(s => `<span class="text-xs font-mono text-[var(--text-secondary)] bg-white/5 border border-[var(--border-color)] px-2.5 py-1 rounded-md">${s}</span>`)
+        .join("");
+    }
+
+    // Buttons
+    if (previewLinkBtn) {
+      previewLinkBtn.href = p.href;
+      previewLinkBtn.textContent = p.title === "Gemini Float" ? "Ver detalles →" : "Abrir proyecto →";
+    }
+    if (previewGithubBtn) {
+      if (p.github) {
+        previewGithubBtn.style.display = "inline-flex";
+        previewGithubBtn.href = p.github;
+      } else {
+        previewGithubBtn.style.display = "none";
+      }
+    }
+  }
+
+  // Hover triggers
+  rows.forEach((row, i) => {
+    row.addEventListener('mouseenter', () => {
+      updatePreview(i);
+    });
+    row.addEventListener('focus', () => {
+      updatePreview(i);
+    });
+  });
+
+  // Pause motion toggle
+  if (pauseBtn) {
+    pauseBtn.addEventListener('click', () => {
+      isMotionPaused = !isMotionPaused;
+      pauseBtn.textContent = isMotionPaused ? "(Reanudar movimiento)" : "(Pausar movimiento)";
+      document.documentElement.classList.toggle('reduce-motion', isMotionPaused);
+    });
+  }
+</script>

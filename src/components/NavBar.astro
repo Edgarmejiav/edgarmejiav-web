@@ -11,21 +11,21 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
 ---
 
 <header class="fixed top-0 z-50 w-full transition-all duration-500" id="navbar">
-  <div class="max-w-[1400px] mx-auto flex items-center justify-between px-[var(--gutter)] h-16">
+  <div class="max-w-[1400px] mx-auto flex items-center justify-between px-(--gutter) h-16">
     <!-- Logo -->
     <a href="#hero" class="flex items-center gap-0 group" id="nav-logo">
-      <span class="font-extrabold text-sm uppercase tracking-tight text-[var(--text-primary)]">Edgar</span>
+      <span class="font-extrabold text-sm uppercase tracking-tight text-(--text-primary)">Edgar</span>
       <span class="relative inline-flex items-center mx-0.5">
-        <span class="absolute inset-0 bg-[var(--accent-cyan)] rounded-[3px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
-        <span class="relative text-sm italic font-medium text-[var(--text-primary)] px-1">m</span>
+        <span class="absolute inset-0 bg-(--accent-cyan) rounded-[3px] scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
+        <span class="relative text-sm italic font-medium text-(--text-primary) px-1">m</span>
       </span>
-      <span class="font-normal text-sm text-[var(--text-primary)]">ejía</span>
+      <span class="font-normal text-sm text-(--text-primary)">ejía</span>
     </a>
 
     <!-- Status (location + time) -->
-    <div class="hidden md:flex items-center gap-2 eyebrow text-[var(--text-secondary)]">
+    <div class="hidden md:flex items-center gap-2 eyebrow text-(--text-secondary)">
       <span>Perú, LATAM</span>
-      <span class="text-[var(--text-tertiary)]">/</span>
+      <span class="text-(--text-tertiary)">/</span>
       <span id="live-time">{timeStr}</span>
     </div>
 
@@ -34,14 +34,14 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="eyebrow text-[var(--text-secondary)] hover:text-[var(--text-primary)] px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-200"
+          class="eyebrow text-(--text-secondary) hover:text-(--text-primary) px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-200"
         >
           {link.label}
         </a>
       ))}
       <a
-        href="mailto:legamejiav@gmail.com"
-        class="eyebrow ml-2 px-4 py-2.5 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider hover:opacity-85 transition-opacity duration-200"
+        href="#contacto"
+        class="eyebrow ml-2 px-4 py-2.5 rounded-full bg-(--accent-cyan) text-black! font-bold tracking-wider hover:opacity-85 transition-opacity duration-200"
       >
         Contáctame
       </a>
@@ -49,7 +49,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
 
     <!-- Mobile menu button -->
     <button
-      class="md:hidden text-[var(--text-secondary)] hover:text-[var(--text-primary)] p-2 rounded-lg hover:bg-white/5 transition-colors"
+      class="md:hidden text-(--text-secondary) hover:text-(--text-primary) p-2 rounded-lg hover:bg-white/5 transition-colors"
       id="mobile-menu-btn"
       aria-label="Toggle menu"
       aria-expanded="false"
@@ -65,7 +65,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
   <!-- Mobile menu -->
   <nav
     id="mobile-menu"
-    class="md:hidden bg-[var(--bg-primary)]/95 backdrop-blur-xl border-t border-[var(--border-color)] px-[var(--gutter)] overflow-hidden transition-all duration-500"
+    class="md:hidden bg-(--bg-primary)/95 backdrop-blur-xl border-t border-(--border-color) px-(--gutter) overflow-hidden transition-all duration-500"
     style="max-height: 0; opacity: 0;"
     aria-label="Mobile navigation"
   >
@@ -75,19 +75,19 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
           href={link.href}
           class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-white/5 transition-all group"
         >
-          <span class="text-[var(--text-primary)] text-lg font-medium">{link.label}</span>
-          <span class="eyebrow text-[var(--text-tertiary)]">0{i + 1}</span>
+          <span class="text-(--text-primary) text-lg font-medium">{link.label}</span>
+          <span class="eyebrow text-(--text-tertiary)">0{i + 1}</span>
         </a>
       ))}
-      <div class="mt-4 pt-4 border-t border-[var(--border-color)]">
+      <div class="mt-4 pt-4 border-t border-(--border-color)">
         <a
-          href="mailto:legamejiav@gmail.com"
-          class="block text-center eyebrow px-4 py-3 rounded-full bg-[var(--accent-cyan)] !text-black font-bold tracking-wider"
+          href="#contacto"
+          class="block text-center eyebrow px-4 py-3 rounded-full bg-(--accent-cyan) text-black! font-bold tracking-wider"
         >
           Contáctame
         </a>
       </div>
-      <div class="mt-4 flex items-center justify-between eyebrow text-[var(--text-tertiary)]">
+      <div class="mt-4 flex items-center justify-between eyebrow text-(--text-tertiary)">
         <span>legamejiav@gmail.com</span>
         <span>Perú, LATAM</span>
       </div>
@@ -136,9 +136,9 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
-      navbar?.classList.add('bg-[var(--bg-primary)]/90', 'backdrop-blur-xl', 'border-b', 'border-[var(--border-color)]');
+      navbar?.classList.add('bg-(--bg-primary)/90', 'backdrop-blur-xl', 'border-b', 'border-(--border-color)');
     } else {
-      navbar?.classList.remove('bg-[var(--bg-primary)]/90', 'backdrop-blur-xl', 'border-b', 'border-[var(--border-color)]');
+      navbar?.classList.remove('bg-(--bg-primary)/90', 'backdrop-blur-xl', 'border-b', 'border-(--border-color)');
     }
   }, { passive: true });
 

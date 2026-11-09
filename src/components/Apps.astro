@@ -56,17 +56,17 @@ const projects = data.map((item, idx) => {
 });
 ---
 
-<section id="apps" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+<section id="apps" class="px-(--gutter)" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
   <div class="max-w-[1400px] mx-auto">
     <!-- Header Wilcock-style -->
     <div class="section-head mb-10" data-reveal>
       <div class="flex items-center gap-3">
-        <h2 class="eyebrow text-[var(--text-secondary)]">
-          Proyectos Seleccionados <span class="text-[var(--text-tertiary)]">({String(projects.length).padStart(2, "0")})</span>
+        <h2 class="eyebrow text-(--text-secondary)">
+          Proyectos Seleccionados <span class="text-(--text-tertiary)">({String(projects.length).padStart(2, "0")})</span>
         </h2>
       </div>
-      <div class="flex items-center gap-4 eyebrow text-[var(--text-tertiary)]">
-        <button type="button" id="pause-motion-btn" class="hover:text-[var(--text-primary)] transition-colors cursor-pointer">
+      <div class="flex items-center gap-4 eyebrow text-(--text-tertiary)">
+        <button type="button" id="pause-motion-btn" class="hover:text-(--text-primary) transition-colors cursor-pointer">
           (Pausar movimiento)
         </button>
         <span class="hidden sm:inline">2021 — 2026</span>
@@ -90,29 +90,29 @@ const projects = data.map((item, idx) => {
             <div class="flex items-baseline justify-between gap-4 w-full">
               <!-- Left: Number + Title -->
               <div class="flex items-baseline gap-4 sm:gap-6 min-w-0">
-                <span class="project-num eyebrow text-[var(--text-tertiary)] group-hover:text-[var(--accent-cyan)] transition-colors">
+                <span class="project-num eyebrow text-(--text-tertiary) group-hover:text-(--accent-cyan) transition-colors">
                   {project.num}
                 </span>
-                <span class="project-title font-sans font-normal tracking-tight text-[var(--text-primary)] group-hover:translate-x-2 transition-transform duration-300">
+                <span class="project-title font-sans font-normal tracking-tight text-(--text-primary) group-hover:translate-x-2 transition-transform duration-300">
                   {project.title}
                 </span>
               </div>
 
               <!-- Right: Year -->
-              <span class="project-year eyebrow text-[var(--text-tertiary)] shrink-0">
+              <span class="project-year eyebrow text-(--text-tertiary) shrink-0">
                 {project.year}
               </span>
             </div>
 
             <!-- Details subtitle row -->
             <div class="flex flex-wrap items-center justify-between gap-2 mt-2 pl-9 sm:pl-12">
-              <div class="flex items-center gap-3 eyebrow text-[var(--text-secondary)]">
-                <span class="text-[var(--text-tertiary)] hidden sm:inline">
+              <div class="flex items-center gap-3 eyebrow text-(--text-secondary)">
+                <span class="text-(--text-tertiary) hidden sm:inline">
                   {project.stack.slice(0, 3).join(" · ")}
                 </span>
-                <span class="text-[var(--accent-cyan)] text-[0.68rem]">{project.tag}</span>
+                <span class="text-(--accent-cyan) text-[0.68rem]">{project.tag}</span>
               </div>
-              <span class="project-cta eyebrow text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] group-hover:translate-x-1 transition-all duration-200">
+              <span class="project-cta eyebrow text-(--text-secondary) group-hover:text-(--text-primary) group-hover:translate-x-1 transition-all duration-200">
                 Ver proyecto →
               </span>
             </div>
@@ -122,22 +122,22 @@ const projects = data.map((item, idx) => {
 
       <!-- Preview Dock (Right Column - Desktop Sticky) -->
       <div class="hidden lg:block lg:col-span-5 sticky top-24">
-        <div class="preview-dock rounded-2xl border border-[var(--border-color)] bg-[var(--bg-card)] p-6 overflow-hidden relative shadow-2xl">
+        <div class="preview-dock rounded-2xl border border-(--border-color) bg-(--bg-card) p-6 overflow-hidden relative shadow-2xl">
           <!-- Background Ambient Glow -->
-          <div class="absolute -top-24 -right-24 w-64 h-64 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[var(--accent-violet)]/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -top-24 -right-24 w-64 h-64 bg-(--accent-cyan)/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-(--accent-violet)/10 rounded-full blur-3xl pointer-events-none"></div>
 
           <!-- Preview Top Header -->
-          <div class="flex items-center justify-between pb-4 border-b border-[var(--border-color)] mb-5">
+          <div class="flex items-center justify-between pb-4 border-b border-(--border-color) mb-5">
             <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-[var(--accent-cyan)] animate-pulse"></span>
-              <span class="eyebrow text-[var(--text-primary)]" id="preview-num">01 / {String(projects.length).padStart(2, "0")}</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-(--accent-cyan) animate-pulse"></span>
+              <span class="eyebrow text-(--text-primary)" id="preview-num">01 / {String(projects.length).padStart(2, "0")}</span>
             </div>
-            <span class="eyebrow text-[var(--accent-cyan)]" id="preview-tag">(DESKTOP · LINUX)</span>
+            <span class="eyebrow text-(--accent-cyan)" id="preview-tag">(DESKTOP · LINUX)</span>
           </div>
 
           <!-- Preview Visual Container -->
-          <div class="relative w-full aspect-[16/10] rounded-xl overflow-hidden bg-black/60 border border-[var(--border-color)] mb-5 flex items-center justify-center p-4" id="preview-visual">
+          <div class="relative w-full aspect-16/10 rounded-xl overflow-hidden bg-black/60 border border-(--border-color) mb-5 flex items-center justify-center p-4" id="preview-visual">
             <img
               id="preview-img"
               src="/imgs/gemini/gemini.png"
@@ -148,35 +148,35 @@ const projects = data.map((item, idx) => {
               <div class="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl mb-3" id="preview-fallback-icon">
                 ⚡
               </div>
-              <span class="text-sm font-medium text-[var(--text-primary)]" id="preview-fallback-title">Proyecto</span>
-              <span class="text-xs text-[var(--text-secondary)] mt-1 font-mono" id="preview-fallback-tech">Tech Stack</span>
+              <span class="text-sm font-medium text-(--text-primary)" id="preview-fallback-title">Proyecto</span>
+              <span class="text-xs text-(--text-secondary) mt-1 font-mono" id="preview-fallback-tech">Tech Stack</span>
             </div>
           </div>
 
           <!-- Preview Text Details -->
           <div class="flex flex-col gap-3">
-            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-[var(--text-primary)]" id="preview-title">
+            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-(--text-primary)" id="preview-title">
               {projects[0].title}
             </h3>
-            <p class="font-sans text-sm text-[var(--text-secondary)] leading-relaxed line-clamp-3" id="preview-desc">
+            <p class="font-sans text-sm text-(--text-secondary) leading-relaxed line-clamp-3" id="preview-desc">
               {projects[0].description}
             </p>
 
             <!-- Tech Pills -->
             <div class="flex flex-wrap gap-1.5 pt-2" id="preview-stack">
               {projects[0].stack.map((t) => (
-                <span class="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] px-2.5 py-1 rounded-md">
+                <span class="font-mono text-xs uppercase tracking-wider text-(--text-secondary) bg-white/3 border border-(--border-color) px-2.5 py-1 rounded-md">
                   {t}
                 </span>
               ))}
             </div>
 
             <!-- Actions Row -->
-            <div class="flex items-center gap-3 pt-4 border-t border-[var(--border-color)] mt-2">
+            <div class="flex items-center gap-3 pt-4 border-t border-(--border-color) mt-2">
               <a
                 id="preview-link-btn"
                 href={projects[0].href}
-                class="font-mono text-xs uppercase tracking-wider flex-1 text-center py-2.5 px-4 rounded-full bg-[var(--accent-cyan)] !text-black font-bold hover:opacity-85 transition-opacity"
+                class="font-mono text-xs uppercase tracking-wider flex-1 text-center py-2.5 px-4 rounded-full bg-(--accent-cyan) text-black! font-bold hover:opacity-85 transition-opacity"
               >
                 Abrir proyecto →
               </a>
@@ -185,7 +185,7 @@ const projects = data.map((item, idx) => {
                 href={projects[0].github || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="p-2.5 rounded-full border border-[var(--border-color)] text-[var(--text-secondary)] hover:text-white hover:border-white/30 transition-all"
+                class="p-2.5 rounded-full border border-(--border-color) text-(--text-secondary) hover:text-white hover:border-white/30 transition-all"
                 aria-label="GitHub"
               >
                 <IconGitHubSmall />
@@ -287,7 +287,7 @@ const projects = data.map((item, idx) => {
     // Stack pills
     if (previewStack) {
       previewStack.innerHTML = p.stack
-        .map(s => `<span class="font-mono text-xs uppercase tracking-wider text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] px-2.5 py-1 rounded-md">${s}</span>`)
+        .map(s => `<span class="font-mono text-xs uppercase tracking-wider text-(--text-secondary) bg-white/3 border border-(--border-color) px-2.5 py-1 rounded-md">${s}</span>`)
         .join("");
     }
 

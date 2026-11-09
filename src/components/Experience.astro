@@ -93,26 +93,26 @@ const experiences = [
 ];
 ---
 
-<section id="experience" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+<section id="experience" class="px-(--gutter)" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
   <div class="max-w-[1400px] mx-auto">
     <!-- Section Head Wilcock-style -->
     <div class="section-head mb-6" data-reveal>
       <div class="flex items-center gap-3">
-        <h2 class="eyebrow text-[var(--text-secondary)]">
-          Experiencia Profesional <span class="text-[var(--text-tertiary)]">(04)</span>
+        <h2 class="eyebrow text-(--text-secondary)">
+          Experiencia Profesional <span class="text-(--text-tertiary)">(04)</span>
         </h2>
       </div>
-      <div class="flex items-center gap-4 eyebrow text-[var(--text-tertiary)]">
-        <span class="text-[var(--accent-cyan)] font-mono">Multinacionales & Startups</span>
+      <div class="flex items-center gap-4 eyebrow text-(--text-tertiary)">
+        <span class="text-(--accent-cyan) font-mono">Multinacionales & Startups</span>
         <span class="hidden sm:inline">·</span>
         <span class="hidden sm:inline">2021 — 2026</span>
       </div>
     </div>
 
     <!-- Editorial Intro Line -->
-    <div class="mb-14 pb-8 border-b border-[var(--border-color)]" data-reveal>
-      <p class="font-sans text-xl sm:text-2xl text-[var(--text-secondary)] max-w-3xl leading-relaxed">
-        Más de <span class="text-[var(--text-primary)] font-medium">4 años</span> liderando y construyendo
+    <div class="mb-14 pb-8 border-b border-(--border-color)" data-reveal>
+      <p class="font-sans text-xl sm:text-2xl text-(--text-secondary) max-w-3xl leading-relaxed">
+        Más de <span class="text-(--text-primary) font-medium">4 años</span> liderando y construyendo
         soluciones en empresas multinacionales de Europa y LATAM. De arquitecturas backend complejas a experiencias de usuario de alto impacto.
       </p>
     </div>
@@ -130,29 +130,29 @@ const experiences = [
             <div class="lg:col-span-4 flex flex-col">
               <!-- Eyebrow Number + Tag -->
               <div class="flex items-center gap-3 mb-3">
-                <span class="font-mono text-sm font-semibold text-[var(--accent-cyan)]">
+                <span class="font-mono text-sm font-semibold text-(--accent-cyan)">
                   {exp.num}
                 </span>
-                <span class="font-mono text-xs text-[var(--text-tertiary)] uppercase tracking-wider">
+                <span class="font-mono text-xs text-(--text-tertiary) uppercase tracking-wider">
                   {exp.category}
                 </span>
               </div>
 
               <!-- Huge Role Title in Archivo -->
-              <h3 class="experience-title font-sans font-bold tracking-tight text-[var(--text-primary)] group-hover:text-white transition-colors duration-300">
+              <h3 class="experience-title font-sans font-bold tracking-tight text-(--text-primary) group-hover:text-white transition-colors duration-300">
                 {exp.title}
               </h3>
 
               <!-- Company & Modality -->
               <div class="mt-3 flex flex-wrap items-center gap-2">
-                <span class="font-sans font-semibold text-lg text-[var(--accent-cyan)]">
+                <span class="font-sans font-semibold text-lg text-(--accent-cyan)">
                   {exp.company}
                 </span>
                 {exp.clients.length > 0 && (
                   <div class="flex items-center gap-1.5">
-                    <span class="text-[var(--text-tertiary)]">/</span>
+                    <span class="text-(--text-tertiary)">/</span>
                     {exp.clients.map((c) => (
-                      <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-white/[0.04] border border-[var(--border-color)] text-[var(--text-secondary)] uppercase tracking-wider">
+                      <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-white/4 border border-(--border-color) text-(--text-secondary) uppercase tracking-wider">
                         🏢 {c}
                       </span>
                     ))}
@@ -160,7 +160,7 @@ const experiences = [
                 )}
               </div>
 
-              <span class="font-mono text-xs text-[var(--text-tertiary)] mt-1.5 uppercase tracking-wider">
+              <span class="font-mono text-xs text-(--text-tertiary) mt-1.5 uppercase tracking-wider">
                 {exp.modality}
               </span>
             </div>
@@ -168,7 +168,7 @@ const experiences = [
             <!-- Center Column: Summary, Standout Metrics & Impact Bullets -->
             <div class="lg:col-span-5 flex flex-col">
               <!-- Summary paragraph -->
-              <p class="font-sans text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed mb-5">
+              <p class="font-sans text-sm sm:text-base text-(--text-secondary) leading-relaxed mb-5">
                 {exp.summary}
               </p>
 
@@ -176,11 +176,11 @@ const experiences = [
               {exp.metrics.length > 0 && (
                 <div class="grid grid-cols-2 gap-3 mb-6">
                   {exp.metrics.map((m) => (
-                    <div class="p-4 rounded-xl border border-[var(--border-color)] bg-black/40 flex flex-col justify-between">
-                      <div class="font-sans font-black text-2xl sm:text-3xl tracking-tighter text-[var(--text-primary)] mb-1">
+                    <div class="p-4 rounded-xl border border-(--border-color) bg-black/40 flex flex-col justify-between">
+                      <div class="font-sans font-black text-2xl sm:text-3xl tracking-tighter text-(--text-primary) mb-1">
                         {m.value}
                       </div>
-                      <div class="font-mono text-[0.65rem] uppercase tracking-wider text-[var(--accent-cyan)]">
+                      <div class="font-mono text-[0.65rem] uppercase tracking-wider text-(--accent-cyan)">
                         {m.label}
                       </div>
                     </div>
@@ -191,8 +191,8 @@ const experiences = [
               <!-- Achievements list -->
               <ul class="flex flex-col gap-2.5">
                 {exp.achievements.map((item) => (
-                  <li class="flex items-start gap-3 text-xs sm:text-sm text-[var(--text-secondary)] font-sans leading-relaxed">
-                    <span class="text-[var(--accent-cyan)] font-mono shrink-0 mt-0.5 text-xs">▹</span>
+                  <li class="flex items-start gap-3 text-xs sm:text-sm text-(--text-secondary) font-sans leading-relaxed">
+                    <span class="text-(--accent-cyan) font-mono shrink-0 mt-0.5 text-xs">▹</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -209,14 +209,14 @@ const experiences = [
                     ACTUAL
                   </span>
                 )}
-                <span class="font-mono text-xs text-[var(--text-tertiary)] bg-white/[0.02] border border-[var(--border-color)] px-3 py-1 rounded-full">
+                <span class="font-mono text-xs text-(--text-tertiary) bg-white/2 border border-(--border-color) px-3 py-1 rounded-full">
                   {exp.periodDetail}
                 </span>
               </div>
 
               <!-- Tech chips in Wilcock rounded-full style -->
               <div class="w-full lg:text-right">
-                <span class="eyebrow text-[var(--text-tertiary)] text-[0.62rem] block mb-2.5">STACK TECNOLÓGICO</span>
+                <span class="eyebrow text-(--text-tertiary) text-[0.62rem] block mb-2.5">STACK TECNOLÓGICO</span>
                 <div class="flex flex-wrap lg:justify-end gap-1.5">
                   {exp.stack.map((t) => (
                     <span class="experience-chip">

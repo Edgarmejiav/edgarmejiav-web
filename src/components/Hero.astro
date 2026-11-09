@@ -4,7 +4,7 @@ const firstName = "EDGAR";
 const lastName = "MEJÍA V.";
 ---
 
-<section id="hero" class="relative flex flex-col justify-between min-h-screen px-[var(--gutter)] pt-24 pb-12 overflow-hidden">
+<section id="hero" class="relative flex flex-col justify-between min-h-screen px-(--gutter) pt-24 pb-12 overflow-hidden">
   <!-- Top eyebrow row -->
   <div class="flex items-center justify-between eyebrow" data-reveal>
     <span>(Portfolio / ©{new Date().getFullYear()})</span>
@@ -31,26 +31,26 @@ const lastName = "MEJÍA V.";
   <!-- Bottom row -->
   <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6">
     <div class="max-w-md" data-reveal>
-      <p class="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed">
-        Desarrollo software <em class="not-italic text-[var(--text-primary)]">escalable</em> y
-        <em class="not-italic text-[var(--text-primary)]">eficiente</em> para empresas
+      <p class="text-lg sm:text-xl text-(--text-secondary) leading-relaxed">
+        Desarrollo software <em class="not-italic text-(--text-primary)">escalable</em> y
+        <em class="not-italic text-(--text-primary)">eficiente</em> para empresas
         multinacionales. Microservicios, APIs y apps con impacto real.
       </p>
 
       <!-- Typewriter role -->
-      <p class="mt-3 text-base text-[var(--text-tertiary)] font-mono">
-        <span class="text-[var(--accent-cyan)]">&lt;</span>
+      <p class="mt-3 text-base text-(--text-tertiary) font-mono">
+        <span class="text-(--accent-cyan)">&lt;</span>
         <span id="role-text"></span>
-        <span class="animate-blink text-[var(--accent-cyan)]">|</span>
-        <span class="text-[var(--accent-cyan)]"> /&gt;</span>
+        <span class="animate-blink text-(--accent-cyan)">|</span>
+        <span class="text-(--accent-cyan)"> /&gt;</span>
       </p>
     </div>
 
     <div class="flex flex-col items-end gap-4" data-reveal>
-      <span class="eyebrow text-[var(--text-tertiary)]">↓ scroll, suave</span>
+      <span class="eyebrow text-(--text-tertiary)">↓ scroll, suave</span>
       <a
         href="#about"
-        class="eyebrow inline-flex items-center gap-2 px-5 py-3 rounded-full border border-[var(--border-color)] text-[var(--text-primary)] hover:bg-white/5 transition-all duration-300"
+        class="eyebrow inline-flex items-center gap-2 px-5 py-3 rounded-full border border-(--border-color) text-(--text-primary) hover:bg-white/5 transition-all duration-300"
       >
         Ver más →
       </a>

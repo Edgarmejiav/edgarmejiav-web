@@ -16,34 +16,34 @@ const { details, images } = app;
 ---
 
 <Layout title={`${app.title} | Proyectos`} description={app.description}>
-  <div class="min-h-screen px-[var(--gutter)] pt-28 pb-20">
+  <div class="min-h-screen px-(--gutter) pt-28 pb-20">
     <div class="max-w-4xl mx-auto">
       <!-- Back link Wilcock eyebrow style -->
       <div class="mb-10" data-reveal>
         <a
           href="/"
-          class="eyebrow inline-flex items-center gap-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors py-2 px-3 -ml-3 rounded-lg hover:bg-white/5"
+          class="eyebrow inline-flex items-center gap-2 text-(--text-secondary) hover:text-(--text-primary) transition-colors py-2 px-3 -ml-3 rounded-lg hover:bg-white/5"
         >
           ← Volver a inicio
         </a>
       </div>
 
       <!-- App Header -->
-      <div class="mb-10 pb-8 border-b border-[var(--border-color)]" data-reveal>
-        <div class="flex items-center gap-3 eyebrow text-[var(--accent-cyan)] mb-3">
+      <div class="mb-10 pb-8 border-b border-(--border-color)" data-reveal>
+        <div class="flex items-center gap-3 eyebrow text-(--accent-cyan) mb-3">
           <span>(PROYECTO SELECCIONADO)</span>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-[var(--text-primary)] mb-4">
+        <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-(--text-primary) mb-4">
           {app.title}
         </h1>
-        <p class="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl">
+        <p class="text-lg sm:text-xl text-(--text-secondary) leading-relaxed max-w-2xl">
           {app.description}
         </p>
 
         <!-- Tech tags -->
         <div class="flex flex-wrap gap-2 mt-6">
           {app.stack.map((t) => (
-            <span class="text-xs font-mono text-[var(--text-secondary)] border border-[var(--border-color)] bg-white/4 px-3 py-1 rounded-md">
+            <span class="text-xs font-mono text-(--text-secondary) border border-(--border-color) bg-white/4 px-3 py-1 rounded-md">
               {t}
             </span>
           ))}
@@ -52,8 +52,8 @@ const { details, images } = app;
 
       <!-- Hero image -->
       {images?.hero && (
-        <div class="rounded-2xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)] mb-12 shadow-2xl" data-reveal>
-          <img src={images.hero} alt={app.title} class="w-full aspect-[16/9] object-cover" />
+        <div class="rounded-2xl overflow-hidden border border-(--border-color) bg-(--bg-card) mb-12 shadow-2xl" data-reveal>
+          <img src={images.hero} alt={app.title} class="w-full aspect-video object-cover" />
         </div>
       )}
 
@@ -64,26 +64,26 @@ const { details, images } = app;
           <div class="grid md:grid-cols-2 gap-4">
             {details.shortcut && (
               <div class="service-card p-6">
-                <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
-                  <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(ATAJO DE TECLADO)</span>
-                  <span class="eyebrow text-[var(--text-tertiary)]">01</span>
+                <div class="flex items-center justify-between pb-3 border-b border-(--border-color) mb-4">
+                  <span class="eyebrow text-(--accent-cyan) text-[0.65rem]">(ATAJO DE TECLADO)</span>
+                  <span class="eyebrow text-(--text-tertiary)">01</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <kbd class="px-3 py-1.5 bg-white/10 border border-white/20 rounded-lg text-sm font-mono text-[var(--text-primary)]">
+                  <kbd class="px-3 py-1.5 bg-white/10 border border-white/20 rounded-lg text-sm font-mono text-(--text-primary)">
                     {details.shortcut.key}
                   </kbd>
-                  <span class="font-sans text-[var(--text-secondary)] text-sm">{details.shortcut.description}</span>
+                  <span class="font-sans text-(--text-secondary) text-sm">{details.shortcut.description}</span>
                 </div>
               </div>
             )}
 
             {details.installation && (
               <div class="service-card p-6">
-                <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-4">
-                  <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(INSTALACIÓN)</span>
-                  <span class="eyebrow text-[var(--text-tertiary)]">02</span>
+                <div class="flex items-center justify-between pb-3 border-b border-(--border-color) mb-4">
+                  <span class="eyebrow text-(--accent-cyan) text-[0.65rem]">(INSTALACIÓN)</span>
+                  <span class="eyebrow text-(--text-tertiary)">02</span>
                 </div>
-                <pre class="bg-black/60 border border-[var(--border-color)] rounded-lg p-3 text-xs sm:text-sm font-mono text-[var(--accent-lime)] overflow-x-auto"><code>{details.installation}</code></pre>
+                <pre class="bg-black/60 border border-(--border-color) rounded-lg p-3 text-xs sm:text-sm font-mono text-(--accent-lime) overflow-x-auto"><code>{details.installation}</code></pre>
               </div>
             )}
           </div>
@@ -91,14 +91,14 @@ const { details, images } = app;
           <!-- Features -->
           {details.features && details.features.length > 0 && (
             <div class="service-card p-6 sm:p-8">
-              <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-5">
-                <h3 class="font-sans font-bold text-lg sm:text-xl text-[var(--text-primary)]">Características Principales</h3>
-                <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(03 / FEATURES)</span>
+              <div class="flex items-center justify-between pb-3 border-b border-(--border-color) mb-5">
+                <h3 class="font-sans font-bold text-lg sm:text-xl text-(--text-primary)">Características Principales</h3>
+                <span class="eyebrow text-(--accent-cyan) text-[0.65rem]">(03 / FEATURES)</span>
               </div>
               <ul class="grid md:grid-cols-2 gap-3.5">
                 {details.features.map((f) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] font-sans text-sm sm:text-base leading-relaxed">
-                    <span class="text-[var(--accent-cyan)] font-mono mt-0.5">▹</span>
+                  <li class="flex items-start gap-3 text-(--text-secondary) font-sans text-sm sm:text-base leading-relaxed">
+                    <span class="text-(--accent-cyan) font-mono mt-0.5">▹</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -109,14 +109,14 @@ const { details, images } = app;
           <!-- Why -->
           {details.why && details.why.length > 0 && (
             <div class="service-card p-6 sm:p-8">
-              <div class="flex items-center justify-between pb-3 border-b border-[var(--border-color)] mb-5">
-                <h3 class="font-sans font-bold text-lg sm:text-xl text-[var(--text-primary)]">¿Por qué {app.title}?</h3>
-                <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem]">(04 / PROPÓSITO)</span>
+              <div class="flex items-center justify-between pb-3 border-b border-(--border-color) mb-5">
+                <h3 class="font-sans font-bold text-lg sm:text-xl text-(--text-primary)">¿Por qué {app.title}?</h3>
+                <span class="eyebrow text-(--accent-cyan) text-[0.65rem]">(04 / PROPÓSITO)</span>
               </div>
               <ul class="space-y-3">
                 {details.why.map((w) => (
-                  <li class="flex items-start gap-3 text-[var(--text-secondary)] font-sans text-sm sm:text-base leading-relaxed">
-                    <span class="text-[var(--accent-cyan)] font-mono mt-0.5">✦</span>
+                  <li class="flex items-start gap-3 text-(--text-secondary) font-sans text-sm sm:text-base leading-relaxed">
+                    <span class="text-(--accent-cyan) font-mono mt-0.5">✦</span>
                     <span>{w}</span>
                   </li>
                 ))}
@@ -125,9 +125,9 @@ const { details, images } = app;
           )}
 
           <!-- License -->
-          <div class="eyebrow text-[var(--text-tertiary)] pt-6 border-t border-[var(--border-color)] flex items-center justify-between">
+          <div class="eyebrow text-(--text-tertiary) pt-6 border-t border-(--border-color) flex items-center justify-between">
             <span>Licencia: {details.license || "MIT"}</span>
-            <a href="/" class="hover:text-[var(--text-primary)] transition-colors">Volver a Proyectos ↑</a>
+            <a href="/" class="hover:text-(--text-primary) transition-colors">Volver a Proyectos ↑</a>
           </div>
         </div>
       )}
@@ -135,10 +135,10 @@ const { details, images } = app;
       <!-- Screenshots gallery -->
       {images?.gallery && images.gallery.length > 0 && (
         <div class="mb-12" data-reveal>
-          <span class="eyebrow text-[var(--text-secondary)] block mb-6">Galería de demostración</span>
+          <span class="eyebrow text-(--text-secondary) block mb-6">Galería de demostración</span>
           <div class="grid md:grid-cols-2 gap-4">
             {images.gallery.map((src) => (
-              <div class="rounded-xl overflow-hidden border border-[var(--border-color)] bg-[var(--bg-card)]">
+              <div class="rounded-xl overflow-hidden border border-(--border-color) bg-(--bg-card)">
                 <img src={src} alt="Demo" class="w-full aspect-video object-cover" />
               </div>
             ))}

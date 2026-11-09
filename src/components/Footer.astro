@@ -1,38 +1,79 @@
 ---
 import SocialIcons from './SocialIcons.astro';
+import IconLinkedin from './icons/IconLinkedin.astro';
 
 const now = new Date();
 const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit', hour12: false });
 ---
 
-<footer class="px-[var(--gutter)] pt-24 pb-12 border-t border-[var(--border-color)] overflow-hidden">
+<footer id="contacto" class="px-(--gutter) pt-24 pb-12 border-t border-(--border-color) overflow-hidden">
   <div class="max-w-[1400px] mx-auto flex flex-col justify-between min-h-[60vh]">
     <!-- Top eyebrow -->
-    <div class="flex items-center justify-between eyebrow text-[var(--text-secondary)] mb-12" data-reveal>
+    <div class="flex items-center justify-between eyebrow text-(--text-secondary) mb-12" data-reveal>
       <span>¿Tienes un proyecto en mente?</span>
       <span class="hidden sm:inline">Disponible para nuevos retos</span>
       <span>(Contacto)</span>
     </div>
 
-    <!-- Massive CTA: HABLEMOS -->
-    <div class="my-auto py-12" data-reveal>
-      <a
-        href="mailto:legamejiav@gmail.com"
-        class="cta-massive block w-full group relative cursor-pointer"
-        aria-label="Escríbeme un correo: legamejiav@gmail.com"
-      >
-        <span class="inline-block transition-transform duration-500 group-hover:scale-[1.02] origin-left">
-          HABLEMOS<span class="text-[var(--accent-cyan)] inline-block transition-transform duration-300 group-hover:translate-x-4">.</span>
+    <!-- Massive CTA & Contacts: HABLEMOS -->
+    <div class="my-auto py-12 flex flex-col xl:flex-row xl:items-center justify-between gap-8 lg:gap-12" data-reveal>
+      <div>
+        <span class="cta-massive block select-none">
+          HABLEMOS<span class="text-(--accent-cyan) inline-block transition-transform duration-300 hover:translate-x-4">.</span>
         </span>
-      </a>
+      </div>
+
+      <!-- Contact actions (LinkedIn & Correo) -->
+      <div class="flex flex-col sm:flex-row xl:flex-col gap-4 w-full sm:w-auto xl:min-w-[340px]">
+        <!-- LinkedIn Button -->
+        <a
+          href="https://www.linkedin.com/in/legamejiav/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center justify-between gap-4 px-6 py-4 rounded-2xl border border-(--border-color) bg-white/2 hover:bg-white/6 hover:border-(--accent-cyan)/60 transition-all duration-300"
+          aria-label="Contactar por LinkedIn"
+        >
+          <div class="flex items-center gap-3.5">
+            <span class="w-10 h-10 rounded-xl bg-[#0077b5]/10 border border-[#0077b5]/30 flex items-center justify-center text-[#0077b5] group-hover:bg-[#0077b5] group-hover:text-white transition-all duration-300">
+              <IconLinkedin />
+            </span>
+            <div class="text-left">
+              <span class="block text-[11px] font-mono uppercase tracking-wider text-(--text-tertiary)">Mensaje / Red</span>
+              <span class="text-base font-semibold text-(--text-primary) group-hover:text-(--accent-cyan) transition-colors">LinkedIn</span>
+            </div>
+          </div>
+          <span class="text-(--text-tertiary) group-hover:text-(--accent-cyan) group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 font-mono text-lg">↗</span>
+        </a>
+
+        <!-- Correo Button -->
+        <a
+          href="mailto:legamejiav@gmail.com"
+          class="group flex items-center justify-between gap-4 px-6 py-4 rounded-2xl border border-(--border-color) bg-white/2 hover:bg-white/6 hover:border-(--accent-cyan)/60 transition-all duration-300"
+          aria-label="Contactar por correo electrónico"
+        >
+          <div class="flex items-center gap-3.5">
+            <span class="w-10 h-10 rounded-xl bg-(--accent-cyan)/10 border border-(--accent-cyan)/30 flex items-center justify-center text-(--accent-cyan) group-hover:bg-(--accent-cyan) group-hover:text-black transition-all duration-300">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+            </span>
+            <div class="text-left">
+              <span class="block text-[11px] font-mono uppercase tracking-wider text-(--text-tertiary)">Email directo</span>
+              <span class="text-base font-semibold text-(--text-primary) group-hover:text-(--accent-cyan) transition-colors">legamejiav@gmail.com</span>
+            </div>
+          </div>
+          <span class="text-(--text-tertiary) group-hover:text-(--accent-cyan) group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 font-mono text-lg">↗</span>
+        </a>
+      </div>
     </div>
 
     <!-- Bottom metadata & links row (Wilcock-style) -->
-    <div class="pt-12 border-t border-[var(--border-color)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 eyebrow text-[var(--text-secondary)]" data-reveal>
+    <div class="pt-12 border-t border-(--border-color) flex flex-col md:flex-row items-start md:items-center justify-between gap-6 eyebrow text-(--text-secondary)" data-reveal>
       <!-- Direct Email -->
       <a
         href="mailto:legamejiav@gmail.com"
-        class="hover:text-[var(--accent-cyan)] transition-colors text-sm font-mono lowercase"
+        class="hover:text-(--accent-cyan) transition-colors text-sm font-mono lowercase"
       >
         legamejiav@gmail.com
       </a>
@@ -43,7 +84,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
           href="https://www.linkedin.com/in/legamejiav/"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[var(--text-primary)] transition-colors"
+          class="hover:text-(--text-primary) transition-colors"
         >
           LinkedIn
         </a>
@@ -51,7 +92,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
           href="https://github.com/edgarmejiav"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[var(--text-primary)] transition-colors"
+          class="hover:text-(--text-primary) transition-colors"
         >
           GitHub
         </a>
@@ -59,7 +100,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
           href="https://www.tiktok.com/@legadev"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[var(--text-primary)] transition-colors"
+          class="hover:text-(--text-primary) transition-colors"
         >
           TikTok
         </a>
@@ -67,7 +108,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
           href="https://github.com/Edgarmejiav/edgarmejiav-web"
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[var(--text-primary)] transition-colors hidden sm:inline"
+          class="hover:text-(--text-primary) transition-colors hidden sm:inline"
         >
           Source Code
         </a>
@@ -75,12 +116,12 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
 
       <!-- Time + Location & Back to Top -->
       <div class="flex items-center gap-6">
-        <span class="text-[var(--text-tertiary)]">
+        <span class="text-(--text-tertiary)">
           Perú, LATAM <span id="footer-time">{timeStr}</span>
         </span>
         <a
           href="#navbar"
-          class="hover:text-[var(--accent-cyan)] transition-colors flex items-center gap-1 cursor-pointer"
+          class="hover:text-(--accent-cyan) transition-colors flex items-center gap-1 cursor-pointer"
           id="back-to-top"
         >
           Volver arriba ↑
@@ -89,7 +130,7 @@ const timeStr = now.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-di
     </div>
 
     <!-- Copyright footnote -->
-    <div class="mt-8 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-[var(--text-tertiary)]">
+    <div class="mt-8 pt-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs font-mono text-(--text-tertiary)">
       <span>© {new Date().getFullYear()} Edgar Mejía Vásquez</span>
       <span class="italic">"Cambiar el mundo a través del código"</span>
       <span>Diseñado con inspiración en mikewilcockdesign</span>

@@ -45,17 +45,17 @@ const techGroups = [
 ];
 ---
 
-<section id="stack" class="px-[var(--gutter)]" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+<section id="stack" class="px-(--gutter)" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
   <div class="max-w-[1400px] mx-auto">
     <!-- Section head (Wilcock-style) -->
     <div class="section-head mb-12" data-reveal>
       <div class="flex items-center gap-3">
-        <h2 class="eyebrow text-[var(--text-secondary)]">
-          Capacidades & Stack <span class="text-[var(--text-tertiary)]">(06)</span>
+        <h2 class="eyebrow text-(--text-secondary)">
+          Capacidades & Stack <span class="text-(--text-tertiary)">(06)</span>
         </h2>
       </div>
-      <div class="flex items-center gap-4 eyebrow text-[var(--text-tertiary)]">
-        <span class="text-[var(--accent-cyan)] font-mono">Full-Stack & Cloud</span>
+      <div class="flex items-center gap-4 eyebrow text-(--text-tertiary)">
+        <span class="text-(--accent-cyan) font-mono">Full-Stack & Cloud</span>
         <span class="hidden sm:inline">·</span>
         <span class="hidden sm:inline">{techGroups.reduce((acc, g) => acc + g.items.length, 0)} tecnologías</span>
       </div>
@@ -70,36 +70,36 @@ const techGroups = [
           style={`transition-delay: ${idx * 0.07}s`}
         >
           <!-- Hover subtle background highlight -->
-          <div class="absolute -top-16 -right-16 w-32 h-32 bg-[var(--accent-cyan)]/5 rounded-full blur-2xl pointer-events-none group-hover:bg-[var(--accent-cyan)]/10 transition-colors duration-500"></div>
+          <div class="absolute -top-16 -right-16 w-32 h-32 bg-(--accent-cyan)/5 rounded-full blur-2xl pointer-events-none group-hover:bg-(--accent-cyan)/10 transition-colors duration-500"></div>
 
           <div>
             <!-- Top card row: Number + Tag -->
-            <div class="flex items-center justify-between pb-4 border-b border-[var(--border-color)] mb-5">
-              <span class="eyebrow text-[var(--text-tertiary)] group-hover:text-[var(--text-primary)] transition-colors">
+            <div class="flex items-center justify-between pb-4 border-b border-(--border-color) mb-5">
+              <span class="eyebrow text-(--text-tertiary) group-hover:text-(--text-primary) transition-colors">
                 {group.num}
               </span>
-              <span class="eyebrow text-[var(--accent-cyan)] text-[0.65rem] tracking-wider">
+              <span class="eyebrow text-(--accent-cyan) text-[0.65rem] tracking-wider">
                 {group.tag}
               </span>
             </div>
 
             <!-- Title in bold Archivo -->
-            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-[var(--text-primary)] mb-3 group-hover:text-white transition-colors">
+            <h3 class="font-sans font-bold text-2xl sm:text-3xl tracking-tight text-(--text-primary) mb-3 group-hover:text-white transition-colors">
               {group.category}
             </h3>
 
             <!-- Description in Archivo -->
-            <p class="font-sans text-sm text-[var(--text-secondary)] leading-relaxed mb-6">
+            <p class="font-sans text-sm text-(--text-secondary) leading-relaxed mb-6">
               {group.description}
             </p>
           </div>
 
           <!-- Items in Geist Mono chips -->
-          <div class="pt-4 border-t border-[var(--border-color)]/60">
-            <span class="eyebrow text-[var(--text-tertiary)] text-[0.6rem] block mb-2.5">TECNOLOGÍAS CLAVE</span>
+          <div class="pt-4 border-t border-(--border-color)/60">
+            <span class="eyebrow text-(--text-tertiary) text-[0.6rem] block mb-2.5">TECNOLOGÍAS CLAVE</span>
             <div class="flex flex-wrap gap-1.5">
               {group.items.map((tech) => (
-                <span class="font-mono text-xs text-[var(--text-secondary)] bg-white/[0.03] border border-[var(--border-color)] rounded-md px-2.5 py-1 hover:border-[var(--accent-cyan)]/50 hover:text-[var(--text-primary)] hover:bg-white/[0.07] transition-all duration-200 cursor-default">
+                <span class="font-mono text-xs text-(--text-secondary) bg-white/3 border border-(--border-color) rounded-md px-2.5 py-1 hover:border-(--accent-cyan)/50 hover:text-(--text-primary) hover:bg-white/[0.07] transition-all duration-200 cursor-default">
                   {tech}
                 </span>
               ))}
